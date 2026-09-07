@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NSCS Header Image</title>
+</head>
+<body>
+<p>NSCS Certificate Image - Redirecting to main image file</p>
+<script>
+window.location.href = '/IMG_2410.jpeg';
+</script>
+</body>
+</html>
