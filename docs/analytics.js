@@ -46,15 +46,24 @@
 
     var href = link.getAttribute("href") || "";
     var parameters = {
-      link_url: link.href,
       link_text: link.textContent.trim().slice(0, 100),
       page_type: pageType
     };
 
-    if (href.indexOf("tel:") === 0) send("phone_click", parameters);
-    else if (href.indexOf("mailto:") === 0) send("email_click", parameters);
-    else if (link.closest(".meeting-card")) send("booking_click", parameters);
-    else if (link.hostname && link.hostname !== window.location.hostname) send("outbound_click", parameters);
+    if (link.closest(".meeting-card")) {
+      parameters.link_type = href.indexOf("tel:") === 0 ? "phone" : "form";
+      send("booking_click", parameters);
+    } else if (href.indexOf("tel:") === 0) {
+      parameters.link_type = "phone";
+      send("phone_click", parameters);
+    } else if (href.indexOf("mailto:") === 0) {
+      parameters.link_type = "email";
+      send("email_click", parameters);
+    } else if (link.hostname && link.hostname !== window.location.hostname) {
+      parameters.link_type = "external";
+      parameters.link_domain = link.hostname;
+      send("outbound_click", parameters);
+    }
   });
 
   window.trackSiteEvent = send;

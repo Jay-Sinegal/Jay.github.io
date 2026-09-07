@@ -26,6 +26,7 @@ Decide which content and distribution channels create qualified consultation opp
 ## Weekly review
 
 - Reconcile GA4 delivered leads with Formspree accepted submissions.
+- In GA4 Admin, mark `generate_lead` as a key event, then verify it in DebugView and Realtime after a successful Formspree submission.
 - Review Search Console queries/pages with rising impressions and weak CTR.
 - Review landing pages and channels behind delivered or qualified leads.
 - Choose one action: improve a winning page, fix a funnel issue, or distribute a proven article.
