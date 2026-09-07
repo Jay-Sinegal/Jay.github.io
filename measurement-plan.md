@@ -27,6 +27,9 @@ Decide which content and distribution channels create qualified consultation opp
 
 - Reconcile GA4 delivered leads with Formspree accepted submissions.
 - In GA4 Admin, mark `generate_lead` as a key event, then verify it in DebugView and Realtime after a successful Formspree submission.
+- Register these event parameters as GA4 custom dimensions when they are needed in reports: `form_name`, `delivery_status`, `error_type`, `page_type`, `link_type`, `link_domain`, and `article_title`.
+- Test the live domain at `/`, `/faq.html`, `/find-a-producer.html`, `/blog/`, both article URLs, and `/privacy.html` in Tag Assistant/DebugView. Submit a real test consultation only after confirming Formspree delivery, then verify one `generate_lead` event in Realtime.
+- No Google Business Profile URL is present in this repository. Add the official profile URL to the homepage `sameAs` array only after it is supplied and verified; do not use a search URL or an unverified listing.
 - Review Search Console queries/pages with rising impressions and weak CTR.
 - Review landing pages and channels behind delivered or qualified leads.
 - Choose one action: improve a winning page, fix a funnel issue, or distribute a proven article.

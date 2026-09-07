@@ -1,6 +1,43 @@
 (function () {
   "use strict";
 
+  var optOutKey = "jaylen_ga4_opt_out";
+  var measurementId = "G-V09SKB92BX";
+
+  function optedOut() {
+    try {
+      return window.localStorage.getItem(optOutKey) === "true";
+    } catch (error) {
+      return false;
+    }
+  }
+
+  window.disableSiteAnalytics = function () {
+    try {
+      window.localStorage.setItem(optOutKey, "true");
+    } catch (error) {
+      // Continue disabling analytics for this page when storage is unavailable.
+    }
+    window["ga-disable-" + measurementId] = true;
+    if (typeof window.gtag === "function") {
+      window.gtag("consent", "update", { analytics_storage: "denied" });
+    }
+  };
+
+  var optOutButton = document.querySelector("[data-analytics-opt-out]");
+  if (optOutButton) {
+    optOutButton.addEventListener("click", function () {
+      window.disableSiteAnalytics();
+      optOutButton.textContent = "Analytics disabled";
+      optOutButton.disabled = true;
+    });
+  }
+
+  if (optedOut()) {
+    window["ga-disable-" + measurementId] = true;
+    return;
+  }
+
   var campaignKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
   var campaign = {};
 
