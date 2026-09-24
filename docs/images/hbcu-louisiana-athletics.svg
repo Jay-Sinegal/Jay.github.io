@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-labelledby="t">
+  <title id="t">HBCU athletics in Louisiana at a glance: SWAC Division I and NAIA</title>
+  <rect width="1200" height="620" fill="#1b1b1b"/>
+  <text x="600" y="56" text-anchor="middle" font-family="Georgia, serif" font-size="32" font-weight="700" fill="#f5efe3" letter-spacing="1">HBCU ATHLETICS IN LOUISIANA AT A GLANCE</text>
+  <line x1="110" y1="80" x2="1090" y2="80" stroke="#a67c00" stroke-width="3"/>
+
+  <g font-family="Arial, Helvetica, sans-serif" fill="#f5efe3">
+    <g>
+      <rect x="80" y="110" width="500" height="52" fill="#a67c00" rx="6"/>
+      <text x="330" y="134" text-anchor="middle" font-size="22" font-weight="700" fill="#1b1b1b">SWAC · NCAA DIVISION I</text>
+      <text x="330" y="154" text-anchor="middle" font-size="13" fill="#1b1b1b" font-weight="700">PUBLIC SCHOOLS</text>
+    </g>
+    <rect x="80" y="162" width="500" height="236" fill="none" stroke="#5a5a5a" stroke-width="2" rx="6"/>
+    <text x="330" y="192" text-anchor="middle" font-size="19" font-weight="700" fill="#cbbd9f">Grambling State University</text>
+    <text x="330" y="210" text-anchor="middle" font-size="13" fill="#cbbd9f">Grambling, LA</text>
+    <text x="330" y="244" text-anchor="middle" font-size="19" font-weight="700" fill="#cbbd9f">Southern University and A&amp;M College</text>
+    <text x="330" y="262" text-anchor="middle" font-size="13" fill="#cbbd9f">Baton Rouge, LA</text>
+    <text x="330" y="300" text-anchor="middle" font-size="14" fill="#cbbd9f">Athletic aid follows NCAA D1 rules</text>
+    <text x="330" y="322" text-anchor="middle" font-size="14" fill="#cbbd9f">Football at the FCS level</text>
+    <text x="330" y="344" text-anchor="middle" font-size="14" fill="#cbbd9f">Partial aid is the norm; equivalency sports</text>
+    <text x="330" y="374" text-anchor="middle" font-size="13" fill="#a67c00" font-weight="700">RIVALRY: THE BAYOU CLASSIC</text>
+
+    <g>
+      <rect x="620" y="110" width="500" height="52" fill="#3e3e3e" rx="6"/>
+      <text x="870" y="134" text-anchor="middle" font-size="22" font-weight="700" fill="#f5efe3">NAIA · GULF COAST AC</text>
+      <text x="870" y="154" text-anchor="middle" font-size="13" fill="#cbbd9f" font-weight="700">PRIVATE + PUBLIC SCHOOLS</text>
+    </g>
+    <rect x="620" y="162" width="500" height="236" fill="none" stroke="#5a5a5a" stroke-width="2" rx="6"/>
+    <text x="870" y="192" text-anchor="middle" font-size="19" font-weight="700" fill="#cbbd9f">Dillard University</text>
+    <text x="870" y="210" text-anchor="middle" font-size="13" fill="#cbbd9f">New Orleans, LA</text>
+    <text x="870" y="244" text-anchor="middle" font-size="19" font-weight="700" fill="#cbbd9f">Xavier University of Louisiana</text>
+    <text x="870" y="262" text-anchor="middle" font-size="13" fill="#cbbd9f">New Orleans, LA</text>
+    <text x="870" y="300" text-anchor="middle" font-size="19" font-weight="700" fill="#cbbd9f">Southern University at New Orleans</text>
+    <text x="870" y="318" text-anchor="middle" font-size="13" fill="#cbbd9f">New Orleans, LA</text>
+    <text x="870" y="352" text-anchor="middle" font-size="14" fill="#cbbd9f">NAIA allows full cost-of-attendance aid</text>
+    <text x="870" y="374" text-anchor="middle" font-size="14" fill="#cbbd9f">for recruited athletes</text>
+
+    <rect x="80" y="430" width="1040" height="54" fill="#a67c00" rx="6"/>
+    <text x="600" y="465" text-anchor="middle" font-size="21" font-weight="700" fill="#1b1b1b">THE STRATEGY ISN'T THE CONFERENCE. IT'S FIT, PLAYING TIME, AND THE AID STACK.</text>
+  </g>
+</svg>
