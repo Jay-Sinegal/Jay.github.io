@@ -559,7 +559,7 @@
 
 <p>This is a working file, not a reading exercise. Fill it in as you go: every school becomes a row, every deadline gets a date. The rows below are examples, not recommendations. Replace them with your own list.</p>
 
-<button onclick="downloadTracker()" style="background:#a67c00;color:#1b1b1b;font-family:Georgia, serif;font-size:16px;font-weight:700;padding:10px 20px;border:none;cursor:pointer;margin:0.5em 0;">Download this tracker as CSV</button>
+<a href="/college-opportunity-tracker.csv" download style="display:inline-block;background:#a67c00;color:#1b1b1b;font-family:Georgia, serif;font-size:16px;font-weight:700;padding:10px 20px;text-decoration:none;margin:0.5em 0;">Download this tracker as CSV</a>
 
 
 
@@ -694,27 +694,6 @@
 
 </main>
 <footer class="site-footer"><div class="wrap"><div><p>&copy; 2026 Jaylen Sinegal · Lafayette, LA</p></div><div><p><a href="tel:+13462919553">(346) 291-9553</a> · <a href="mailto:jsinegal@bestversion.com">jsinegal@bestversion.com</a></p></div></div></footer>
-<script>
-function downloadTracker() {
-  var table = document.getElementById("tracker-table");
-  var rows = table.querySelectorAll("tr");
-  var csv = [];
-  rows.forEach(function(row) {
-    var cells = [];
-    row.querySelectorAll("th, td").forEach(function(cell) {
-      var text = cell.innerText.replace(/"/g, '""');
-      cells.push('"' + text + '"');
-    });
-    csv.push(cells.join(","));
-  });
-  var blob = new Blob([csv.join("\n")], { type: "text/csv" });
-  var a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = "college-opportunity-tracker.csv";
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-}
-</script>
+
 </body>
 </html>
