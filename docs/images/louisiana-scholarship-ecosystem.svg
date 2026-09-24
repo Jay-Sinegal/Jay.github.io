@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="t">
+  <title id="t">Where should a Louisiana student-athlete look? The scholarship ecosystem</title>
+  <rect width="1200" height="720" fill="#1b1b1b"/>
+  <text x="600" y="60" text-anchor="middle" font-family="Georgia, serif" font-size="34" font-weight="700" fill="#f5efe3" letter-spacing="1">WHERE SHOULD A LOUISIANA STUDENT-ATHLETE LOOK?</text>
+  <line x1="110" y1="84" x2="1090" y2="84" stroke="#a67c00" stroke-width="3"/>
+  <text x="600" y="120" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#a67c00">There isn't one scholarship source. There is an ecosystem.</text>
+
+  <g font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#f5efe3">
+    <g>
+      <rect x="430" y="148" width="340" height="44" fill="#a67c00" rx="6"/>
+      <text x="600" y="177" text-anchor="middle" font-size="19" font-weight="700" fill="#1b1b1b">NCAA ELIGIBILITY CENTER</text>
+    </g>
+    <g>
+      <line x1="600" y1="192" x2="600" y2="218" stroke="#a67c00" stroke-width="3"/>
+      <polygon points="600,228 592,210 608,210" fill="#a67c00"/>
+    </g>
+    <g>
+      <rect x="430" y="228" width="340" height="44" fill="#3e3e3e" rx="6"/>
+      <text x="600" y="257" text-anchor="middle" font-size="18" font-weight="700">COLLEGE ATHLETIC DEPARTMENT</text>
+    </g>
+    <g>
+      <line x1="600" y1="272" x2="600" y2="298" stroke="#a67c00" stroke-width="3"/>
+      <polygon points="600,308 592,290 608,290" fill="#a67c00"/>
+    </g>
+    <g>
+      <rect x="430" y="308" width="340" height="44" fill="#3e3e3e" rx="6"/>
+      <text x="600" y="337" text-anchor="middle" font-size="18" font-weight="700">FINANCIAL AID OFFICE</text>
+    </g>
+    <g>
+      <line x1="600" y1="352" x2="600" y2="378" stroke="#a67c00" stroke-width="3"/>
+      <polygon points="600,388 592,370 608,370" fill="#a67c00"/>
+    </g>
+    <g>
+      <rect x="300" y="388" width="200" height="44" fill="#3e3e3e" rx="6"/>
+      <text x="400" y="417" text-anchor="middle" font-size="18" font-weight="700">LOSFA</text>
+    </g>
+    <g>
+      <rect x="516" y="388" width="168" height="44" fill="#3e3e3e" rx="6"/>
+      <text x="600" y="417" text-anchor="middle" font-size="18" font-weight="700">FAFSA</text>
+    </g>
+    <g>
+      <rect x="700" y="388" width="200" height="44" fill="#3e3e3e" rx="6"/>
+      <text x="800" y="417" text-anchor="middle" font-size="18" font-weight="700">LHSAA</text>
+    </g>
+    <g>
+      <line x1="400" y1="432" x2="400" y2="532" stroke="#a67c00" stroke-width="3"/>
+      <polygon points="400,542 392,524 408,524" fill="#a67c00"/>
+      <line x1="600" y1="432" x2="600" y2="532" stroke="#a67c00" stroke-width="3"/>
+      <polygon points="600,542 592,524 608,524" fill="#a67c00"/>
+      <line x1="800" y1="432" x2="800" y2="532" stroke="#a67c00" stroke-width="3"/>
+      <polygon points="800,542 792,524 808,524" fill="#a67c00"/>
+    </g>
+    <g>
+      <rect x="300" y="542" width="200" height="44" fill="#3e3e3e" rx="6"/>
+      <text x="400" y="571" text-anchor="middle" font-size="18" font-weight="700">PRIVATE</text>
+      <text x="400" y="581" text-anchor="middle" font-size="0"> </text>
+    </g>
+    <g>
+      <rect x="516" y="542" width="168" height="44" fill="#3e3e3e" rx="6"/>
+      <text x="600" y="571" text-anchor="middle" font-size="18" font-weight="700">LOCAL</text>
+    </g>
+    <g>
+      <rect x="700" y="542" width="200" height="44" fill="#3e3e3e" rx="6"/>
+      <text x="800" y="571" text-anchor="middle" font-size="18" font-weight="700">TOPS-TECH</text>
+    </g>
+
+    <g>
+      <line x1="400" y1="586" x2="400" y2="620" stroke="#a67c00" stroke-width="3"/>
+      <line x1="600" y1="586" x2="600" y2="620" stroke="#a67c00" stroke-width="3"/>
+      <line x1="800" y1="586" x2="800" y2="620" stroke="#a67c00" stroke-width="3"/>
+      <rect x="240" y="620" width="720" height="54" fill="#a67c00" rx="6"/>
+      <text x="600" y="654" text-anchor="middle" font-size="20" font-weight="700" fill="#1b1b1b">APPLY TO EVERY GATE WITH A DEADLINE</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-labelledby="t">
+  <title id="t">College Athletics Pathways: D1, D2, D3, and JUCO compared</title>
+  <rect width="1200" height="600" fill="#1b1b1b"/>
+  <text x="600" y="56" text-anchor="middle" font-family="Georgia, serif" font-size="34" font-weight="700" fill="#f5efe3" letter-spacing="1">COLLEGE ATHLETICS PATHWAYS</text>
+  <line x1="80" y1="78" x2="1120" y2="78" stroke="#a67c00" stroke-width="3"/>
+
+  <g font-family="Arial, Helvetica, sans-serif">
+    <g>
+      <rect x="60" y="100" width="262" height="46" fill="#a67c00" rx="6"/>
+      <text x="191" y="130" text-anchor="middle" font-size="24" font-weight="700" fill="#1b1b1b">D1</text>
+      <rect x="60" y="430" width="262" height="46" fill="none" stroke="#a67c00" stroke-width="2" rx="6"/>
+      <text x="191" y="460" text-anchor="middle" font-size="20" font-weight="700" fill="#a67c00">NCAA</text>
+    </g>
+    <g>
+      <rect x="338" y="100" width="262" height="46" fill="#3e3e3e" rx="6"/>
+      <text x="469" y="130" text-anchor="middle" font-size="24" font-weight="700" fill="#f5efe3">D2</text>
+      <rect x="338" y="430" width="262" height="46" fill="none" stroke="#5a5a5a" stroke-width="2" rx="6"/>
+      <text x="469" y="460" text-anchor="middle" font-size="20" font-weight="700" fill="#cbbd9f">NCAA</text>
+    </g>
+    <g>
+      <rect x="616" y="100" width="262" height="46" fill="#3e3e3e" rx="6"/>
+      <text x="747" y="130" text-anchor="middle" font-size="24" font-weight="700" fill="#f5efe3">D3</text>
+      <rect x="616" y="430" width="262" height="46" fill="none" stroke="#5a5a5a" stroke-width="2" rx="6"/>
+      <text x="747" y="460" text-anchor="middle" font-size="20" font-weight="700" fill="#cbbd9f">NO ELIGIBILITY CENTER</text>
+    </g>
+    <g>
+      <rect x="894" y="100" width="262" height="46" fill="#3e3e3e" rx="6"/>
+      <text x="1025" y="130" text-anchor="middle" font-size="24" font-weight="700" fill="#f5efe3">JUCO</text>
+      <rect x="894" y="430" width="262" height="46" fill="none" stroke="#5a5a5a" stroke-width="2" rx="6"/>
+      <text x="1025" y="460" text-anchor="middle" font-size="20" font-weight="700" fill="#cbbd9f">NJCAA</text>
+    </g>
+
+    <text x="191" y="205" text-anchor="middle" font-size="14" font-weight="700" fill="#a67c00" letter-spacing="1.5">ATHLETIC AID</text>
+    <text x="191" y="268" text-anchor="middle" font-size="14" font-weight="700" fill="#a67c00" letter-spacing="1.5">ACADEMIC AID</text>
+    <text x="191" y="331" text-anchor="middle" font-size="14" font-weight="700" fill="#a67c00" letter-spacing="1.5">ELIGIBILITY</text>
+    <text x="191" y="394" text-anchor="middle" font-size="14" font-weight="700" fill="#a67c00" letter-spacing="1.5">RECRUITING</text>
+
+    <g font-size="13.5" fill="#cbbd9f">
+      <text x="60" y="176" font-size="12">Largest schools, most competition</text>
+      <text x="60" y="240" font-size="12">TOPS, FAFSA, and institutional aid stack</text>
+      <text x="60" y="303" font-size="12">16 core courses, 2.3 core GPA</text>
+      <text x="60" y="366" font-size="12">National stage, constant recruiting</text>
+      <text x="60" y="472">Most aid is partial; full rides are rare</text>
+
+      <text x="338" y="176" font-size="12">Partial-scholarship model</text>
+      <text x="338" y="240" font-size="12">TOPS, FAFSA, and institutional aid stack</text>
+      <text x="338" y="303" font-size="12">16 core courses, 2.2 core GPA</text>
+      <text x="338" y="366" font-size="12">Regional recruiting, faster development</text>
+      <text x="338" y="472">Coaches split equivalents across the roster</text>
+
+      <text x="616" y="176" font-size="12">No athletic scholarships</text>
+      <text x="616" y="240" font-size="12">Merit and need-based aid still available</text>
+      <text x="616" y="303" font-size="12">School's own admission and aid process</text>
+      <text x="616" y="366" font-size="12">Academics first, regional competition</text>
+      <text x="616" y="472">The money comes from a different department</text>
+
+      <text x="894" y="176" font-size="12">Athletic aid varies by division (D-I up to full)</text>
+      <text x="894" y="240" font-size="12">TOPS-Tech, FAFSA, then transfer to four-year</text>
+      <text x="894" y="303" font-size="12">NJCAA standards, roughly a 2.0 GPA</text>
+      <text x="894" y="366" font-size="12">Coaches recruit constantly</text>
+      <text x="894" y="472">A two-year on-ramp, not a dead end</text>
+    </g>
+  </g>
+</svg>
