@@ -32,6 +32,6 @@ export const RESOURCE_CAPTURE_URL = "";
 // Empty values keep the default behavior: CTAs scroll to the lead form
 // instead of opening a scheduler, and no calendar embeds render.
 export const SCHEDULING = {
-  pathA: "", // Athlete Advisory call (paid)
+  pathA: "https://calendar.google.com/appointments/schedules/AcZssZ0UTaAwsF8Z1DyxAQ0CfkU-4ehkSu9I6pH6pL4dIkRMLFKunw17Qn4jMuJ_JiTszLBM0F8k-mWm", // Athlete Advisory call (paid)
   pathB: "", // Institutional Education discovery call (free)
 };
