@@ -3,9 +3,9 @@ import Icons from "./Icons.astro";
 import { SCHEDULING } from "../data/site";
 
 const EMBEDS: { label: string; url: string }[] = [];
-if (SCHEDULING.pathA) EMBEDS.push({ label: "Brand Strategy Call", url: SCHEDULING.pathA });
+if (SCHEDULING.pathA) EMBEDS.push({ label: "Athlete Advisory Call", url: SCHEDULING.pathA });
 if (SCHEDULING.pathB && SCHEDULING.pathB !== SCHEDULING.pathA) {
-  EMBEDS.push({ label: "Clinic Discovery Call", url: SCHEDULING.pathB });
+  EMBEDS.push({ label: "Institutional Education Discovery Call", url: SCHEDULING.pathB });
 }
 
 const embedSrc = (url: string) => (url.includes("?") ? url : `${url}?gv=true`);

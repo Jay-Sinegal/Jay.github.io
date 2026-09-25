@@ -11,9 +11,9 @@ const PATHS = [
     ring: "hover:border-electricBlue hover:shadow-[0_0_25px_rgba(37,99,235,0.18)]",
     chip: "bg-electricBlue/10 text-electricBlue",
     icon: "sprout",
-    step: "PATH A",
+    step: "ATHLETE ADVISORY",
     glow: "electric",
-    title: "Executive Advisory and Brand Architecture",
+    title: "Digital identity, recruiting communication, and athlete brand stewardship.",
     audience: "For athletes and families",
     promise: "Control your narrative. I teach the family how.",
     bullets: [
@@ -29,7 +29,7 @@ const PATHS = [
       "A family-controlled IP map: every account and asset, and who owns it",
       "A written action plan: prioritized next steps tied directly to the audit",
     ],
-    cta: { label: "Schedule Brand Strategy Call", href: "#contact-brand", external: false },
+    cta: { label: "Schedule Athlete Advisory Call", href: "#contact-brand", external: false },
   },
   {
     id: "clinics",
@@ -37,9 +37,9 @@ const PATHS = [
     ring: "hover:border-neonRed hover:shadow-[0_0_25px_rgba(239,68,68,0.18)]",
     chip: "bg-neonRed/10 text-neonRed",
     icon: "scale",
-    step: "PATH B",
+    step: "INSTITUTIONAL EDUCATION",
     glow: "neon",
-    title: "Sports Music Licensing and NIL Clinics",
+    title: "NIL, media rights, athlete digital identity, and content practices.",
     audience: "For high schools, athletic directors, and clubs",
     bullets: [
       "Louisiana Act 810 and LHSAA bylaw compliance",
@@ -61,13 +61,14 @@ const PATHS = [
     ring: "hover:border-black hover:shadow-[0_0_25px_rgba(0,0,0,0.15)]",
     chip: "bg-black text-white",
     icon: "building",
-    step: "PATH C",
+    step: "FLIGHTTIME PERFORMANCE",
     glow: "dark",
-    title: "Ventures and Incubated Platforms",
-    audience: "Case study · FlightTime Athletics LLC",
+    title: "Testing, training, team combines, and Flight Night.",
+    audience: "Strategic advisory · FlightTime Athletics LLC",
+    promise: "Jaylen Sinegal builds the strategy. FlightTime Athletics operates the ecosystem.",
     bullets: [
-      "Youth physiological speed and agility training, ages 8 to 17",
-      "BlazePod reactive light training and Vital Tanks sleds on the training floor",
+      "Brand, business, and media strategy for the FlightTime athlete-performance ecosystem",
+      "FlightTime operates the academy, testing, and combines - speed and agility training for ages 8 to 17",
       "Standardized combine testing: 40-yard dash, 5-10-5 agility, vertical jump",
       "AI metric leaderboards for measurable progress",
       'Invitational "Flight Night" walkout showcases',
@@ -97,7 +98,7 @@ const TRACKS = PATHS.map((path) => {
 <section id="paths" class="py-24">
   <div class="container-page">
     <div class="mx-auto max-w-2xl text-center" data-reveal>
-      <p class="lead-label text-electricBlue">Three paths, one system</p>
+      <p class="lead-label text-electricBlue">One ecosystem, four business lines</p>
       <h2 class="mt-3 text-4xl font-black tracking-tight text-black sm:text-5xl">
         Choose the entry point that matches your stage.
       </h2>
@@ -181,8 +182,9 @@ const TRACKS = PATHS.map((path) => {
     <div class="mt-12 flex flex-col gap-3 rounded-sm border border-neutral-200 bg-neutral-50 p-6 sm:flex-row sm:items-center sm:justify-between" data-reveal>
       <p class="flex items-center gap-2 text-sm font-medium text-neutral-700">
         <Icons name="file-badge" className="h-4 w-4 text-neonRed" />
-        Consulting, education, and media IP work only. Jaylen Sinegal is not a licensed sports
-        agent.
+        Consulting, education, and media IP work only. Jaylen Sinegal builds the strategy;
+        FlightTime Athletics operates the athlete-performance ecosystem. Jaylen is not a licensed
+        sports agent.
       </p>
       <ShinyButton href="/#contact" className="shrink-0 px-6 py-3 text-xs">Start the conversation</ShinyButton>
     </div>

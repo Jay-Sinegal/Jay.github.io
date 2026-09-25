@@ -6,10 +6,10 @@ export const SITE = {
 
 export const NAV_LINKS = [
   { label: "About", href: "/#about" },
-  { label: "Advisory", href: "/#advisory" },
-  { label: "IP Clinics", href: "/#clinics" },
-  { label: "Speaking", href: "/#speaking" },
-  { label: "Ventures", href: "/#ventures" },
+  { label: "Athlete Advisory", href: "/#advisory" },
+  { label: "Institutional Ed.", href: "/#clinics" },
+  { label: "Speaking & Strategy", href: "/#speaking" },
+  { label: "Performance", href: "/#ventures" },
   { label: "Resources", href: "/resources/" },
   { label: "Blog", href: "/blog/" },
   { label: "Contact", href: "/#contact" },
@@ -32,6 +32,6 @@ export const RESOURCE_CAPTURE_URL = "";
 // Empty values keep the default behavior: CTAs scroll to the lead form
 // instead of opening a scheduler, and no calendar embeds render.
 export const SCHEDULING = {
-  pathA: "", // 1-on-1 Brand Architecture Consultation (paid)
-  pathB: "", // B2B Clinic Discovery Call (free)
+  pathA: "", // Athlete Advisory call (paid)
+  pathB: "", // Institutional Education discovery call (free)
 };
