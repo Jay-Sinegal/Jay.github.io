@@ -1,4 +1,6 @@
 ---
+import Medallions from "./Medallions.astro";
+
 const CREDENTIALS = [
   "Official Louisiana Storyteller · Louisiana Economic Development",
   "Member, The National Society of Collegiate Scholars (NSCS)",
@@ -15,6 +17,13 @@ const CREDENTIALS = [
       <h2 class="mt-3 text-4xl font-black tracking-tight text-black sm:text-5xl">
         Louisiana is not a market to me. It is a proving ground.
       </h2>
+      <p class="mt-6 text-base font-medium leading-relaxed text-neutral-600">
+        Credentials earned on the ground in Louisiana and in the classroom at Full Sail University.
+        Each medallion below is a standing proof point behind the strategy work.
+      </p>
+      <div class="mt-8" data-reveal>
+        <Medallions />
+      </div>
     </div>
     <div>
       <p class="text-lg font-medium leading-relaxed text-neutral-700">

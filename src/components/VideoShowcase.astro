@@ -1,0 +1,32 @@
+---
+import Backlight from "./Backlight.astro";
+---
+
+<section class="border-t border-neutral-200 bg-white py-24">
+  <div class="container-page">
+    <div class="mx-auto max-w-2xl text-center" data-reveal>
+      <p class="lead-label text-electricBlue">In motion</p>
+      <h2 class="mt-3 text-4xl font-black tracking-tight text-black sm:text-5xl">
+        A backlit view of the work.
+      </h2>
+      <p class="mt-4 text-lg font-medium text-neutral-600">
+        Strategy, performance, and brand motion converge on the FlightTime training floor and behind
+        every story we produce.
+      </p>
+    </div>
+
+    <div class="mx-auto mt-12 max-w-4xl" data-reveal>
+      <Backlight className="rounded-sm">
+        <iframe
+          class="block aspect-video w-full"
+          src="https://www.youtube.com/embed/9CJLtzzUphU"
+          title="Gradient Loop Background"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </Backlight>
+    </div>
+  </div>
+</section>

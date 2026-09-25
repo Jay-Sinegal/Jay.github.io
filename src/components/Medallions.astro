@@ -1,0 +1,65 @@
+---
+interface Medallion {
+  img: string;
+  alt: string;
+  title: string;
+  subtitle?: string;
+}
+
+const MEDALLIONS: Medallion[] = [
+  {
+    img: "/medallions/storyteller.jpg",
+    alt: "Jaylen Sinegal portrait",
+    title: "Official Louisiana Storyteller",
+    subtitle: "Louisiana Economic Development",
+  },
+  {
+    img: "/medallions/full-sail-graduation.jpg",
+    alt: "Jaylen Sinegal in Full Sail University graduation attire",
+    title: "Full Sail University Graduate",
+    subtitle: "B.S. Music Business · M.S. Candidate",
+  },
+  {
+    img: "/medallions/flighttime-flag-football.jpg",
+    alt: "Jaylen Sinegal on the flag football field",
+    title: "FlightTime Athletics",
+    subtitle: "Chief Brand Officer · Youth Speed",
+  },
+  {
+    img: "/medallions/portrait.jpg",
+    alt: "Jaylen Sinegal, executive brand strategist",
+    title: "Executive Brand Strategist",
+    subtitle: "Media IP Consultant",
+  },
+];
+---
+
+<div class="flex flex-wrap justify-center gap-6 sm:gap-8">
+  {
+    MEDALLIONS.map((m) => (
+      <figure class="group flex w-40 flex-col items-center text-center">
+        <div
+          class="h-24 w-24 overflow-hidden rounded-full bg-gradient-to-br from-electricBlue via-white to-neonRed p-[3px] shadow-[0_0_20px_rgba(37,99,235,0.25)] transition-all duration-300 group-hover:shadow-[0_0_28px_rgba(239,68,68,0.35)]"
+        >
+          <img
+            src={m.img}
+            alt={m.alt}
+            width="512"
+            height="512"
+            loading="lazy"
+            decoding="async"
+            class="h-full w-full rounded-full object-cover"
+          />
+        </div>
+        <figcaption class="mt-3">
+          <p class="text-sm font-black leading-tight text-black">{m.title}</p>
+          {m.subtitle && (
+            <p class="mt-1 text-[10px] font-extrabold uppercase tracking-wide text-neutral-500">
+              {m.subtitle}
+            </p>
+          )}
+        </figcaption>
+      </figure>
+    ))
+  }
+</div>

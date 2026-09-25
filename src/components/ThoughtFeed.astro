@@ -1,6 +1,7 @@
 ---
 import { FEATURED_TITLES, articleBySlug } from "../data/articles";
 import Icons from "./Icons.astro";
+import ShinyButton from "./ShinyButton.astro";
 ---
 
 <section id="blog" class="border-t border-neutral-200 bg-neutral-50 py-24">
@@ -12,13 +13,10 @@ import Icons from "./Icons.astro";
           Published long-form thinking.
         </h2>
       </div>
-      <a
-        href="/blog/"
-        class="inline-flex shrink-0 items-center gap-2 text-sm font-black uppercase tracking-wide text-black transition hover:text-electricBlue"
-      >
+      <ShinyButton href="/blog/" className="shrink-0 px-6 py-3 text-xs">
         All articles
-        <Icons name="arrow-up-right" />
-      </a>
+        <Icons name="arrow-up-right" className="h-4 w-4" />
+      </ShinyButton>
     </div>
 
     <div class="mt-12 grid gap-6 md:grid-cols-3" data-reveal-group>
