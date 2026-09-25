@@ -23,6 +23,12 @@ const PATHS = [
       "Unified, family-controlled personal IP",
       "Positioning that outlasts one season or one platform",
     ],
+    deliverables: [
+      "Brand & IP Audit: a written findings document of your digital footprint, platform terms, and consent gaps",
+      "The Architecture Deck: your strategy translated into one ownable presentation",
+      "A family-controlled IP map: every account and asset, and who owns it",
+      "A written action plan: prioritized next steps tied directly to the audit",
+    ],
     cta: { label: "Schedule Brand Strategy Call", href: "#contact-brand", external: false },
   },
   {
@@ -40,6 +46,12 @@ const PATHS = [
       "DMCA safe-harbor workflows for highlight content",
       "Master rights versus sync rights in highlight reels",
       "Athletic department media and copyright risk audits",
+    ],
+    deliverables: [
+      "Compliance Risk Audit: a written report of your Act 810 / SB 389 gaps",
+      "A music-clearance guide: master vs. sync and DMCA safe-harbor workflows for your media team",
+      "The clinic itself: delivered on your in-service, admin, or parent day",
+      "A yearly refresh offer to keep the program current as rules change",
     ],
     cta: { label: "Inquire for Clinic or Speaking", href: "#contact-clinic", external: false },
   },
@@ -59,6 +71,11 @@ const PATHS = [
       "Standardized combine testing: 40-yard dash, 5-10-5 agility, vertical jump",
       "AI metric leaderboards for measurable progress",
       'Invitational "Flight Night" walkout showcases',
+    ],
+    deliverables: [
+      "Standardized combine metrics: 40-yard dash, 5-10-5 agility, and vertical jump, tracked over time",
+      "AI-powered leaderboards so progress is measurable, not just felt",
+      "Invitational Flight Night exposure events on the training floor",
     ],
     cta: { label: "Visit FlightTime Athletics", href: FLIGHTTIME_URL, external: true },
   },
@@ -126,6 +143,24 @@ const TRACKS = PATHS.map((path) => {
                 ))
               }
             </ul>
+
+            {path.deliverables && (
+              <div class="mt-6 rounded-sm border border-neutral-200 bg-neutral-50 p-4">
+                <p class="text-[10px] font-black uppercase tracking-[0.18em] text-neutral-500">
+                  What you receive
+                </p>
+                <ul class="mt-3 flex flex-col gap-2.5">
+                  {
+                    path.deliverables.map((item) => (
+                      <li class="flex items-start gap-2 text-xs font-semibold leading-relaxed text-neutral-700">
+                        <Icons name="file-badge" className={`mt-0.5 h-3.5 w-3.5 shrink-0 ${path.accent}`} />
+                        {item}
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
+            )}
 
             <a
               href={path.href}
