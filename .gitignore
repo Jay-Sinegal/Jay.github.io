@@ -1,2 +1,10 @@
+# build output
+node_modules/
+.next/
+out/
+
 # Internal operating procedures and customer records must not enter the public repository.
 operations/
+
+# local editor noise
+.DS_Store
