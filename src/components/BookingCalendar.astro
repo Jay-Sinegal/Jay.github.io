@@ -1,0 +1,75 @@
+---
+import Icons from "./Icons.astro";
+import { SCHEDULING } from "../data/site";
+
+const EMBEDS: { label: string; url: string }[] = [];
+if (SCHEDULING.pathA) EMBEDS.push({ label: "Brand Strategy Call", url: SCHEDULING.pathA });
+if (SCHEDULING.pathB && SCHEDULING.pathB !== SCHEDULING.pathA) {
+  EMBEDS.push({ label: "Clinic Discovery Call", url: SCHEDULING.pathB });
+}
+
+const embedSrc = (url: string) => (url.includes("?") ? url : `${url}?gv=true`);
+---
+
+{
+  EMBEDS.length > 0 && (
+    <section id="booking" class="py-24">
+      <div class="container-page">
+        <div class="mx-auto max-w-2xl" data-reveal>
+          <p class="lead-label text-electricBlue">Book a call directly</p>
+          <h2 class="mt-3 text-4xl font-black tracking-tight text-black sm:text-5xl">
+            Pick a time that works.
+          </h2>
+          <p class="mt-4 text-lg font-medium text-neutral-600">
+            Choose a slot below. Your confirmation email carries the intake gate and the
+            Act 810 / SB 389 boundary - no back-and-forth needed.
+          </p>
+        </div>
+
+        <div
+          class={`mt-14 grid gap-10 ${EMBEDS.length > 1 ? "lg:grid-cols-2" : "mx-auto max-w-3xl"}`}
+          data-reveal
+        >
+          {EMBEDS.map((entry) => (
+            <div class="rounded-sm border border-neutral-200 bg-white p-7">
+              <p class="text-xs font-black uppercase tracking-[0.2em] text-neutral-400">
+                {entry.label}
+              </p>
+              <div
+                class="calendar-embed-container mt-5 overflow-hidden rounded-sm border border-neutral-200 shadow-[0_4px_20px_rgba(0,0,0,0.08)]"
+                style="position: relative; height: 700px"
+              >
+                <iframe
+                  src={embedSrc(entry.url)}
+                  title={`${entry.label} · Jaylen Sinegal`}
+                  style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                >
+                </iframe>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div
+          class="mt-12 flex flex-col gap-3 rounded-sm border border-neutral-200 bg-neutral-50 p-6 sm:flex-row sm:items-center sm:justify-between"
+          data-reveal
+        >
+          <p class="flex items-start gap-2 text-sm font-medium text-neutral-700">
+            <Icons name="shield-check" className="mt-0.5 h-4 w-4 shrink-0 text-neonRed" />
+            Calls are education and brand strategy, not athlete representation. The intake and
+            risk-audit gates are enforced before any call proceeds.
+          </p>
+          <a
+            href="/#contact"
+            class="inline-flex shrink-0 items-center justify-center gap-2 rounded-sm bg-black px-6 py-3 text-xs font-black uppercase tracking-wide text-white transition hover:bg-neutral-800"
+          >
+            Prefer the form?
+            <Icons name="arrow-right" className="h-4 w-4" />
+          </a>
+        </div>
+      </div>
+    </section>
+  )
+}

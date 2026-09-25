@@ -6,7 +6,9 @@ import PolicyBand from "../components/PolicyBand.astro";
 import About from "../components/About.astro";
 import TrackMatrix from "../components/TrackMatrix.astro";
 import ThoughtFeed from "../components/ThoughtFeed.astro";
+import Speaking from "../components/Speaking.astro";
 import LeadEngine from "../components/LeadEngine.astro";
+import BookingCalendar from "../components/BookingCalendar.astro";
 import Footer from "../components/Footer.astro";
 import { ARTICLES } from "../data/articles";
 
@@ -65,8 +67,10 @@ const blogSchema = {
     <PolicyBand />
     <About />
     <TrackMatrix />
+    <Speaking />
     <ThoughtFeed />
     <LeadEngine />
+    <BookingCalendar />
   </main>
   <Footer />
   <script type="application/ld+json" set:html={JSON.stringify(blogSchema)} />

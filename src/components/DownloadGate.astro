@@ -1,0 +1,129 @@
+---
+import Icons from "./Icons.astro";
+import { RESOURCE_CAPTURE_URL } from "../data/site";
+
+interface Props {
+  pdf: string;
+  title: string;
+  slug?: string;
+  block?: boolean;
+  label?: string;
+}
+
+const { pdf, title, slug = "", block = false, label = "Download" } = Astro.props as Props;
+const captureActive = Boolean(RESOURCE_CAPTURE_URL);
+const fileUrl = `/downloads/${pdf}`;
+
+const compactLink = "pointer-events-auto relative z-10 mt-5 inline-flex items-center gap-2 text-sm font-black uppercase tracking-wide text-electricBlue transition group-hover:text-black";
+const blockLink = "pointer-events-auto relative z-10 mt-4 inline-flex w-full items-center justify-center gap-2 rounded-sm bg-black px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition-all duration-300 hover:bg-neutral-800";
+---
+
+{
+  captureActive ? (
+    <form
+      class="download-gate pointer-events-auto relative z-10 mt-5"
+      data-resource-slug={slug}
+      data-resource-title={title}
+      data-resource-pdf={pdf}
+      data-resource-url={fileUrl}
+      data-capture-url={RESOURCE_CAPTURE_URL}
+    >
+      <label for={`dg-${slug || title}`} class="sr-only">Email address</label>
+      <input
+        id={`dg-${slug || title}`}
+        name="email"
+        type="email"
+        required
+        autocomplete="email"
+        placeholder="Your email"
+        class="w-full rounded-sm border border-neutral-300 bg-white px-4 py-3 text-sm font-medium text-black placeholder-neutral-400 outline-none transition focus:border-electricBlue focus:ring-2 focus:ring-electricBlue/20"
+      />
+      <input type="text" name="_company" class="hidden" tabindex="-1" autocomplete="off" />
+
+      <button
+        type="submit"
+        class="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-sm bg-black px-6 py-3 text-xs font-black uppercase tracking-wide text-white transition-all duration-300 hover:bg-neutral-800"
+      >
+        Email me the PDF
+        <Icons name="download" className="h-4 w-4" />
+      </button>
+      <p class="mt-3 text-[11px] font-medium leading-relaxed text-neutral-500">
+        Sent to your inbox, plus occasional athlete &amp; IP resources you can unsubscribe
+        from anytime. Education only - not legal advice, not athlete representation.
+      </p>
+    </form>
+  ) : (
+    <a
+      href={fileUrl}
+      download
+      class={block ? blockLink : compactLink}
+    >
+      {label}
+      <Icons name="download" className="h-4 w-4" />
+    </a>
+  )
+}
+
+<script is:inline>
+  document.addEventListener("submit", function (event) {
+    var target = event.target;
+    var form = target && target.closest ? target.closest(".download-gate") : null;
+    if (!form) return;
+    event.preventDefault();
+
+    var emailEl = form.querySelector('input[name="email"]');
+    var spoofEl = form.querySelector('input[name="_company"]');
+    var email = emailEl ? emailEl.value : "";
+    if (spoofEl && spoofEl.value) return; // bots fill the honeypot
+
+    var fileUrl = form.getAttribute("data-resource-url") || "";
+    var captureUrl = form.getAttribute("data-capture-url") || "";
+
+    function swap(text) {
+      var btn = form.querySelector("button[type='submit']");
+      if (btn) btn.textContent = text;
+      var old = form.querySelector(".download-gate-note");
+      if (old && old.parentNode) old.parentNode.removeChild(old);
+      var note = document.createElement("p");
+      note.className = "download-gate-note mt-3 text-[11px] font-bold leading-relaxed text-neutral-600";
+      note.textContent = text;
+      form.appendChild(note);
+    }
+
+    function triggerDownload() {
+      var link = document.createElement("a");
+      link.href = fileUrl;
+      link.download = "";
+      document.body.appendChild(link);
+      link.click();
+      link.parentNode.removeChild(link);
+    }
+
+    function done() {
+      swap("Check your inbox - downloading now.");
+      triggerDownload();
+    }
+
+    if (captureUrl) {
+      var timedOut = false;
+      var timer = setTimeout(function () { timedOut = true; done(); }, 4000);
+      fetch(captureUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          resource: form.getAttribute("data-resource-slug") || "",
+          resourceTitle: form.getAttribute("data-resource-title") || "",
+          email: email,
+          consent: true,
+          ts: new Date().toISOString(),
+        }),
+      })
+        .then(function () { clearTimeout(timer); done(); })
+        .catch(function () {
+          if (!timedOut) { clearTimeout(timer); done(); }
+        });
+    } else {
+      done();
+    }
+  });
+</script>

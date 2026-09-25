@@ -3,6 +3,7 @@ import Base from "../../layouts/Base.astro";
 import Nav from "../../components/Nav.astro";
 import Footer from "../../components/Footer.astro";
 import Icons from "../../components/Icons.astro";
+import DownloadGate from "../../components/DownloadGate.astro";
 import resources from "../../data/resources.json";
 
 interface Props {
@@ -95,14 +96,7 @@ const creativeSchema = {
               <p class="text-xs font-black uppercase tracking-[0.2em] text-neutral-400">
                 Download the PDF
               </p>
-              <a
-                href={`/downloads/${resource.pdf}`}
-                download
-                class="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-sm bg-black px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition-all duration-300 hover:bg-neutral-800"
-              >
-                <Icons name="download" className="h-4 w-4" />
-                Save PDF
-              </a>
+              <DownloadGate pdf={resource.pdf} title={resource.title} slug={resource.slug} block label="Save PDF" />
               <p class="mt-4 text-xs font-semibold leading-relaxed text-neutral-500">
                 {resource.audience}
               </p>

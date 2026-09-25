@@ -1,10 +1,10 @@
 # GO LIVE - Turn On the Gated Intake Flow
 
-What "submissions hit your inbox only" means today, and the 20 minutes that
-fixes it. Everything here is manual because these live inside YOUR Google and
-Calendly/Acuity accounts. Repo-side wiring is already done and deployed.
+What "submissions hit your inbox only" means today, and the 30 minutes that
+fixes it. Everything here is manual because these live inside YOUR Google
+account. Repo-side wiring is already done and deployed.
 
-Est. time: 20-30 minutes. Do in this order.
+Est. time: 30 minutes. Do in this order.
 
 ---
 
@@ -35,41 +35,57 @@ Open each form in the Forms editor and make it yours:
 - Do NOT touch the Legal Boundary wording (Section 5 / set text). It is your
   SB 389 insulation.
 
-## Step 3. Create the two scheduler events (10 min)
+## Step 3. Create the booking schedule (10 min)
 
-In Calendly (or Acuity), make EXACTLY two events per
-`automation/01-scheduling.md`:
+In Google Calendar: Create (+) > **Appointment schedule**. Make ONE event that
+serves both gates (split into two events later if booking volume justifies it):
 
-1. **1-on-1 Brand Architecture Consultation (Path A)** - paid, 60 min, payment
-   captured at booking, auto-emails the PAGE A INTAKE FORM link on booking.
-   Booking question: "Ready to complete the Intake and Legal Boundary form
-   before the call?"
-2. **B2B Clinic Discovery Call (Path B)** - free, 20 min, auto-emails the RISK
-   AUDIT link on booking.
+- **Title:** Brand Strategy Call (Path A / Path B) - Jaylen Sinegal
+- **Duration / availability:** 30 minutes, America/Chicago, 15-minute buffer
+  between appointments, minimum 24 hours notice.
+- **Booking form custom questions:**
+  1. Student-Athlete Name & Current Grade
+  2. Sport & Primary Position
+  3. Target level (NCAA D1, D2, D3, NAIA, JUCO, Undecided)
+  4. Hudl / Social Profile Link
+  5. Parent / Guardian Mobile Phone
+- **Confirmation / disclaimer** (mandatory in the booking confirmation):
+  > "Jaylen Sinegal is an Executive Brand Strategist and Media IP Consultant.
+  > He is not an attorney and does not provide legal advice. He is not a
+  > licensed sports agent under Louisiana SB 389 (Act 895) and does not
+  > solicit or negotiate athletic contracts."
 
-Copy the two booking page URLs.
+Copy the appointment schedule URL (Share link). It looks like
+`https://calendar.google.com/calendar/appointments/schedules/...`.
+
+Note: Google Calendar does not auto-send the intake form link. Set a reminder
+in your calendar: on each booking, email the correct gate link yourself (Path A
+intake form for families, Path B risk-audit form for ADs) and do not start a
+call before the gate is met.
 
 ## Step 4. Wire the site CTAs (5 min)
 
-Edit `src/data/site.ts` and paste the two URLs:
+Edit `src/data/site.ts` and paste the schedule URL:
 
 ```ts
+export const RESOURCE_CAPTURE_URL = ""; // Step 7
+
 export const SCHEDULING = {
-  pathA: "https://calendly.com/you/path-a-brand-architecture",
-  pathB: "https://calendly.com/you/path-b-discovery-call",
+  pathA: "https://calendar.google.com/calendar/appointments/schedules/YOUR_ID",
+  pathB: "https://calendar.google.com/calendar/appointments/schedules/YOUR_ID",
 };
 ```
 
-Path A card buttons now open your paid booking page and Path B cards open your
-discovery call in a new tab. Until these are filled in, cards keep the default
-scroll-to-form behavior, so nothing breaks if you ship before the URLs exist.
+Both cards open the same Brand Strategy Call; your booking questions route each
+person to the right gate. While empty, cards keep the default scroll-to-form
+behavior and no calendar embeds render - nothing breaks if you ship early.
 
 ## Step 5. Deploy (already automated)
 
 ```bash
-npm run build        # merges Astro output into docs/
+npm run build        # merges Astro output into docs/ (incl. resource PDFs)
 python3 scripts/validate_seo.py
-git add -A && git commit -m "Wire scheduler CTAs" && git push
+git add -A && git commit -m "Wire scheduler + capture" && git push
 ```
 
 GitHub Actions deploys `docs/` automatically.
@@ -80,10 +96,24 @@ End to end before you take money:
 
 1. Submit the Path A intake form. -> expect a `CLIENTS_2026/PATH_A_ATHLETES/
    <date>_<Last>` subfolder and a lead log row.
-2. Confirm the gate holds: the booking page collects the form link; do NOT
-   join any Path A call before a signed intake row exists.
+2. Confirm the gate holds: the booking confirmation collects the intake link;
+   do NOT join any Path A call before a signed intake row exists.
 3. Submit the Path B audit -> expect the PATH_B_SCHOOLS subfolder + log row,
    and only THEN send the one-page proposal.
+
+## Step 7. Turn on the download email list (10 min)
+
+The resource library already POSTs to `RESOURCE_CAPTURE_URL` when it is set
+(and falls straight through to a direct download when it is not). To finish:
+
+1. In the same Apps Script project, Deploy > New deployment > **Web app**.
+2. Execute as: **Me**. Who has access: **Anyone**. Deploy.
+3. Copy the `.../exec` URL. Paste it into `src/data/site.ts`:
+   `export const RESOURCE_CAPTURE_URL = "https://script.google.com/macros/s/.../exec";`
+4. Rebuild and push (Step 5).
+5. Test: download any PDF on `/resources/` -> a row appears in
+   `DOWNLOAD_LEADS > ResourceDownloads`. Until you paste the URL, downloads
+   stay direct with no gate, so nothing breaks if you skip this step.
 
 ## Guardrails to keep
 
@@ -91,5 +121,6 @@ End to end before you take money:
   a Path A call before the signed intake; never send a Path B proposal before
   the audit.
 - `_OPERATIONS/03_PricingSheet` stays private; real numbers belong there only.
+- `DOWNLOAD_LEADS` stays private; it is your email list, not a public sheet.
 - If a submission route ever needs changing, edit the handler functions in
   `build_hub.js`, then re-run `installTriggers()`.

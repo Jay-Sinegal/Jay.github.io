@@ -2,8 +2,9 @@
  * THE EXECUTIVE CONSULTING HUB - Google Workspace builder and intake automation
  *
  * One run creates the CLIENTS_2026 folder tree, both gate forms, the lead log
- * sheet, and the form-submit automation so submissions drive the gated intake
- * flow (client subfolder + lead log row) instead of landing as emails only.
+ * sheet, the DOWNLOAD_LEADS spreadsheet, and the form-submit automation so
+ * submissions drive the gated intake flow (client subfolder + lead log row)
+ * instead of landing as emails only.
  *
  * HOW TO RUN (in your Google account):
  *   1. Drive > New > More > Google Apps Script
@@ -12,6 +13,13 @@
  *   4. Run installTriggers (authorize again) - installs the on-submit triggers
  *   5. Open each created form in the Forms editor, add your voice/copy from
  *      consulting-hub/path-a|path-b markdown, set confirmations.
+ *
+ * RESOURCE DOWNLOAD EMAIL LIST:
+ *   6. Deploy the doPost web app: Deploy > New deployment > Web app.
+ *      Execute as: Me. Who has access: Anyone. Copy the /exec URL.
+ *   7. Paste that URL into RESOURCE_CAPTURE_URL in src/data/site.ts so the
+ *      resource library POSTs each download's email here before the PDF is
+ *      delivered. Rows append to DOWNLOAD_LEADS > ResourceDownloads.
  *
  * What each submission now does automatically:
  *   - Path A intake      -> creates PATH_A_ATHLETES/<date>_<Last> folder,
@@ -33,6 +41,7 @@ var KEY_LOGS = "HUB_LEADS_LOG_SS_ID";
 var KEY_FORM_A = "HUB_INTAKE_FORM_ID";
 var KEY_FORM_B = "HUB_AUDIT_FORM_ID";
 var KEY_NOTIFY = "HUB_NOTIFY_EMAIL";
+var KEY_DOWNLOADS = "HUB_DOWNLOADS_SS_ID";
 
 /**
  * Step 1. Create folders, forms, and log sheet. Remembers ids for automation.
@@ -48,6 +57,7 @@ function createHub() {
     .forEach(function (name) { ensureChildFolder(name, ops); });
 
   ensureLogsSpreadsheet();
+  var downloads = ensureDownloadsSpreadsheet();
 
   var intake = buildIntakeForm();
   var audit = buildRiskAuditForm();
@@ -57,6 +67,7 @@ function createHub() {
   Logger.log("CLIENTS_2026: " + rootUrl);
   Logger.log("Path A Intake form: " + intake.shortenFormUrl());
   Logger.log("Path B Risk Audit form: " + audit.shortenFormUrl());
+  Logger.log("DOWNLOAD_LEADS (resource emails): " + downloads.getUrl());
   Logger.log("Next: run installTriggers() to wire submission automation.");
 }
 
@@ -174,6 +185,62 @@ function onPathBRiskAudit(e) {
 
 function folderSafe(name) {
   return String(name).replace(/[\/\\:*?"<>|]/g, "").trim() || "School";
+}
+
+// ---------------------------------------------- resource download email list -
+// Public web-app endpoint. The resource library POSTs { resource, resourceTitle,
+// email, consent, ts } from each PDF download; rows land in
+// DOWNLOAD_LEADS > ResourceDownloads. Deploy as Web app, Execute as Me,
+// Who has access: Anyone (go-live steps in consulting-hub/GO_LIVE.md).
+function ensureDownloadsSpreadsheet() {
+  var ss = null;
+  var id = PROPS.getProperty(KEY_DOWNLOADS);
+  if (id) {
+    try { ss = SpreadsheetApp.openById(id); } catch (e) { /* recreate below */ }
+  }
+  if (!ss) {
+    ss = SpreadsheetApp.create("DOWNLOAD_LEADS");
+    PROPS.setProperty(KEY_DOWNLOADS, ss.getId());
+  }
+  return ss;
+}
+
+function resourceLeadsSheet() {
+  var ss = ensureDownloadsSpreadsheet();
+  var sheet = ss.getSheetByName("ResourceDownloads") || ss.insertSheet("ResourceDownloads");
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow(["Received", "Email", "Resource slug", "Resource title", "Consent", "Submitted"]);
+  }
+  return sheet;
+}
+
+function doPost(e) {
+  try {
+    var body = JSON.parse(e.postData.contents || "{}");
+    var email = String(body.email || "").trim().toLowerCase();
+    if (!email) {
+      return ContentService.createTextOutput(JSON.stringify({ ok: false, error: "email required" }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+    resourceLeadsSheet().appendRow([
+      new Date(),
+      email,
+      String(body.resource || ""),
+      String(body.resourceTitle || ""),
+      body.consent === true ? "Yes" : "No",
+      String(body.ts || ""),
+    ]);
+    var notify = PROPS.getProperty(KEY_NOTIFY);
+    if (notify) {
+      MailApp.sendEmail(notify, "Resource download lead: " + email,
+        "Email: " + email + "\nResource: " + String(body.resourceTitle || "") + "\nSubmitted: " + String(body.ts || ""));
+    }
+    return ContentService.createTextOutput(JSON.stringify({ ok: true }))
+      .setMimeType(ContentService.MimeType.JSON);
+  } catch (err) {
+    return ContentService.createTextOutput(JSON.stringify({ ok: false, error: String(err) }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
 }
 
 // -------------------------------------------------- gate forms (unchanged) --

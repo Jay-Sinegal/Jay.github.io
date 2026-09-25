@@ -171,5 +171,20 @@
       "Join the free interest list from any page: the contact form at the bottom of the home page"
     ],
     "pdf": "find-a-producer-launch-flyer.pdf"
+  },
+  {
+    "slug": "executive-speaker-one-sheet",
+    "title": "Executive Speaker One-Sheet",
+    "tagline": "Three signature keynotes for corporate, sports, and education stages.",
+    "category": "About",
+    "audience": "Event planners, conference organizers, and press",
+    "description": "A printable one-page speaker brief covering Jaylen Sinegal's three signature keynotes: brand memory, the athlete IP ecosystem, and systems-driven leadership.",
+    "intro": "For conference organizers, chambers, athletic departments, and podcasts weighing a booking: this one-pager answers who, why, and what each talk delivers in a single page. It also spells out the boundary so there is no confusion about the role.",
+    "bullets": [
+      "Three keynote titles with subtitles, target audiences, and two-line summaries",
+      "Positioning: executive brand strategist and media IP consultant from Louisiana",
+      "Boundary: stage content is education and brand strategy - not athlete representation"
+    ],
+    "pdf": "executive-speaker-one-sheet.pdf"
   }
 ]

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate downloadable PDFs for the free resource library.
 
-Pure Python, no dependencies. Writes the 10 resource PDFs into
+Pure Python, no dependencies. Writes the resource PDFs into
 public/downloads/ from src/data/resources.json so Astro ships them with
 every build. Deterministic output (no timestamps) for clean git diffs.
 """
@@ -309,7 +309,51 @@ DISCLAIMER = (
 )
 
 
+SPEAKER_TALKS = [
+    {
+        "title": "Being Seen Isn't the Same as Being Remembered",
+        "subtitle": "The Architecture of Long-Term Brand Memory",
+        "audience": "Corporate executives, marketing directors, regional chambers of commerce, and entrepreneurs.",
+        "summary": "Moves beyond short-lived viral attention into cognitive brand structure. Jaylen demonstrates how businesses build distinctive brand assets, narrative depth, and sustainable market trust across the Gulf Coast.",
+    },
+    {
+        "title": "The Modern Athlete IP Ecosystem & Louisiana Act 810",
+        "subtitle": "Ethics, Amateurism, and the Future of Sports",
+        "audience": "High school athletic directors, school boards, head coaches, sports law symposiums.",
+        "summary": "Translates Louisiana Act 810 and SB 389 into an actionable institutional defense strategy. Covers protecting student amateur status, insulating campuses from predatory runner agents, and eliminating copyright liabilities on school media channels.",
+    },
+    {
+        "title": "Systems Over Symptoms: Leadership Under Pressure",
+        "subtitle": "From 11 Schools to the Executive Suite",
+        "audience": "Corporate leadership retreats, universities, and student-athlete leadership conferences.",
+        "summary": "Drawing from his journey navigating 11 different schools, coaching award-winning athletic programs, and managing municipal sports complexes, Jaylen breaks down his core philosophy: \"I don't just build the thing. I build the system around it.\"",
+    },
+]
+
+
+def build_speaker_one_sheet(asset):
+    d = PDF()
+    d.kicker("Jaylen Sinegal · Executive Speaker One-Sheet")
+    d.title(asset["title"])
+    d.tagline(asset["tagline"])
+    d.heading("The three talks", space_before=10)
+    for talk in SPEAKER_TALKS:
+        d.para("**" + talk["title"] + "**", size=11.5, leading=15, color=GOLD)
+        d.para(talk["subtitle"], size=9.8, leading=13, color=GRAY)
+        d.para("**Audience:** " + talk["audience"], size=9.2, leading=13, color=INK)
+        d.para("**Summary:** " + talk["summary"], size=9.2, leading=13, color=INK)
+        d.spacer(4)
+    d.heading("Who is Jaylen Sinegal?", space_before=10)
+    d.para(ABOUT, size=9.5, leading=14.5)
+    d.spacer(4)
+    d.box(DISCLAIMER)
+    d.footer()
+    return d.render()
+
+
 def build(asset):
+    if asset["slug"] == "executive-speaker-one-sheet":
+        return build_speaker_one_sheet(asset)
     d = PDF()
     d.kicker("Jaylen Sinegal · Free Resource Library")
     d.title(asset["title"])

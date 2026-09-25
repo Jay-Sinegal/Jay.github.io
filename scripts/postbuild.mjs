@@ -89,18 +89,10 @@ if (existsSync(notFound)) {
 }
 
 // 3. Keep sitemap canonical parity: every exported canonical must exist as <loc>.
-const RESOURCE_SLUGS = [
-  "act-810-nil-consent-checklist",
-  "verify-your-sports-agent-checklist",
-  "master-vs-sync-neighboring-rights",
-  "first-production-deal-template",
-  "should-families-brand-kids-early",
-  "sample-brand-ip-audit",
-  "podcast-episode-one-sheet",
-  "media-ip-glossary",
-  "media-kit-press-one-pager",
-  "find-a-producer-launch-flyer",
-];
+//    Resource slugs come from resources.json, the single source of truth.
+const RESOURCE_SLUGS = JSON.parse(
+  readFileSync(join(ROOT, "src", "data", "resources.json"), "utf8"),
+).map((resource) => resource.slug);
 const sitemapPath = join(DOCS, "sitemap.xml");
 if (existsSync(sitemapPath)) {
   let sitemap = readFileSync(sitemapPath, "utf8");

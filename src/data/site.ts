@@ -8,6 +8,7 @@ export const NAV_LINKS = [
   { label: "About", href: "/#about" },
   { label: "Advisory", href: "/#advisory" },
   { label: "IP Clinics", href: "/#clinics" },
+  { label: "Speaking", href: "/#speaking" },
   { label: "Ventures", href: "/#ventures" },
   { label: "Resources", href: "/resources/" },
   { label: "Blog", href: "/blog/" },
@@ -20,9 +21,16 @@ export const FLIGHTTIME_URL = "https://www.flighttimeathleticsllc.com";
 // Never publish a FlightTime price on jaylensinegal.com. Point price questions
 // to the FlightTime site directly (see agents/planner/sop_kb/04-flighttime.md).
 
-// Paste your real Calendly/Acuity event links here after creating them
-// (steps in consulting-hub/GO_LIVE.md). Empty values keep the default
-// behavior: CTAs scroll to the lead form instead of opening a scheduler.
+// Resource downloads: where the site POSTs an email capture on each PDF
+// download (steps in consulting-hub/GO_LIVE.md Step 7). Empty string keeps
+// downloads direct (no gate) until the Google Apps Script web app is live.
+export const RESOURCE_CAPTURE_URL = "";
+
+// Paste your real Google Calendar appointment-schedule links here after
+// creating them (steps in consulting-hub/GO_LIVE.md). Format:
+//   https://calendar.google.com/calendar/appointments/schedules/<SCHEDULE_ID>
+// Empty values keep the default behavior: CTAs scroll to the lead form
+// instead of opening a scheduler, and no calendar embeds render.
 export const SCHEDULING = {
   pathA: "", // 1-on-1 Brand Architecture Consultation (paid)
   pathB: "", // B2B Clinic Discovery Call (free)

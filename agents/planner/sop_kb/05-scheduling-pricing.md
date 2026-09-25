@@ -31,7 +31,8 @@ Rules that govern bookings, gates, and money questions. Applies to both paths.
 
 ## Planning rules for scheduling/pricing intents
 - These are triage intents: confirm which path and event, enforce the matching
-  gate reminder, and hand off the correct link (Calendly/Acuity, intake form,
+  gate reminder, and hand off the correct link (Google Calendar appointment
+  schedule, intake form,
   or audit form).
 - Always needs_human: a person must confirm the gate before any call.
 - Never let a scheduling or pricing question skip to a service plan on its
