@@ -42,7 +42,17 @@ function pruneStaleAssets(src, dest) {
   }
 }
 const freshAssets = join(OUT, "_astro");
-if (existsSync(freshAssets)) pruneStaleAssets(freshAssets, join(DOCS, "_astro"));
+if (existsSync(freshAssets)) {
+  pruneStaleAssets(freshAssets, join(DOCS, "_astro"));
+} else {
+  // No fresh hashed assets were emitted this build (e.g. styles inlined),
+  // so every leftover hashed asset in docs is stale by definition.
+  const stale = join(DOCS, "_astro");
+  if (existsSync(stale)) {
+    rmSync(stale, { recursive: true, force: true });
+    console.log(`Pruned stale asset dir: ${relative(ROOT, stale)}`);
+  }
+}
 
 // 2. Patch the generated 404.html with proper 404 SEO metadata so it satisfies
 //    the repository's SEO validator while staying honest for search engines.

@@ -7,11 +7,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        neonRed: "#EF4444",
-        electricBlue: "#2563EB",
+        neonRed: "rgb(var(--color-neon) / <alpha-value>)",
+        electricBlue: "rgb(var(--color-electric) / <alpha-value>)",
       },
       fontFamily: {
         sans: [
+          "Inter Tight Variable",
           "Inter",
           "-apple-system",
           "BlinkMacSystemFont",
