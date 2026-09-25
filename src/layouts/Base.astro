@@ -30,6 +30,9 @@ const fullCanonical = canonical.startsWith("http") ? canonical : `${host}${canon
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script is:inline>
+      document.documentElement.classList.add("js");
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#ffffff" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -78,4 +81,53 @@ const fullCanonical = canonical.startsWith("http") ? canonical : `${host}${canon
   <body>
     <slot />
   </body>
+  <script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (!reduceMotion) {
+      const hero = document.querySelector("[data-hero-animate]");
+      if (hero) {
+        gsap.fromTo(
+          hero.children,
+          { y: 24 },
+          { y: 0, autoAlpha: 1, duration: 0.8, ease: "power3.out", stagger: 0.1, delay: 0.15 },
+        );
+      }
+
+      gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((el) => {
+        gsap.fromTo(
+          el,
+          { y: 24 },
+          {
+            y: 0,
+            autoAlpha: 1,
+            duration: 0.7,
+            ease: "power2.out",
+            scrollTrigger: { trigger: el, start: "top 85%", once: true },
+          },
+        );
+      });
+
+      gsap.utils.toArray<HTMLElement>("[data-reveal-group]").forEach((group) => {
+        gsap.fromTo(
+          group.children,
+          { y: 24 },
+          {
+            y: 0,
+            autoAlpha: 1,
+            duration: 0.7,
+            ease: "power2.out",
+            stagger: 0.1,
+            scrollTrigger: { trigger: group, start: "top 85%", once: true },
+          },
+        );
+      });
+
+      document.fonts?.ready.then(() => ScrollTrigger.refresh()).catch(() => {});
+    }
+  </script>
 </html>

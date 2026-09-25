@@ -60,7 +60,7 @@ const PATHS = [
 
 <section id="paths" class="py-24">
   <div class="container-page">
-    <div class="mx-auto max-w-2xl text-center">
+    <div class="mx-auto max-w-2xl text-center" data-reveal>
       <p class="lead-label text-electricBlue">Three paths, one system</p>
       <h2 class="mt-3 text-4xl font-black tracking-tight text-black sm:text-5xl">
         Choose the entry point that matches your stage.
@@ -71,7 +71,7 @@ const PATHS = [
       </p>
     </div>
 
-    <div class="mt-14 grid gap-6 lg:grid-cols-3">
+    <div class="mt-14 grid gap-6 lg:grid-cols-3" data-reveal-group>
       {
         PATHS.map((path) => (
           <article
@@ -116,7 +116,7 @@ const PATHS = [
       }
     </div>
 
-    <div class="mt-12 flex flex-col gap-3 rounded-sm border border-neutral-200 bg-neutral-50 p-6 sm:flex-row sm:items-center sm:justify-between">
+    <div class="mt-12 flex flex-col gap-3 rounded-sm border border-neutral-200 bg-neutral-50 p-6 sm:flex-row sm:items-center sm:justify-between" data-reveal>
       <p class="flex items-center gap-2 text-sm font-medium text-neutral-700">
         <Icons name="file-badge" className="h-4 w-4 text-neonRed" />
         Consulting, education, and media IP work only. Jaylen Sinegal is not a licensed sports

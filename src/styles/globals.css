@@ -28,6 +28,14 @@ html {
   scroll-padding-top: 5rem;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal],
+  .js [data-reveal-group] > *,
+  .js [data-hero-animate] > * {
+    opacity: 0;
+  }
+}
+
 body {
   @apply bg-white text-neutral-900 antialiased;
   font-feature-settings: "cv02", "cv03", "cv11";

@@ -5,7 +5,7 @@ import Icons from "./Icons.astro";
 
 <section id="blog" class="border-t border-neutral-200 bg-neutral-50 py-24">
   <div class="container-page">
-    <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+    <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between" data-reveal>
       <div>
         <p class="lead-label text-electricBlue">Thought leadership</p>
         <h2 class="mt-3 text-4xl font-black tracking-tight text-black sm:text-5xl">
@@ -21,7 +21,7 @@ import Icons from "./Icons.astro";
       </a>
     </div>
 
-    <div class="mt-12 grid gap-6 md:grid-cols-3">
+    <div class="mt-12 grid gap-6 md:grid-cols-3" data-reveal-group>
       {
         FEATURED_TITLES.map((featured) => {
           const article = articleBySlug(featured.slug);
