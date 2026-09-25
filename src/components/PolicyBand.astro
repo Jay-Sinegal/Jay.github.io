@@ -1,0 +1,40 @@
+---
+import Icons from "./Icons.astro";
+---
+
+<section class="px-6 pb-28">
+  <div class="mx-auto max-w-4xl">
+    <div
+      class="group relative overflow-hidden rounded-sm border-2 border-neutral-100 bg-white p-8 transition-all duration-500 hover:border-electricBlue hover:shadow-[0_0_30px_rgba(37,99,235,0.25)] sm:p-10"
+    >
+      <div
+        aria-hidden="true"
+        class="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-electricBlue to-neonRed opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+      />
+      <h3 class="text-3xl font-black tracking-tight text-black sm:text-4xl">
+        Is Your Athletic Department Act 810 Compliant?
+      </h3>
+      <p class="mt-4 max-w-3xl text-base font-medium leading-relaxed text-neutral-600">
+        Federal NIL shifts and Louisiana's Act 810 mandate strict compliance. Read the full
+        executive analysis to protect your program's eligibility, then bring me in to audit your
+        music licensing and highlight workflows on campus.
+      </p>
+      <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+        <a
+          href="/blog/trump-executive-order-college-sports-nil.html"
+          class="inline-flex items-center justify-center gap-2 rounded-sm border border-black bg-black px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition-all duration-300 hover:bg-transparent hover:text-neonRed hover:shadow-[0_0_25px_rgba(239,68,68,0.6)]"
+        >
+          <Icons name="play" className="h-3.5 w-3.5 fill-current" />
+          Read Policy Analysis
+        </a>
+        <a
+          href="#contact-clinic"
+          class="inline-flex items-center justify-center gap-2 rounded-sm border border-neutral-300 bg-white px-6 py-4 text-sm font-black uppercase tracking-wide text-black transition-all duration-300 hover:border-electricBlue hover:text-electricBlue hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]"
+        >
+          Host a Clinic at Your School
+          <Icons name="arrow-right" />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

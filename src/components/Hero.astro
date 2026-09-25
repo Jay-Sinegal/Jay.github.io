@@ -1,69 +1,54 @@
 ---
 import Icons from "./Icons.astro";
 
-const PROOF = [
-  "Official Louisiana Storyteller · Louisiana Economic Development",
-  "Member, The National Society of Collegiate Scholars",
-  "Chief Brand Officer, FlightTime Athletics LLC",
-  "M.S. Entertainment Business Candidate · Full Sail University, 2027",
-  "B.S. Music Business · Full Sail University",
+const BADGES = [
+  { text: "Official Louisiana Storyteller (LED)", glow: "badge-blue" },
+  { text: "CBO, FlightTime Athletics LLC", glow: "badge-red" },
+  { text: "M.S. Entertainment Business Candidate", glow: "badge-blue" },
+  { text: "Member, The National Society of Collegiate Scholars", glow: "badge-red" },
 ];
 ---
 
-<section class="relative overflow-hidden pb-20 pt-32 sm:pb-24 sm:pt-40">
-  <div
-    aria-hidden="true"
-    class="pointer-events-none absolute -top-40 left-1/2 h-[480px] w-[720px] -translate-x-1/2 rounded-full bg-cobalt/20 blur-[120px]"
-  />
-  <div
-    aria-hidden="true"
-    class="pointer-events-none absolute bottom-0 right-0 h-[300px] w-[400px] rounded-full bg-gold/10 blur-[110px]"
-  />
-
-  <div class="container-page relative">
-    <span class="badge uppercase tracking-[0.18em]">
-      <span class="h-1.5 w-1.5 rounded-full bg-gold" aria-hidden="true" />
-      Executive Strategist · Louisiana Storyteller · M.S. Entertainment Business Candidate
-    </span>
-
-    <h1 class="mt-6 max-w-3xl text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl md:text-7xl">
-      Initiate Your Athletic or Brand Evolution.
-    </h1>
-
-    <p class="mt-6 max-w-2xl text-lg leading-relaxed text-white/70 sm:text-xl">
-      Architecting modern athlete IP, copyright compliance, and athletic performance ecosystems
-      across the Gulf Coast.
+<section class="relative overflow-hidden px-6 py-24 sm:py-28">
+  <div class="mx-auto max-w-5xl text-center">
+    <p class="lead-label mb-6 text-electricBlue drop-shadow-[0_0_8px_rgba(37,99,235,0.4)]">
+      Executive Strategist · Media IP Consultant
     </p>
 
-    <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+    <h1
+      class="text-5xl font-black leading-tight tracking-tighter text-black sm:text-6xl md:text-7xl"
+    >
+      Initiate Your Athletic or<br class="hidden sm:block" /> Brand Evolution.
+    </h1>
+
+    <p class="mx-auto mt-8 max-w-2xl text-lg font-medium leading-relaxed text-neutral-600">
+      Architecting modern athlete IP, copyright compliance, and athletic performance ecosystems
+      across the Gulf Coast. Strategy plus evidence, compliance, and execution.
+    </p>
+
+    <div class="mt-12 flex flex-wrap items-center justify-center gap-3 md:gap-4">
+      {
+        BADGES.map((badge) => (
+          <span class={`badge ${badge.glow}`}>{badge.text}</span>
+        ))
+      }
+    </div>
+
+    <div class="mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row">
       <a
         href="#advisory"
-        class="inline-flex items-center justify-center gap-2 rounded-md bg-cobalt px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-cobalt/25 transition hover:bg-blue-600"
+        class="inline-flex w-full items-center justify-center gap-2 rounded-sm bg-black px-8 py-4 text-sm font-black uppercase tracking-wide text-white transition-all duration-300 hover:bg-transparent hover:text-black hover:shadow-[0_0_25px_rgba(37,99,235,0.4)] sm:w-auto sm:border sm:border-black"
       >
         Explore Advisory and Clinics
         <Icons name="arrow-right" />
       </a>
       <a
         href="#ventures"
-        class="inline-flex items-center justify-center gap-2 rounded-md border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur transition hover:border-white/30 hover:bg-white/10"
+        class="inline-flex w-full items-center justify-center gap-2 rounded-sm border border-neutral-300 bg-white px-8 py-4 text-sm font-black uppercase tracking-wide text-black transition-all duration-300 hover:border-neonRed hover:text-neonRed hover:shadow-[0_0_25px_rgba(239,68,68,0.4)] sm:w-auto"
       >
-        <Icons name="grid" className="h-4 w-4 text-gold" />
         View Ventures
+        <Icons name="grid" className="h-4 w-4" />
       </a>
-    </div>
-
-    <div class="mt-16 border-t border-white/10 pt-8">
-      <p class="text-[11px] font-medium uppercase tracking-[0.22em] text-white/40">Recognized by</p>
-      <ul class="mt-4 flex flex-wrap gap-x-8 gap-y-3">
-        {
-          PROOF.map((item) => (
-            <li class="flex items-center gap-2 text-sm font-medium text-white/55">
-              <span class="h-1 w-1 rounded-full bg-cobalt" aria-hidden="true" />
-              {item}
-            </li>
-          ))
-        }
-      </ul>
     </div>
   </div>
 </section>

@@ -5,20 +5,23 @@ import Icons from "./Icons.astro";
 
 <header
   id="site-header"
-  class="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-transparent transition-colors"
+  class="sticky top-0 z-50 border-b border-neutral-200 bg-white/90 backdrop-blur-md transition-colors"
 >
   <div class="container-page flex h-16 items-center justify-between gap-4">
     <a href="/" class="flex flex-col leading-tight" aria-label="Jaylen Sinegal home">
-      <span class="text-sm font-extrabold tracking-[0.14em] text-white">{SITE.name}</span>
-      <span class="text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
+      <span class="text-base font-extrabold uppercase tracking-tight text-black">{SITE.name}</span>
+      <span class="text-[10px] font-bold uppercase tracking-[0.22em] text-electricBlue">
         Executive Brand Strategist
       </span>
     </a>
 
-    <nav aria-label="Primary" class="hidden items-center gap-7 lg:flex">
+    <nav aria-label="Primary" class="hidden items-center gap-8 lg:flex">
       {
         NAV_LINKS.map((link) => (
-          <a href={link.href} class="text-sm font-medium text-white/70 transition hover:text-white">
+          <a
+            href={link.href}
+            class="text-sm font-semibold text-neutral-600 transition hover:text-electricBlue"
+          >
             {link.label}
           </a>
         ))
@@ -28,14 +31,14 @@ import Icons from "./Icons.astro";
     <div class="flex items-center gap-3">
       <a
         href="#contact"
-        class="hidden items-center gap-2 rounded-md bg-cobalt px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-cobalt/25 transition hover:bg-blue-600 sm:inline-flex"
+        class="hidden items-center gap-2 rounded-sm border border-neutral-300 bg-white px-6 py-2.5 text-sm font-bold text-black transition-all duration-300 hover:border-electricBlue hover:shadow-[0_0_15px_rgba(37,99,235,0.5)] sm:inline-flex"
       >
         Book Consultation
         <Icons name="arrow-right" />
       </a>
       <button
         type="button"
-        class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/10 text-white lg:hidden"
+        class="inline-flex h-10 w-10 items-center justify-center rounded-sm border border-neutral-300 text-neutral-800 lg:hidden"
         data-mobile-toggle
         aria-expanded="false"
         aria-label="Open menu"
@@ -46,14 +49,14 @@ import Icons from "./Icons.astro";
     </div>
   </div>
 
-  <div data-mobile-menu class="hidden border-t border-white/10 bg-midnight/95 backdrop-blur-md lg:hidden">
+  <div data-mobile-menu class="hidden border-t border-neutral-200 bg-white lg:hidden">
     <nav aria-label="Mobile" class="container-page flex flex-col py-4">
       {
         NAV_LINKS.map((link) => (
           <a
             href={link.href}
             data-mobile-link
-            class="border-b border-white/5 py-3 text-sm font-medium text-white/80 transition hover:text-white"
+            class="border-b border-neutral-100 py-3 text-sm font-semibold text-neutral-700 transition hover:text-electricBlue"
           >
             {link.label}
           </a>
@@ -62,7 +65,7 @@ import Icons from "./Icons.astro";
       <a
         href="#contact"
         data-mobile-link
-        class="mt-4 inline-flex items-center justify-center gap-2 rounded-md bg-cobalt px-4 py-3 text-sm font-semibold text-white"
+        class="mt-4 inline-flex items-center justify-center gap-2 rounded-sm bg-black px-4 py-3 text-sm font-bold text-white"
       >
         Book Consultation
         <Icons name="arrow-right" />
@@ -75,16 +78,6 @@ import Icons from "./Icons.astro";
   const header = document.getElementById("site-header") as HTMLElement;
   const menu = header?.querySelector("[data-mobile-menu]") as HTMLElement | null;
   const toggle = header?.querySelector("[data-mobile-toggle]") as HTMLButtonElement | null;
-
-  const onScroll = () => {
-    const scrolled = window.scrollY > 12;
-    header?.classList.toggle("bg-midnight/90", scrolled);
-    header?.classList.toggle("backdrop-blur-md", scrolled);
-    header?.classList.toggle("border-white/10", scrolled);
-    header?.classList.toggle("border-transparent", !scrolled);
-  };
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
 
   const setOpen = (open: boolean) => {
     menu?.classList.toggle("hidden", !open);

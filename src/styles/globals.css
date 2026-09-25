@@ -8,12 +8,12 @@ html {
 }
 
 body {
-  @apply bg-midnight text-white antialiased;
+  @apply bg-white text-neutral-900 antialiased;
   font-feature-settings: "cv02", "cv03", "cv11";
 }
 
 ::selection {
-  background: rgba(37, 99, 235, 0.35);
+  background: #2563eb;
   color: #ffffff;
 }
 
@@ -21,21 +21,30 @@ body {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0b0f19;
+  background: #ffffff;
 }
 ::-webkit-scrollbar-thumb {
-  background: #374151;
+  background: #d4d4d4;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #4b5563;
+  background: #a3a3a3;
 }
 
 @layer components {
   .container-page {
-    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+    @apply mx-auto w-full max-w-7xl px-6 sm:px-8;
   }
   .badge {
-    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-xs font-medium tracking-wide text-white/80 backdrop-blur;
+    @apply inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-xs font-bold tracking-wide text-neutral-800 transition-all duration-300;
+  }
+  .badge-blue {
+    @apply hover:border-electricBlue hover:shadow-[0_0_18px_rgba(37,99,235,0.35)];
+  }
+  .badge-red {
+    @apply hover:border-neonRed hover:shadow-[0_0_18px_rgba(239,68,68,0.35)];
+  }
+  .lead-label {
+    @apply text-xs font-extrabold uppercase tracking-[0.2em];
   }
 }

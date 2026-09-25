@@ -11,27 +11,27 @@ import Icons from "../components/Icons.astro";
   canonical="/404.html"
 >
   <Nav />
-  <main class="flex min-h-[70vh] items-center justify-center pb-24 pt-32">
+  <main class="flex min-h-[70vh] items-center justify-center pb-24 pt-20">
     <div class="container-page max-w-xl text-center">
-      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-cobalt">Error 404</p>
-      <h1 class="mt-4 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+      <p class="lead-label text-electricBlue">Error 404</p>
+      <h1 class="mt-4 text-4xl font-black tracking-tight text-black sm:text-5xl">
         This page took a wrong turn.
       </h1>
-      <p class="mt-4 text-lg text-white/60">
+      <p class="mt-4 text-lg font-medium text-neutral-600">
         The page you tried to reach does not exist or has been moved. Every path in my brand is
         intentional, so this one deserves a redirect.
       </p>
       <div class="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
         <a
           href="/"
-          class="inline-flex items-center justify-center gap-2 rounded-md bg-cobalt px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-cobalt/25 transition hover:bg-blue-600"
+          class="inline-flex items-center justify-center gap-2 rounded-sm border border-black bg-black px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition-all duration-300 hover:bg-transparent hover:text-neonRed hover:shadow-[0_0_25px_rgba(239,68,68,0.6)]"
         >
           <Icons name="arrow-right" />
           Back to Homepage
         </a>
         <a
           href="/blog/"
-          class="inline-flex items-center justify-center gap-2 rounded-md border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/10"
+          class="inline-flex items-center justify-center gap-2 rounded-sm border border-neutral-300 bg-white px-6 py-4 text-sm font-black uppercase tracking-wide text-black transition-all duration-300 hover:border-electricBlue hover:text-electricBlue hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]"
         >
           Read the Blog
         </a>
