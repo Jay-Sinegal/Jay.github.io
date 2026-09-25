@@ -74,12 +74,12 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: "trump-executive-order-college-sports-nil",
-    title: "Trump's New Executive Order on College Sports and NIL",
+    title: "Act 810, SB 389, and Trump's Executive Order: Louisiana High School NIL Compliance",
     date: "2026-09-07",
     dateLabel: "September 7, 2026",
-    read: "8 min read",
+    read: "10 min read",
     pillar: "Sports & Entertainment · NIL",
-    dek: "What the executive order means for athletes, families, schools, brands, and the future of personal branding.",
+    dek: "The federal executive order opened a nationwide NIL conversation. Louisiana answered with Act 810 for high school athletes and SB 389 for athlete agents. Here is what families, schools, and athletic departments across Acadiana need to understand.",
   },
   {
     slug: "who-is-jaylen-sinegal-part-1",
@@ -104,7 +104,7 @@ export const ARTICLES: Article[] = [
 export const FEATURED_TITLES = [
   {
     slug: "trump-executive-order-college-sports-nil",
-    title: "Trump's Executive Order on College Sports and NIL: What Athletes Should Know",
+    title: "Act 810, SB 389, and Trump's Executive Order: Louisiana High School NIL Compliance",
   },
   {
     slug: "should-families-brand-kids-early",
