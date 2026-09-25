@@ -1,5 +1,5 @@
 ---
-import { FLIGHTTIME_URL } from "../data/site";
+import { FLIGHTTIME_URL, SCHEDULING } from "../data/site";
 import Icons from "./Icons.astro";
 import GlowEffect from "./GlowEffect.astro";
 import ShinyButton from "./ShinyButton.astro";
@@ -63,6 +63,18 @@ const PATHS = [
     cta: { label: "Visit FlightTime Athletics", href: FLIGHTTIME_URL, external: true },
   },
 ];
+
+const BOOKING_BY_ID: Record<string, string> = { advisory: SCHEDULING.pathA, clinics: SCHEDULING.pathB };
+
+const TRACKS = PATHS.map((path) => {
+  const booking = BOOKING_BY_ID[path.id] ?? "";
+  return {
+    ...path,
+    href: booking || path.cta.href,
+    openNewTab: Boolean(booking) || Boolean(path.cta.external),
+    redHover: Boolean(path.cta.external),
+  };
+});
 ---
 
 <section id="paths" class="py-24">
@@ -80,7 +92,7 @@ const PATHS = [
 
     <div class="mt-14 grid gap-6 lg:grid-cols-3" data-reveal-group>
       {
-        PATHS.map((path) => (
+        TRACKS.map((path) => (
           <article
             id={path.id}
             data-glow-card
@@ -116,15 +128,15 @@ const PATHS = [
             </ul>
 
             <a
-              href={path.cta.href}
-              target={path.cta.external ? "_blank" : undefined}
-              rel={path.cta.external ? "noopener noreferrer" : undefined}
+              href={path.href}
+              target={path.openNewTab ? "_blank" : undefined}
+              rel={path.openNewTab ? "noopener noreferrer" : undefined}
               class={`mt-8 inline-flex items-center gap-2 self-start rounded-sm border border-neutral-300 bg-white px-5 py-3 text-sm font-black uppercase tracking-wide text-black transition-all duration-300 hover:border-electricBlue hover:shadow-[0_0_18px_rgba(37,99,235,0.35)] ${
-                path.cta.external ? "hover:border-neonRed hover:text-neonRed hover:shadow-[0_0_18px_rgba(239,68,68,0.35)]" : "hover:text-electricBlue"
+                path.redHover ? "hover:border-neonRed hover:text-neonRed hover:shadow-[0_0_18px_rgba(239,68,68,0.35)]" : "hover:text-electricBlue"
               }`}
             >
               {path.cta.label}
-              <Icons name={path.cta.external ? "arrow-up-right" : "arrow-right"} />
+              <Icons name={path.openNewTab ? "arrow-up-right" : "arrow-right"} />
             </a>
           </article>
         ))
