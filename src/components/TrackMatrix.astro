@@ -15,6 +15,7 @@ const PATHS = [
     glow: "electric",
     title: "Executive Advisory and Brand Architecture",
     audience: "For athletes and families",
+    promise: "Control your narrative. We teach the family how.",
     bullets: [
       "Digital profile audits across platforms and recruiting systems",
       "Recruitment highlight and brand story strategy",
@@ -96,6 +97,12 @@ const PATHS = [
             <p class="mt-1 text-xs font-extrabold uppercase tracking-wide text-neutral-500">
               {path.audience}
             </p>
+
+            {path.promise && (
+              <p class="mt-3 inline-flex rounded-sm border border-electricBlue/20 bg-electricBlue/5 px-3 py-2 text-xs font-black tracking-wide text-electricBlue">
+                {path.promise}
+              </p>
+            )}
 
             <ul class="mt-6 flex flex-col gap-3">
               {
