@@ -56,6 +56,8 @@ if (existsSync(freshAssets)) {
 
 // 2. Patch the generated 404.html with proper 404 SEO metadata so it satisfies
 //    the repository's SEO validator while staying honest for search engines.
+//    Canonical points at the homepage root (a soft-404 pattern) so the 404 page
+//    never needs its own sitemap entry.
 const notFound = join(DOCS, "404.html");
 if (existsSync(notFound)) {
   let html = readFileSync(notFound, "utf8");
@@ -75,7 +77,7 @@ if (existsSync(notFound)) {
     .replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`)
     .replace(/<meta name="description" content="[^"]*"/, `<meta name="description" content="${description}"`)
     .replace(/<meta name="robots" content="[^"]*"/, '<meta name="robots" content="noindex, follow"')
-    .replace(/<link rel="canonical" href="[^"]*"/, '<link rel="canonical" href="https://jaylensinegal.com/404.html"')
+    .replace(/<link rel="canonical" href="[^"]*"/, '<link rel="canonical" href="https://jaylensinegal.com/"')
     .replace(/(<\/head>)/, `${openGraph}\n$1`);
   if (!html.includes('property="og:url"')) {
     html = html.replace(/(<\/head>)/, `\n${openGraph}\n$1`);
@@ -87,21 +89,49 @@ if (existsSync(notFound)) {
 }
 
 // 3. Keep sitemap canonical parity: every exported canonical must exist as <loc>.
+const RESOURCE_SLUGS = [
+  "act-810-nil-consent-checklist",
+  "verify-your-sports-agent-checklist",
+  "master-vs-sync-neighboring-rights",
+  "first-production-deal-template",
+  "should-families-brand-kids-early",
+  "sample-brand-ip-audit",
+  "podcast-episode-one-sheet",
+  "media-ip-glossary",
+  "media-kit-press-one-pager",
+  "find-a-producer-launch-flyer",
+];
 const sitemapPath = join(DOCS, "sitemap.xml");
 if (existsSync(sitemapPath)) {
   let sitemap = readFileSync(sitemapPath, "utf8");
-  const newLocs = [
+  const locales = [
     "https://jaylensinegal.com/blog/",
     "https://jaylensinegal.com/blog/escaping-platform-lock-in-hudl-student-athlete-ip.html",
     "https://jaylensinegal.com/blog/hbcu-college-athletics-louisiana-scholarships.html",
-    "https://jaylensinegal.com/404.html",
   ];
+  // 404.html is intentionally NOT a sitemap <loc>: it canonicalizes to the
+  // homepage so bots consolidate soft-404s instead of indexing an error page.
+  locales.push("https://jaylensinegal.com/resources/");
+  for (const slug of RESOURCE_SLUGS) {
+    locales.push(`https://jaylensinegal.com/resources/${slug}/`);
+  }
   let changed = false;
-  for (const loc of newLocs) {
+  for (const loc of locales) {
     if (!sitemap.includes(`<loc>${loc}</loc>`)) {
       sitemap = sitemap.replace("</urlset>", `  <url>\n    <loc>${loc}</loc>\n  </url>\n</urlset>`);
       changed = true;
     }
+  }
+  // A lingering /404.html entry is treated as stale and stripped.
+  const stale404 = `<url>\n    <loc>https://jaylensinegal.com/404.html</loc>\n  </url>\n`;
+  const stale404Inline = `<url><loc>https://jaylensinegal.com/404.html</loc></url>`;
+  if (sitemap.includes(stale404)) {
+    sitemap = sitemap.replace(stale404, "");
+    changed = true;
+  }
+  if (sitemap.includes(stale404Inline)) {
+    sitemap = sitemap.replace(stale404Inline, "");
+    changed = true;
   }
   if (changed) {
     writeFileSync(sitemapPath, sitemap);

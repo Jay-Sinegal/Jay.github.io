@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && node scripts/postbuild.mjs",
+    "build": "npm run downloads && astro build && node scripts/postbuild.mjs",
+    "downloads": "python3 scripts/generate_downloads.py",
     "preview": "astro preview",
     "astro": "astro"
   },

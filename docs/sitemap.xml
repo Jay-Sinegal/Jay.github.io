@@ -35,9 +35,61 @@
     <loc>https://jaylensinegal.com/blog/escaping-platform-lock-in-hudl-student-athlete-ip.html</loc>
   </url>
   <url>
-    <loc>https://jaylensinegal.com/404.html</loc>
+    <loc>https://jaylensinegal.com/blog/hbcu-college-athletics-louisiana-scholarships.html</loc>
   </url>
   <url>
-    <loc>https://jaylensinegal.com/blog/hbcu-college-athletics-louisiana-scholarships.html</loc>
+    <loc>https://jaylensinegal.com/resources/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jaylensinegal.com/resources/act-810-nil-consent-checklist/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://jaylensinegal.com/resources/verify-your-sports-agent-checklist/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://jaylensinegal.com/resources/master-vs-sync-neighboring-rights/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://jaylensinegal.com/resources/first-production-deal-template/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://jaylensinegal.com/resources/should-families-brand-kids-early/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://jaylensinegal.com/resources/sample-brand-ip-audit/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://jaylensinegal.com/resources/podcast-episode-one-sheet/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://jaylensinegal.com/resources/media-ip-glossary/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://jaylensinegal.com/resources/media-kit-press-one-pager/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://jaylensinegal.com/resources/find-a-producer-launch-flyer/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>

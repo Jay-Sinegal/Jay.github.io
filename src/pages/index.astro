@@ -10,6 +10,32 @@ import LeadEngine from "../components/LeadEngine.astro";
 import Footer from "../components/Footer.astro";
 import { ARTICLES } from "../data/articles";
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://jaylensinegal.com/#service",
+  name: "Executive Brand Strategy and Media IP Consulting",
+  description:
+    "Education and consulting only: athlete and family brand architecture (Path A), sports music licensing and NIL clinics for schools (Path B), and media copyright and facility audits. Jaylen Sinegal is not a licensed sports agent and does not solicit, negotiate, or procure athletic contracts or employment.",
+  serviceType: "Consulting",
+  category: ["Brand Strategy", "NIL Education", "Music Licensing Education", "Copyright Compliance", "Media Audit"],
+  provider: { "@id": "https://jaylensinegal.com/#person" },
+  areaServed: ["Lafayette", "Louisiana", "Gulf Coast", "United States"],
+  audience: {
+    "@type": "EducationalAudience",
+    educationalRole: "Families, student-athletes, schools, athletic departments, and creative professionals",
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Engagement paths",
+    itemListElement: [
+      { "@type": "Offer", name: "Executive Advisory and Brand Architecture", category: "Education" },
+      { "@type": "Offer", name: "Sports Music Licensing and NIL Clinic", category: "Education" },
+      { "@type": "Offer", name: "Media Copyright and Facility Audit", category: "Consulting" },
+    ],
+  },
+};
+
 const blogSchema = {
   "@context": "https://schema.org",
   "@type": "Blog",
@@ -44,4 +70,5 @@ const blogSchema = {
   </main>
   <Footer />
   <script type="application/ld+json" set:html={JSON.stringify(blogSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
 </Base>
