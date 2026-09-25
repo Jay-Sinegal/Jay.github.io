@@ -2,10 +2,10 @@ import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSy
 import { join, relative, dirname } from "node:path";
 
 const ROOT = process.cwd();
-const OUT = join(ROOT, "out");
+const OUT = join(ROOT, "dist");
 const DOCS = join(ROOT, "docs");
 
-// 1. Merge the Next.js static export into docs/ (overwrite matching files,
+// 1. Merge the Astro static build into docs/ (overwrite matching files,
 //    keep everything else: legacy articles, images, tracker csv, etc).
 function copyTree(src, dest) {
   for (const entry of readdirSync(src)) {
@@ -21,11 +21,11 @@ function copyTree(src, dest) {
 }
 
 if (!existsSync(OUT)) {
-  console.error("No out/ directory found. Did `next build` run?");
+  console.error("No dist/ directory found. Did `astro build` run?");
   process.exit(1);
 }
 copyTree(OUT, DOCS);
-console.log("Merged static export into docs/.");
+console.log("Merged Astro build into docs/.");
 
 // 2. Patch the generated 404.html with proper 404 SEO metadata so it satisfies
 //    the repository's SEO validator while staying honest for search engines.
@@ -46,9 +46,9 @@ if (existsSync(notFound)) {
 
   html = html
     .replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`)
-    .replace(/<meta name="description"[^>]*\/>/, `<meta name="description" content="${description}" />`)
-    .replace(/<meta name="robots"[^>]*\/>/, '<meta name="robots" content="noindex, follow" />')
-    .replace(/<link rel="canonical" href="[^"]*"\/?>/, '<link rel="canonical" href="https://jaylensinegal.com/404.html" />')
+    .replace(/<meta name="description" content="[^"]*"/, `<meta name="description" content="${description}"`)
+    .replace(/<meta name="robots" content="[^"]*"/, '<meta name="robots" content="noindex, follow"')
+    .replace(/<link rel="canonical" href="[^"]*"/, '<link rel="canonical" href="https://jaylensinegal.com/404.html"')
     .replace(/(<\/head>)/, `${openGraph}\n$1`);
   if (!html.includes('property="og:url"')) {
     html = html.replace(/(<\/head>)/, `\n${openGraph}\n$1`);

@@ -1,0 +1,84 @@
+---
+import "../styles/globals.css";
+import JsonLd from "../components/JsonLd.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  ogType?: string;
+  ogImage?: string;
+  ogImageAlt?: string;
+  extraCanonical?: string;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogType = "website",
+  ogImage = "https://jaylensinegal.com/louisiana-storyteller.jpg",
+  ogImageAlt = "Jaylen Sinegal, executive brand strategist and Louisiana storyteller",
+  extraCanonical = "",
+} = Astro.props;
+
+const host = "https://jaylensinegal.com";
+const fullCanonical = canonical.startsWith("http") ? canonical : `${host}${canonical}`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <link rel="canonical" href={fullCanonical} />
+    {extraCanonical && <link rel="alternate" hreflang="en" href={fullCanonical} />}
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="Jaylen Sinegal" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={fullCanonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="2000" />
+    <meta property="og:image:height" content="2000" />
+    <meta property="og:image:alt" content={ogImageAlt} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      try { if (localStorage.getItem('jaylen_ga4_opt_out') === 'true') window['ga-disable-G-V09SKB92BX'] = true; } catch (error) {}
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V09SKB92BX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-V09SKB92BX', { anonymize_ip: true });
+    </script>
+
+    <JsonLd />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

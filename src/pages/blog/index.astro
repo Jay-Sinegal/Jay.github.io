@@ -1,0 +1,107 @@
+---
+import Base from "../../layouts/Base.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import Icons from "../../components/Icons.astro";
+import { ARTICLES } from "../../data/articles";
+
+const pillars = [
+  "Brand Strategy",
+  "Business & Market Strategy",
+  "Sports & Entertainment",
+  "Community & Louisiana",
+  "Personal Development & Identity",
+];
+
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "@id": "https://jaylensinegal.com/blog/#blog",
+  url: "https://jaylensinegal.com/blog/",
+  name: "Jaylen Sinegal Blog",
+  description:
+    "Long-form brand strategy, media IP, and sports entertainment thinking from Jaylen Sinegal.",
+  blogPost: ARTICLES.map((a) => ({
+    "@type": "BlogPosting",
+    headline: a.title,
+    url: `https://jaylensinegal.com/blog/${a.slug}.html`,
+    datePublished: a.date,
+    author: { "@id": "https://jaylensinegal.com/#person" },
+  })),
+};
+---
+
+<Base
+  title="Blog | Jaylen Sinegal"
+  description="Long-form brand strategy, media IP, and sports entertainment thinking from Jaylen Sinegal: athletes, families, schools, events, and Louisiana brands."
+  canonical="/blog/"
+  ogType="website"
+  ogImage="https://jaylensinegal.com/louisiana-storyteller.jpg"
+  ogImageAlt="Jaylen Sinegal, executive brand strategist and Louisiana storyteller"
+>
+  <Nav />
+  <main class="pb-24 pt-32">
+    <div class="container-page">
+      <p class="text-sm font-semibold uppercase tracking-[0.16em] text-cobalt">The Blog</p>
+      <h1 class="mt-3 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+        Ideas worth branding.
+      </h1>
+      <p class="mt-4 max-w-2xl text-lg text-white/60">
+        Original thinking on family, ambition, character, and building a name with substance.
+      </p>
+
+      <div class="mt-10 rounded-xl border border-white/10 bg-steel-900/60 p-6 sm:p-8">
+        <h2 class="text-xl font-bold text-white">
+          I don&apos;t just build the thing. I build the system around it.
+        </h2>
+        <p class="mt-3 max-w-3xl leading-relaxed text-white/65">
+          A fight is more than a fight: fighters, gyms, sponsors, fans, and stories. An event is
+          more than an event: operations, licensing, sponsorship, content, and audience. A
+          student-athlete is more than a recruit: academics, performance data, recruiting,
+          financial aid, and identity. A brand is more than a logo: memory, consistency, and
+          experience. The opportunity lives in the system around the thing, so that is where I look
+          first.
+        </p>
+        <div class="mt-5 flex flex-wrap gap-2">
+          {
+            pillars.map((pillar) => (
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-white/70">
+                {pillar}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="mt-12 grid gap-6 sm:grid-cols-2">
+        {
+          ARTICLES.map((article) => (
+            <a
+              href={`/blog/${article.slug}.html`}
+              class="group flex flex-col rounded-xl border border-white/10 bg-steel-900/50 p-7 transition hover:border-white/30"
+            >
+              <p class="text-[11px] font-bold uppercase tracking-[0.16em] text-gold">
+                {article.pillar}
+              </p>
+              <h2 class="mt-3 flex-1 text-lg font-bold leading-snug text-white">
+                {article.title}
+              </h2>
+              <p class="mt-3 text-sm leading-relaxed text-white/55">{article.dek}</p>
+              <p class="mt-5 flex items-center justify-between text-sm text-white/40">
+                <span>
+                  {article.dateLabel} · {article.read}
+                </span>
+                <span class="inline-flex items-center gap-1 text-cobalt transition group-hover:gap-2">
+                  Read
+                  <Icons name="arrow-up-right" />
+                </span>
+              </p>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </main>
+  <Footer />
+  <script type="application/ld+json" set:html={JSON.stringify(blogSchema)} />
+</Base>

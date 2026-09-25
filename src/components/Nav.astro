@@ -1,0 +1,104 @@
+---
+import { NAV_LINKS, SITE } from "../data/site";
+import Icons from "./Icons.astro";
+---
+
+<header
+  id="site-header"
+  class="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-transparent transition-colors"
+>
+  <div class="container-page flex h-16 items-center justify-between gap-4">
+    <a href="/" class="flex flex-col leading-tight" aria-label="Jaylen Sinegal home">
+      <span class="text-sm font-extrabold tracking-[0.14em] text-white">{SITE.name}</span>
+      <span class="text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
+        Executive Brand Strategist
+      </span>
+    </a>
+
+    <nav aria-label="Primary" class="hidden items-center gap-7 lg:flex">
+      {
+        NAV_LINKS.map((link) => (
+          <a href={link.href} class="text-sm font-medium text-white/70 transition hover:text-white">
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a
+        href="#contact"
+        class="hidden items-center gap-2 rounded-md bg-cobalt px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-cobalt/25 transition hover:bg-blue-600 sm:inline-flex"
+      >
+        Book Consultation
+        <Icons name="arrow-right" />
+      </a>
+      <button
+        type="button"
+        class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/10 text-white lg:hidden"
+        data-mobile-toggle
+        aria-expanded="false"
+        aria-label="Open menu"
+      >
+        <Icons name="menu" />
+        <Icons name="x" class="hidden h-5 w-5" />
+      </button>
+    </div>
+  </div>
+
+  <div data-mobile-menu class="hidden border-t border-white/10 bg-midnight/95 backdrop-blur-md lg:hidden">
+    <nav aria-label="Mobile" class="container-page flex flex-col py-4">
+      {
+        NAV_LINKS.map((link) => (
+          <a
+            href={link.href}
+            data-mobile-link
+            class="border-b border-white/5 py-3 text-sm font-medium text-white/80 transition hover:text-white"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <a
+        href="#contact"
+        data-mobile-link
+        class="mt-4 inline-flex items-center justify-center gap-2 rounded-md bg-cobalt px-4 py-3 text-sm font-semibold text-white"
+      >
+        Book Consultation
+        <Icons name="arrow-right" />
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById("site-header") as HTMLElement;
+  const menu = header?.querySelector("[data-mobile-menu]") as HTMLElement | null;
+  const toggle = header?.querySelector("[data-mobile-toggle]") as HTMLButtonElement | null;
+
+  const onScroll = () => {
+    const scrolled = window.scrollY > 12;
+    header?.classList.toggle("bg-midnight/90", scrolled);
+    header?.classList.toggle("backdrop-blur-md", scrolled);
+    header?.classList.toggle("border-white/10", scrolled);
+    header?.classList.toggle("border-transparent", !scrolled);
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  const setOpen = (open: boolean) => {
+    menu?.classList.toggle("hidden", !open);
+    toggle?.setAttribute("aria-expanded", String(open));
+    toggle?.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    if (toggle) {
+      const icons = Array.from(toggle.querySelectorAll("svg"));
+      icons.forEach((icon) => icon.classList.add("hidden"));
+      icons[open ? 1 : 0]?.classList.remove("hidden");
+    }
+  };
+
+  toggle?.addEventListener("click", () => setOpen(!menu?.classList.contains("hidden")));
+  menu?.querySelectorAll("[data-mobile-link]").forEach((link) =>
+    link.addEventListener("click", () => setOpen(false))
+  );
+</script>

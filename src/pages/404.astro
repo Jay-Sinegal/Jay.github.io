@@ -1,0 +1,42 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import Icons from "../components/Icons.astro";
+---
+
+<Base
+  title="Page Not Found | Jaylen Sinegal"
+  description="This page could not be found on jaylensinegal.com. Head back to the homepage to explore Jaylen Sinegal's brand strategy work and blog."
+  canonical="/404.html"
+>
+  <Nav />
+  <main class="flex min-h-[70vh] items-center justify-center pb-24 pt-32">
+    <div class="container-page max-w-xl text-center">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-cobalt">Error 404</p>
+      <h1 class="mt-4 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+        This page took a wrong turn.
+      </h1>
+      <p class="mt-4 text-lg text-white/60">
+        The page you tried to reach does not exist or has been moved. Every path in my brand is
+        intentional, so this one deserves a redirect.
+      </p>
+      <div class="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+        <a
+          href="/"
+          class="inline-flex items-center justify-center gap-2 rounded-md bg-cobalt px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-cobalt/25 transition hover:bg-blue-600"
+        >
+          <Icons name="arrow-right" />
+          Back to Homepage
+        </a>
+        <a
+          href="/blog/"
+          class="inline-flex items-center justify-center gap-2 rounded-md border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/10"
+        >
+          Read the Blog
+        </a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Base>

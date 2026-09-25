@@ -1,0 +1,60 @@
+---
+import Icons from "./Icons.astro";
+import { SITE } from "../data/site";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-white/10 bg-black/30">
+  <div class="container-page py-12">
+    <div class="grid gap-10 lg:grid-cols-3">
+      <div>
+        <a href="/" class="flex flex-col leading-tight">
+          <span class="text-sm font-extrabold tracking-[0.14em] text-white">{SITE.name}</span>
+          <span class="text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
+            Executive Brand Strategist
+          </span>
+        </a>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-white/50">
+          Brand strategy, talent representation alternatives, media IP, and performance ecosystems
+          across the Gulf Coast.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-white/40">
+          Legal safeguards
+        </h3>
+        <p class="mt-4 text-sm leading-relaxed text-white/60">
+          Jaylen Sinegal provides brand strategy, media education, and IP consulting. He is not a
+          licensed sports agent and does not solicit, negotiate, or procure athletic contracts or
+          employment.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-white/40">Connect</h3>
+        <div class="mt-4">
+          <a
+            href="https://www.linkedin.com/in/jaylen-sinegal"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/10 text-white/60 transition hover:border-white/30 hover:text-white"
+          >
+            <Icons name="linkedin" />
+          </a>
+        </div>
+        <p class="mt-4 text-xs text-white/35">Lafayette · Youngsville · Louisiana</p>
+      </div>
+    </div>
+
+    <div class="mt-10 flex flex-col gap-3 border-t border-white/5 pt-6 sm:flex-row sm:items-center sm:justify-between">
+      <p class="text-xs text-white/40">© {year} {SITE.name}. All rights reserved.</p>
+      <p class="flex items-center gap-2 text-xs text-white/40">
+        <Icons name="arrow-up-right" className="h-3.5 w-3.5 text-gold" />
+        Governance · Compliance · Brand evidence
+      </p>
+    </div>
+  </div>
+</footer>
