@@ -12,32 +12,6 @@ import BookingCalendar from "../components/BookingCalendar.astro";
 import Footer from "../components/Footer.astro";
 import { ARTICLES } from "../data/articles";
 
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "@id": "https://jaylensinegal.com/#service",
-  name: "Executive Brand Strategy and Media IP Consulting",
-  description:
-    "Education and consulting only: athlete and family brand architecture (Athlete Advisory), sports music licensing and NIL clinics for schools (Institutional Education), and media copyright and facility audits. Jaylen Sinegal is not a licensed sports agent and does not solicit, negotiate, or procure athletic contracts or employment.",
-  serviceType: "Consulting",
-  category: ["Brand Strategy", "NIL Education", "Music Licensing Education", "Copyright Compliance", "Media Audit"],
-  provider: { "@id": "https://jaylensinegal.com/#person" },
-  areaServed: ["Lafayette", "Louisiana", "Gulf Coast", "United States"],
-  audience: {
-    "@type": "EducationalAudience",
-    educationalRole: "Families, student-athletes, schools, athletic departments, and creative professionals",
-  },
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Business lines",
-    itemListElement: [
-      { "@type": "Offer", name: "Athlete Advisory", category: "Education" },
-      { "@type": "Offer", name: "Institutional Education", category: "Education" },
-      { "@type": "Offer", name: "FlightTime Performance", category: "Consulting" },
-    ],
-  },
-};
-
 const blogSchema = {
   "@context": "https://schema.org",
   "@type": "Blog",
@@ -57,8 +31,8 @@ const blogSchema = {
 ---
 
 <Base
-  title="Jaylen Sinegal | Executive Brand Strategist and Media IP Consultant"
-  description="Jaylen Sinegal is an executive brand strategist and media IP consultant across Louisiana. Athlete IP, copyright compliance, and athletic performance ecosystems for athletes, schools, brands, and communities."
+  title="Jaylen Sinegal | Executive Brand Strategist & Sports Media IP Consultant"
+  description="Architecting modern athlete IP, Louisiana Act 810 compliance, sports music licensing, and youth performance combine testing in Lafayette and Youngsville, LA."
   canonical="/"
 >
   <Nav />
@@ -74,5 +48,4 @@ const blogSchema = {
   </main>
   <Footer />
   <script type="application/ld+json" set:html={JSON.stringify(blogSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
 </Base>
