@@ -1,0 +1,38 @@
+{
+  "Next.js cache metadata": {
+    "prefix": "nextmd",
+    "body": [
+      "export const metadata: Metadata = {",
+      "\tmetadataBase: new URL(\"https://jaylensinegal.com\"),",
+      "\ttitle: \"$1\",",
+      "\tdescription: \"$2\",",
+      "\talternates: { canonical: \"/$3\" },",
+      "\topenGraph: {",
+      "\t\ttitle: \"$1\",",
+      "\t\tdescription: \"$2\",",
+      "\t\turl: \"https://jaylensinegal.com/$3\",",
+      "\t\timages: [{",
+      "\t\t\turl: \"${4:/images/og/$5.jpg}\",",
+      "\t\t\twidth: 1200,",
+      "\t\t\theight: 630,",
+      "\t\t\talt: \"$6\"",
+      "\t\t}],",
+      "\t},",
+      "\ttwitter: { card: \"summary_large_image\", title: \"$1\", description: \"$2\" },",
+      "};"
+    ],
+    "description": "Next.js App Router metadata block with OG image path pointing at public/images/og"
+  },
+  "Tailwind section header": {
+    "prefix": "tailsec",
+    "body": [
+      "<section className=\"py-24\">",
+      "\t<div className=\"container-page\">",
+      "\t\t<p className=\"text-sm font-semibold tracking-[0.16em] text-cobalt uppercase\">$1</p>",
+      "\t\t<h2 className=\"mt-3 text-4xl font-bold tracking-tight text-white sm:text-5xl\">$2</h2>",
+      "\t</div>",
+      "</section>"
+    ],
+    "description": "Standard dark-theme section header used across the site"
+  }
+}
