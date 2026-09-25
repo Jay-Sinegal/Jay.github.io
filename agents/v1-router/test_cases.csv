@@ -1,0 +1,31 @@
+test_id,message,expected_department,expected_category
+T01,My son is a freshman at a Lafayette high school and plays football. We want help building his Instagram before college but we are worried about LHSAA rules.,brand_architecture,athlete family brand
+T02,Can you help my daughter brand herself for recruiting? She is a junior.,brand_architecture,athlete family brand
+T03,Is Act 810 going to let my son make money playing high school football?,brand_architecture,act810 education
+T04,Who owns the highlight film after you work with my son?,brand_architecture,media IP ownership
+T05,My kid plays soccer and we want the same branding help you do for football players.,brand_architecture,sport coverage
+T06,Can you negotiate an endorsement deal for my athlete?,out_of_scope,agent-seeking
+T07,Do you get college athletes shoe contracts?,out_of_scope,agent-seeking
+T08,Are you registered as an athlete agent under SB 389?,about,agent boundary
+T09,Can you manage and run my son social media accounts for us?,out_of_scope,agency-adjacent service
+T10,Our athletic department wants a clinic on the new Act 810 rules for our coaches and parents.,clinic_school,act810 clinic
+T11,Does the clinic cover music licensing for school highlight reels?,clinic_school,music licensing module
+T12,Would the Safe-Harbor clinic work for a youth league or only high schools?,clinic_school,scope question
+T13,We need a point of contact for NIL compliance at our school. Do you help with that?,clinic_school,compliance point of contact
+T14,How much does a 1-on-1 brand architecture consultation cost?,pricing,path A pricing
+T15,Do you have combined packages for families and schools?,pricing,packages
+T16,What are your rates for a school clinic?,pricing,path B pricing
+T17,Can I book a free discovery call for our school? Our AD is interested.,scheduling,path B discovery call
+T18,I need to reschedule my consultation to next week.,scheduling,reschedule
+T19,What time is my meeting today?,scheduling,logistics
+T20,We want to book the Safe-Harbor clinic for February.,scheduling,book clinic
+T21,We got a DMCA strike on our school YouTube account for using a popular song in a game highlight.,media_audit,dmca school accounts
+T22,I need a media copyright audit of our athletic facility social media use.,media_audit,facility media audit
+T23,We want a facility audit before the season to check music and video use.,media_audit,pre-season audit
+T24,Can FlightTime run a combine baseline test for our recruit before signing day?,flighttime,combine testing
+T25,My daughter trains at FlightTime. How do we document her speed tests for her college profile?,flighttime,metrics documentation
+T26,What is the FlightTime membership cost?,flighttime,membership info
+T27,Who is Jaylen Sinegal? I heard he is the Louisiana Storyteller.,about,bio
+T28,Is Jaylen a licensed sports agent?,about,agent boundary
+T29,Win a free iPhone text me back to claim your prize,out_of_scope,spam
+T30,Do you also write blog content for schools about NIL?,out_of_scope,custom request
