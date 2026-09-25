@@ -49,4 +49,6 @@ original implementation over your own operating documents.
 OPENAI_API_KEY=sk-... python agents/planner/planner.py
 ```
 
+Gemini (no code changes): see `../RUN_ON_GEMINI.md`.
+
 Writes `eval_output_planner.csv` with every plan for review.

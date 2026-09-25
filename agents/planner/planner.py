@@ -13,16 +13,20 @@ Run:
 
 import json
 import os
+import re
+import sys
 
 import pandas as pd
-from openai import OpenAI
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from _client import default_model, get_client  # noqa: E402
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 KB_DIR = os.path.join(BASE, "sop_kb")
 TEST_SET = os.path.join(BASE, "test_cases.csv")
-MODEL = os.getenv("MODEL", "gpt-4o-mini")
+MODEL = default_model()
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = get_client()
 
 INTENTS = [
     "brand_architecture",
@@ -107,6 +111,16 @@ RISKY_INTENTS = ["out_of_scope", "scheduling", "pricing"]
 
 
 # ---------------------------------------------------------------- intent ---
+def _parse_json(text: str) -> dict:
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        match = re.search(r"\{.*\}", text, re.DOTALL)
+        if not match:
+            raise ValueError(f"model returned no JSON object: {text[:200]}")
+        return json.loads(match.group(0))
+
+
 def classify_intent(message: str) -> str:
     resp = client.chat.completions.create(
         model=MODEL,
@@ -120,7 +134,7 @@ def classify_intent(message: str) -> str:
             {"role": "user", "content": message},
         ],
     )
-    data = json.loads(resp.choices[0].message.content)
+    data = _parse_json(resp.choices[0].message.content)
     intent = data.get("intent")
     if intent not in INTENTS:
         raise ValueError(f"classifier returned unknown intent: {intent}")
@@ -188,7 +202,7 @@ def build_plan(message: str, intent: str, context: str) -> dict:
             {"role": "user", "content": message},
         ],
     )
-    return json.loads(resp.choices[0].message.content)
+    return _parse_json(resp.choices[0].message.content)
 
 
 def _plan_system_prompt(intent: str) -> str:

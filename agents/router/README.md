@@ -40,5 +40,7 @@ representation.
 OPENAI_API_KEY=sk-... python agents/router/router_baseline.py
 ```
 
+Gemini (no code changes): see `../RUN_ON_GEMINI.md`.
+
 Output: routing accuracy, per-intent accuracy, failure rows, and
 `eval_output.csv` with every prediction for review.

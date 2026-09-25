@@ -1,11 +1,12 @@
 """
-V1 Action Autonomy Router for Jaylen Sinegal - The Executive Consulting Hub.
+Lead-intent router for Jaylen Sinegal's consulting practice.
 
-Given an input message, predict which department the inquiry belongs to and
-why. Mirrors the course's "action autonomy" baseline, but with YOUR taxonomy.
+Given an inbound message, predict which intent it belongs to and why.
+Runs on OpenAI by default or Google Gemini (LLM_PROVIDER=gemini).
 
 Run:
     OPENAI_API_KEY=sk-... python router_baseline.py
+    LLM_PROVIDER=gemini GEMINI_API_KEY=... python router_baseline.py
 
 Optional observability: pip install openinference-instrumentation-openai
 arize-phoenix-otel and set USE_PHOENIX=1.
@@ -14,16 +15,19 @@ arize-phoenix-otel and set USE_PHOENIX=1.
 import json
 import os
 import re
+import sys
 
 import pandas as pd
-from openai import OpenAI
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from _client import default_model, get_client  # noqa: E402
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 TEST_SET = os.path.join(BASE_DIR, "test_cases.csv")
-MODEL = os.getenv("MODEL", "gpt-4o-mini")
+MODEL = default_model()
 USE_PHOENIX = os.getenv("USE_PHOENIX", "0") == "1"
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = get_client()
 
 DEPARTMENTS = [
     "brand_architecture",
