@@ -89,7 +89,49 @@ export default function Home() {
             Explore FlightTime Academy →
           </Link>
         </div>
+{/* Authority & Proof Strip Component */}
+<div className="w-full max-w-5xl mx-auto mt-12 mb-16 px-4">
+  <p className="text-center text-xs font-semibold text-gray-500 uppercase tracking-widest mb-6">
+    Recognized & Credentialed By
+  </p>
+  
+  <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4">
+    {/* Badge 1: LED */}
+    <div className="flex items-center px-4 py-2 border border-gray-800 rounded-full bg-[#0B0F19] hover:border-[#F59E0B] transition-colors duration-300 cursor-default">
+      <span className="text-xs font-medium text-gray-300 tracking-wide">
+        Official Louisiana Storyteller (LED)
+      </span>
+    </div>
 
+    {/* Badge 2: FlightTime Athletics CBO */}
+    <div className="flex items-center px-4 py-2 border border-gray-800 rounded-full bg-[#0B0F19] hover:border-[#2563EB] transition-colors duration-300 cursor-default">
+      <span className="text-xs font-medium text-gray-300 tracking-wide">
+        Chief Brand Officer, FlightTime Athletics LLC
+      </span>
+    </div>
+
+    {/* Badge 3: M.S. Candidate */}
+    <div className="flex items-center px-4 py-2 border border-gray-800 rounded-full bg-[#0B0F19] hover:border-gray-400 transition-colors duration-300 cursor-default">
+      <span className="text-xs font-medium text-gray-300 tracking-wide">
+        M.S. Entertainment Business Candidate
+      </span>
+    </div>
+
+    {/* Badge 4: B.S. Degree */}
+    <div className="flex items-center px-4 py-2 border border-gray-800 rounded-full bg-[#0B0F19] hover:border-gray-400 transition-colors duration-300 cursor-default">
+      <span className="text-xs font-medium text-gray-300 tracking-wide">
+        B.S. Music Business
+      </span>
+    </div>
+
+    {/* Badge 5: Coach of the Year */}
+    <div className="flex items-center px-4 py-2 border border-gray-800 rounded-full bg-[#0B0F19] hover:border-gray-400 transition-colors duration-300 cursor-default">
+      <span className="text-xs font-medium text-gray-300 tracking-wide">
+        Acadiana Coach of the Year
+      </span>
+    </div>
+  </div>
+</div>
       </section>
 
       {/* Mandatory Legal Footer */}
