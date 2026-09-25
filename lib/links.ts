@@ -13,11 +13,4 @@ export const NAV_LINKS = [
   { label: "Contact", href: "#contact" },
 ];
 
-export const SOCIALS = {
-  linkedin: "https://www.linkedin.com/in/jaylen-sinegal",
-  // TODO: replace with live profile URLs
-  x: "#",
-  youtube: "#",
-};
-
 export const FLIGHTTIME_URL = "https://www.flighttimeathleticsllc.com";

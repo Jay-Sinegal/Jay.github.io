@@ -1,10 +1,8 @@
-import { ArrowUpRight, Linkedin, Twitter, Youtube } from "lucide-react";
-import { SOCIALS, SITE } from "@/lib/links";
+import { ArrowUpRight, Linkedin } from "lucide-react";
+import { SITE } from "@/lib/links";
 
 const SOCIAL_ICONS = [
-  { key: "linkedin", label: "LinkedIn", icon: Linkedin, href: SOCIALS.linkedin },
-  { key: "x", label: "X", icon: Twitter, href: SOCIALS.x },
-  { key: "youtube", label: "YouTube", icon: Youtube, href: SOCIALS.youtube },
+  { key: "linkedin", label: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/jaylen-sinegal" },
 ] as const;
 
 export function Footer() {
