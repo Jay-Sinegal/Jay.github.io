@@ -1,0 +1,182 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import Icons from "../components/Icons.astro";
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://jaylensinegal.com/privacy.html#webpage",
+  url: "https://jaylensinegal.com/privacy.html",
+  name: "Privacy Notice",
+  description:
+    "How JaylenSinegal.com handles website inquiry and analytics information.",
+  isPartOf: { "@id": "https://jaylensinegal.com/#website" },
+  about: { "@id": "https://jaylensinegal.com/#person" },
+  inLanguage: "en-US",
+};
+---
+
+<Base
+  title="Privacy Notice | Jaylen Sinegal"
+  description="How JaylenSinegal.com collects, uses, shares, secures, and retains website inquiry and analytics information."
+  canonical="/privacy.html"
+>
+  <Nav />
+  <main>
+    <section class="py-20 sm:py-28">
+      <div class="container-page">
+        <div class="mx-auto max-w-2xl" data-hero-animate>
+          <p class="lead-label text-electricBlue">Privacy &amp; confidentiality</p>
+          <h1 class="mt-3 text-4xl font-black tracking-tight text-black sm:text-5xl">
+            Privacy Notice
+          </h1>
+          <p class="mt-4 text-lg font-medium text-neutral-600">
+            A plain-language explanation of the information this website handles.
+          </p>
+          <p class="mt-3 text-sm font-bold uppercase tracking-[0.18em] text-neutral-400">
+            Effective September 4, 2026
+          </p>
+        </div>
+
+        <div class="mx-auto mt-14 max-w-3xl" data-reveal>
+          <p class="text-lg font-medium leading-relaxed text-neutral-700">
+            This notice applies to JaylenSinegal.com. It explains website data practices; it is
+            not a promise that internet transmission or storage can be made completely risk-free.
+          </p>
+
+          <h2 class="mt-10 text-xl font-black tracking-tight text-black">
+            Information you choose to provide
+          </h2>
+          <p class="mt-3 text-[15px] font-medium leading-relaxed text-neutral-700">
+            The consultation form collects your name, email address, business or organization,
+            selected service or founding-producer launch interest, meeting preference, and message.
+            Joining the interest list does not create a membership, enroll a producer, reserve a
+            profile, or authorize a payment. Downloading a free resource collects your email
+            address so the PDF can be delivered to you, and you may unsubscribe from resource
+            updates at any time. Please do not submit Social Security numbers, payment-card
+            details, health records, passwords, trade secrets, or other highly sensitive
+            information through this form.
+          </p>
+
+          <h2 class="mt-10 text-xl font-black tracking-tight text-black">How information is used</h2>
+          <p class="mt-3 text-[15px] font-medium leading-relaxed text-neutral-700">
+            Inquiry information is used to review and respond to your request, communicate about
+            potential services, prevent abuse, maintain business records, and protect the website.
+            It is not sold. Access should be limited to people and service providers who need it
+            for those purposes.
+          </p>
+
+          <h2 class="mt-10 text-xl font-black tracking-tight text-black">Service providers</h2>
+          <p class="mt-3 text-[15px] font-medium leading-relaxed text-neutral-700">
+            Form submissions are transmitted to and processed by Formspree. Resource-download
+            email addresses are posted to a private Google Sheet via Google Apps Script; that
+            spreadsheet is not public. Website usage and conversion events are processed by Google
+            Analytics. GitHub Pages hosts the website. Those providers handle information under
+            their own terms and privacy practices.
+          </p>
+
+          <h2 class="mt-10 text-xl font-black tracking-tight text-black">Analytics</h2>
+          <p class="mt-3 text-[15px] font-medium leading-relaxed text-neutral-700">
+            Google Analytics helps measure page visits, article engagement, contact actions, and
+            successfully delivered inquiries. The website does not intentionally send form names,
+            email addresses, message contents, or other inquiry text to Google Analytics.
+          </p>
+
+          <h2 class="mt-10 text-xl font-black tracking-tight text-black">
+            Retention and confidentiality
+          </h2>
+          <p class="mt-3 text-[15px] font-medium leading-relaxed text-neutral-700">
+            Inquiry records should be kept only as long as reasonably needed to respond, maintain
+            appropriate business records, resolve disputes, and meet legal obligations, then
+            securely deleted where practical. Confidentiality obligations for a client engagement
+            should also be stated in the applicable written agreement.
+          </p>
+
+          <h2 class="mt-10 text-xl font-black tracking-tight text-black">Your choices</h2>
+          <p class="mt-3 text-[15px] font-medium leading-relaxed text-neutral-700">
+            You may use direct email or phone contact instead of the website form. You may also
+            ask to access, correct, or delete inquiry information, subject to identity verification
+            and any records that must be retained for legitimate or legal reasons. To stop GA4
+            analytics on this browser, use the control below; the preference is stored locally and
+            applies to future visits on this browser.
+          </p>
+          <button
+            type="button"
+            data-analytics-opt-out
+            class="mt-5 inline-flex items-center gap-2 rounded-sm border border-neutral-300 bg-white px-5 py-2.5 text-sm font-bold text-black transition-all duration-300 hover:border-electricBlue hover:shadow-[0_0_15px_rgba(37,99,235,0.5)]"
+          >
+            <Icons name="shield-check" className="h-4 w-4 text-electricBlue" />
+            Disable analytics
+          </button>
+          <p
+            data-analytics-status
+            class="mt-3 hidden text-sm font-bold text-electricBlue"
+          ></p>
+
+          <h2 class="mt-10 text-xl font-black tracking-tight text-black">Security and incidents</h2>
+          <p class="mt-3 text-[15px] font-medium leading-relaxed text-neutral-700">
+            Reasonable administrative, technical, and service-provider controls are used to reduce
+            risk. If a suspected incident involves your information, contact Jaylen promptly using
+            the details below.
+          </p>
+
+          <h2 class="mt-10 text-xl font-black tracking-tight text-black">Contact</h2>
+          <p class="mt-3 text-[15px] font-medium leading-relaxed text-neutral-700">
+            Email{" "}
+            <a
+              href="mailto:jaylensinegal@yahoo.com"
+              class="font-bold text-electricBlue transition hover:text-black"
+            >
+              jaylensinegal@yahoo.com
+            </a>{" "}
+            or call{" "}
+            <a
+              href="tel:+13462919553"
+              class="font-bold text-electricBlue transition hover:text-black"
+            >
+              (346) 291-9553
+            </a>
+            .
+          </p>
+
+          <div class="mt-10 flex items-start gap-2 rounded-sm border border-neutral-200 bg-neutral-50 p-6">
+            <Icons name="shield-check" className="mt-0.5 h-4 w-4 shrink-0 text-neonRed" />
+            <p class="text-sm font-medium leading-relaxed text-neutral-700">
+              This operational notice should be reviewed by a Louisiana-licensed attorney before
+              relying on it as legal advice or as a complete statement of obligations for a
+              particular client, industry, or jurisdiction.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+  <script>
+    const btn = document.querySelector("[data-analytics-opt-out]") as HTMLButtonElement | null;
+    const status = document.querySelector("[data-analytics-status]") as HTMLElement | null;
+    const apply = () => {
+      const optedOut = localStorage.getItem("jaylen_ga4_opt_out") === "true";
+      if (btn) {
+        btn.textContent = optedOut ? "Analytics disabled" : "Disable analytics";
+        btn.setAttribute("aria-pressed", String(optedOut));
+      }
+      if (status) {
+        status.textContent = optedOut
+          ? "Google Analytics is disabled for this browser."
+          : "";
+        status.classList.toggle("hidden", !optedOut);
+      }
+    };
+    btn?.addEventListener("click", () => {
+      const optedOut = localStorage.getItem("jaylen_ga4_opt_out") === "true";
+      localStorage.setItem("jaylen_ga4_opt_out", String(!optedOut));
+      window["ga-disable-G-V09SKB92BX"] = !optedOut;
+      apply();
+    });
+    apply();
+  </script>
+  <Footer />
+</Base>

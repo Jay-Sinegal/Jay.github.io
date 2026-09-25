@@ -54,6 +54,21 @@ if (existsSync(freshAssets)) {
   }
 }
 
+// 1c. FAQ and Privacy are Astro pages but must keep their legacy canonical
+//     URLs (/faq.html, /privacy.html). Astro emits them under directories
+//     (dist/faq/index.html), so flatten each back to the .html file that
+//     replaces the old hand-maintained page.
+for (const name of ["faq", "privacy"]) {
+  const dirHtml = join(DOCS, name, "index.html");
+  const flatHtml = join(DOCS, `${name}.html`);
+  if (existsSync(dirHtml)) {
+    rmSync(flatHtml, { force: true });
+    copyFileSync(dirHtml, flatHtml);
+    rmSync(join(DOCS, name), { recursive: true, force: true });
+    console.log(`Flattened docs/${name}/index.html -> docs/${name}.html`);
+  }
+}
+
 // 2. Patch the generated 404.html with proper 404 SEO metadata so it satisfies
 //    the repository's SEO validator while staying honest for search engines.
 //    Canonical points at the homepage root (a soft-404 pattern) so the 404 page

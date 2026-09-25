@@ -1,0 +1,136 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import Icons from "../components/Icons.astro";
+
+const faqs = [
+  {
+    q: "What services does Jaylen Sinegal provide?",
+    a: "Services include brand strategy and positioning, athlete and family brand architecture, NIL and music licensing education, media copyright and facility audits, content strategy and creative direction, sponsorship development and sales, community and partnership marketing, market research, business development, and speaking and keynotes.",
+  },
+  {
+    q: "Is Jaylen Sinegal a sports agent?",
+    a: "No. Jaylen provides brand strategy, media education, and IP consulting. He is not a licensed sports agent and does not solicit, negotiate, or procure athletic contracts, sponsorships, or employment. Education, not representation. Families keep control of their accounts and assets.",
+  },
+  {
+    q: "What is Executive Brand Architecture?",
+    a: "Path A is a 1-on-1 engagement for athletes and families: digital profile audits across platforms and recruiting systems, recruiting highlight and brand story strategy, platform lock-in analysis including Hudl terms, and unified, family-controlled personal IP. It begins with an intake and legal boundary form, then the brand strategy call.",
+  },
+  {
+    q: "What happens in an NIL and music licensing clinic?",
+    a: "Path B is for high schools, athletic directors, and clubs. Clinics cover Louisiana Act 810 and LHSAA bylaw compliance, DMCA safe-harbor workflows for highlight content, and master versus sync rights in highlight reels, plus an optional athletic department media and copyright risk audit.",
+  },
+  {
+    q: "What is a media copyright and facility audit?",
+    a: "An audit produces written findings: where the athlete, family, or school appears today, platform and licensing risk such as Hudl terms and unlicensed music in video, consent gaps, and prioritized next steps. The family or school keeps control of every asset and account.",
+  },
+  {
+    q: "Are there free resources I can download?",
+    a: 'Yes. The <a href="/resources/" class="font-bold text-electricBlue transition hover:text-black">free resource library</a> includes an Act 810 NIL consent checklist, an agent-verification checklist, music-rights one-pagers, production deal templates, a glossary, and more. PDFs are delivered to your inbox, and you can unsubscribe anytime.',
+  },
+  {
+    q: "How do athlete families get started?",
+    a: "Browse the free resources, then choose an entry point on the home page. Families typically start with Executive Brand Architecture: request a call, complete the intake and legal boundary form, then schedule the brand strategy conversation. Schools and clubs start with the NIL and music licensing clinic.",
+  },
+  {
+    q: "Who do you help?",
+    a: "Jaylen supports athletes, families, and schools through brand architecture, NIL and music licensing education, and media audits. He also serves Louisiana brands, home-service businesses, professional experts, destinations, hospitality brands, and community-focused organizations.",
+  },
+  {
+    q: "Do you work only in Broussard and Lafayette?",
+    a: "The primary service area includes Lafayette, Youngsville, and Acadiana. Work spans across Louisiana and the Gulf Coast, with clinics and speaking available anywhere travel allows.",
+  },
+  {
+    q: "What will I receive after a consultation?",
+    a: "Every engagement states its deliverables up front. Path A (athlete and family brand architecture) delivers a written Brand & IP Audit, a family-controlled IP map, and a written action plan. Path B (schools) delivers a written NIL and media compliance risk audit, a music-clearance guide for your media team, and the clinic itself. Speaker bookings deliver the keynote plus the speaker one-sheet for your planners and press. Free downloads deliver the completed document or template you keep. Scope and pricing are confirmed before any work begins.",
+  },
+  {
+    q: "Do you offer paid advertising, SEO, or marketing campaigns?",
+    a: "No. The work is education and consulting only: athlete and family brand architecture, NIL and music licensing clinics, media copyright and facility audits, and speaking. No paid campaigns, no guaranteed outcomes, and no athlete representation.",
+  },
+  {
+    q: "Can I submit music for you to pitch or promote?",
+    a: "Music is not accepted for pitching or promotion through the general contact form. The Find a Producer directory remains in pre-launch, and no music submissions or membership payments are being accepted.",
+  },
+  {
+    q: "How do we get started?",
+    a: 'Submit the consultation form, email <a href="mailto:jaylensinegal@yahoo.com" class="font-bold text-electricBlue transition hover:text-black">jaylensinegal@yahoo.com</a>, or call <a href="tel:+13462919553" class="font-bold text-electricBlue transition hover:text-black">(346) 291-9553</a> to arrange an in-person, virtual, or phone meeting. In-person meetings are available in Broussard, Lafayette, Abbeville, New Iberia, and surrounding areas.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: String(f.a).replace(/<[^>]+>/g, "") },
+  })),
+};
+---
+
+<Base
+  title="Frequently Asked Questions | Jaylen Sinegal"
+  description="Answers about Jaylen Sinegal's brand strategy, NIL and music licensing education, media IP audits, free resources, service areas, and how to get started."
+  canonical="/faq.html"
+>
+  <Nav />
+  <main>
+    <section class="py-20 sm:py-28">
+      <div class="container-page">
+        <div class="mx-auto max-w-2xl" data-hero-animate>
+          <p class="lead-label text-electricBlue">Frequently asked questions</p>
+          <h1 class="mt-3 text-4xl font-black tracking-tight text-black sm:text-5xl">
+            Straight answers about athletes, schools, and brands.
+          </h1>
+          <p class="mt-4 text-lg font-medium text-neutral-600">
+            Understand what Jaylen does, who he supports, what each deliverable includes, and how
+            to get started. Education and media IP guidance only - not legal advice, not athlete
+            representation.
+          </p>
+        </div>
+
+        <div class="mx-auto mt-14 flex max-w-3xl flex-col gap-4" data-reveal>
+          {faqs.map((f, i) => (
+            <details
+              class="group rounded-sm border border-neutral-200 bg-white transition open:border-electricBlue/50 open:shadow-[0_0_25px_rgba(37,99,235,0.08)]"
+              open={i === 0}
+            >
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 p-6 [&::-webkit-details-marker]:hidden">
+                <span class="text-lg font-black leading-snug text-black">{f.q}</span>
+                <Icons
+                  name="chevron-down"
+                  className="h-4 w-4 shrink-0 text-electricBlue transition-transform group-open:rotate-180"
+                />
+              </summary>
+              <p class="px-6 pb-6 text-[15px] font-medium leading-relaxed text-neutral-600">
+                <Fragment set:html={f.a} />
+              </p>
+            </details>
+          ))}
+        </div>
+
+        <div
+          class="mx-auto mt-16 flex max-w-3xl flex-col gap-3 rounded-sm border border-neutral-200 bg-neutral-50 p-7 sm:flex-row sm:items-center sm:justify-between"
+          data-reveal
+        >
+          <p class="flex items-start gap-2 text-sm font-medium text-neutral-700">
+            <Icons name="shield-check" className="mt-0.5 h-4 w-4 shrink-0 text-neonRed" />
+            Bring your athlete, your school, or your stage. We will map the next practical step
+            together.
+          </p>
+          <a
+            href="/#contact"
+            class="inline-flex shrink-0 items-center justify-center gap-2 rounded-sm bg-black px-6 py-3 text-xs font-black uppercase tracking-wide text-white transition hover:bg-neutral-800"
+          >
+            Request a consultation
+            <Icons name="arrow-right" className="h-4 w-4" />
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <Footer />
+</Base>
