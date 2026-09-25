@@ -89,6 +89,8 @@ const fullCanonical = canonical.startsWith("http") ? canonical : `${host}${canon
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (!reduceMotion) {
+      ScrollTrigger.config({ ignoreMobileResize: true });
+
       const hero = document.querySelector("[data-hero-animate]");
       if (hero) {
         gsap.fromTo(

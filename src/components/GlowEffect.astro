@@ -1,0 +1,139 @@
+---
+interface Props {
+  variant?: "electric" | "neon" | "dark";
+}
+
+const { variant = "electric" } = Astro.props;
+
+const uid = Math.random().toString(36).slice(2, 8);
+
+const GRADIENTS: Record<string, [string, string]> = {
+  electric: ["#60A5FA", "#2563EB"],
+  neon: ["#F87171", "#EF4444"],
+  dark: ["#525252", "#0a0a0a"],
+};
+
+const [c1, c2] = GRADIENTS[variant];
+---
+
+<div
+  aria-hidden="true"
+  data-glow-svg
+  class="pointer-events-none absolute -inset-px overflow-visible opacity-0 transition-opacity duration-500"
+>
+  <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <defs>
+      <linearGradient id={`glow-grad-${uid}`} x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color={c1} />
+        <stop offset="100%" stop-color={c2} />
+      </linearGradient>
+      <filter id={`glow-blur-${uid}`} x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="5" />
+      </filter>
+    </defs>
+    <path
+      data-glow-blur
+      d="M0 0 L0 0"
+      fill="none"
+      stroke={`url(#glow-grad-${uid})`}
+      stroke-width="4"
+      filter={`url(#glow-blur-${uid})`}
+      opacity="0.55"
+    />
+    <path
+      data-glow-path
+      d="M0 0 L0 0"
+      fill="none"
+      stroke={`url(#glow-grad-${uid})`}
+      stroke-width="1.5"
+    />
+  </svg>
+</div>
+
+<script>
+  const W = 100;
+  const H = 100;
+  const PERIMETER = W * 2 + H * 2;
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const sweepPath = (t: number): string => {
+    const d = t * PERIMETER;
+    if (d <= W) return `M0 0 L${d} 0`;
+    if (d <= W + H) return `M0 0 L${W} 0 L${W} ${d - W}`;
+    if (d <= W + H + W) return `M0 0 L${W} 0 L${W} ${H} L${W - (d - W - H)} ${H}`;
+    return `M0 0 L${W} 0 L${W} ${H} L0 ${H} L0 ${H - (d - W - H - W)}`;
+  };
+
+  const closestParam = (x: number, y: number): number => {
+    const clamp = (v: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, v));
+    const cx = clamp(x, 2, W - 2);
+    const cy = clamp(y, 2, H - 2);
+    const edges = [
+      [0, 0, W, 0, 0],
+      [W, 0, W, H, W / PERIMETER],
+      [W, H, 0, H, (W + H) / PERIMETER],
+      [0, H, 0, 0, (W + H + W) / PERIMETER],
+    ] as const;
+    let best = Infinity;
+    let param = 0;
+    for (const [x1, y1, x2, y2, start] of edges) {
+      const len = Math.hypot(x2 - x1, y2 - y1) || 1;
+      let t = ((cx - x1) * (x2 - x1) + (cy - y1) * (y2 - y1)) / len;
+      t = Math.max(0, Math.min(len, t));
+      const px = x1 + ((x2 - x1) * t) / len;
+      const py = y1 + ((y2 - y1) * t) / len;
+      const dist = Math.hypot(cx - px, cy - py);
+      if (dist < best) {
+        best = dist;
+        param = start + t / PERIMETER;
+      }
+    }
+    return param;
+  };
+
+  document.querySelectorAll<HTMLElement>("[data-glow-card]").forEach((card) => {
+    const svgWrap = card.querySelector<HTMLElement>("[data-glow-svg]");
+    const sharp = card.querySelector<SVGPathElement>("[data-glow-path]");
+    const blur = card.querySelector<SVGPathElement>("[data-glow-blur]");
+    if (!svgWrap || !sharp || !blur || reducedMotion) return;
+
+    let cur = 0;
+    let tar = 0;
+    let active = false;
+    let raf = 0;
+
+    const step = () => {
+      let diff = ((tar - cur) % 1 + 1) % 1;
+      if (diff > 0.5) diff -= 1;
+      cur += diff * 0.18;
+      if (Math.abs(diff) < 0.004) cur = tar;
+      const d = sweepPath(cur);
+      sharp.setAttribute("d", d);
+      blur.setAttribute("d", d);
+      if (active || cur !== tar) {
+        raf = requestAnimationFrame(step);
+      } else {
+        raf = 0;
+      }
+    };
+
+    card.addEventListener("mouseenter", () => {
+      active = true;
+      svgWrap.classList.add("opacity-100");
+      if (!raf) raf = requestAnimationFrame(step);
+    });
+
+    card.addEventListener("mousemove", (event: MouseEvent) => {
+      const rect = card.getBoundingClientRect();
+      const px = ((event.clientX - rect.left) / rect.width) * W;
+      const py = ((event.clientY - rect.top) / rect.height) * H;
+      tar = closestParam(px, py);
+      if (!raf) raf = requestAnimationFrame(step);
+    });
+
+    card.addEventListener("mouseleave", () => {
+      active = false;
+      svgWrap.classList.remove("opacity-100");
+    });
+  });
+</script>
