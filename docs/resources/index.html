@@ -16,709 +16,27 @@ Practical checklists, one-pagers, and templates for athletes, families, schools,
             guidance only - not legal advice, not athlete representation.
 </p> </div> <div class="mt-14" data-reveal> <h2 class="text-xs font-black uppercase tracking-[0.2em] text-neutral-400"> Families &amp; Athletes </h2> <div class="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3"> <article class="group relative flex flex-col rounded-sm border border-neutral-200 bg-white p-7 transition-all duration-300 hover:border-electricBlue hover:shadow-[0_0_25px_rgba(37,99,235,0.15)]"> <a href="/resources/act-810-nil-consent-checklist/" class="absolute inset-0" aria-label="Louisiana Act 810 NIL Consent Checklist"></a> <div class="relative"> <span class="inline-flex items-center gap-1.5 rounded-sm bg-electricBlue/10 px-2.5 py-1 text-[10px] font-black tracking-[0.18em] text-electricBlue"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true"><path d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><circle cx="8" cy="16" r="3"/><path d="m6.5 18.5-2.5 2.5"/></svg>
 PDF
-</span> <h3 class="mt-4 text-lg font-black text-black">Louisiana Act 810 NIL Consent Checklist</h3> <p class="mt-2 text-sm font-medium leading-relaxed text-neutral-600">What should be in writing before anyone uses a minor&#39;s name, image, or likeness in Louisiana.</p> <a href="/downloads/act-810-nil-consent-checklist.pdf" download class="pointer-events-auto relative z-10 mt-5 inline-flex items-center gap-2 text-sm font-black uppercase tracking-wide text-electricBlue transition group-hover:text-black">Download<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></a><script>
-  document.addEventListener("submit", function (event) {
-    var target = event.target;
-    var form = target && target.closest ? target.closest(".download-gate") : null;
-    if (!form) return;
-    event.preventDefault();
-
-    var emailEl = form.querySelector('input[name="email"]');
-    var spoofEl = form.querySelector('input[name="_company"]');
-    var email = emailEl ? emailEl.value : "";
-    if (spoofEl && spoofEl.value) return; // bots fill the honeypot
-
-    var fileUrl = form.getAttribute("data-resource-url") || "";
-    var captureUrl = form.getAttribute("data-capture-url") || "";
-
-    function swap(text) {
-      var btn = form.querySelector("button[type='submit']");
-      if (btn) btn.textContent = text;
-      var old = form.querySelector(".download-gate-note");
-      if (old && old.parentNode) old.parentNode.removeChild(old);
-      var note = document.createElement("p");
-      note.className = "download-gate-note mt-3 text-[11px] font-bold leading-relaxed text-neutral-600";
-      note.textContent = text;
-      form.appendChild(note);
-    }
-
-    function triggerDownload() {
-      var link = document.createElement("a");
-      link.href = fileUrl;
-      link.download = "";
-      document.body.appendChild(link);
-      link.click();
-      link.parentNode.removeChild(link);
-    }
-
-    function done() {
-      swap("Check your inbox - downloading now.");
-      triggerDownload();
-    }
-
-    if (captureUrl) {
-      var timedOut = false;
-      var timer = setTimeout(function () { timedOut = true; done(); }, 4000);
-      fetch(captureUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          resource: form.getAttribute("data-resource-slug") || "",
-          resourceTitle: form.getAttribute("data-resource-title") || "",
-          email: email,
-          consent: true,
-          ts: new Date().toISOString(),
-        }),
-      })
-        .then(function () { clearTimeout(timer); done(); })
-        .catch(function () {
-          if (!timedOut) { clearTimeout(timer); done(); }
-        });
-    } else {
-      done();
-    }
-  });
-</script> </div> </article><article class="group relative flex flex-col rounded-sm border border-neutral-200 bg-white p-7 transition-all duration-300 hover:border-electricBlue hover:shadow-[0_0_25px_rgba(37,99,235,0.15)]"> <a href="/resources/verify-your-sports-agent-checklist/" class="absolute inset-0" aria-label="Verify Your Would-Be Sports Agent"></a> <div class="relative"> <span class="inline-flex items-center gap-1.5 rounded-sm bg-electricBlue/10 px-2.5 py-1 text-[10px] font-black tracking-[0.18em] text-electricBlue"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true"><path d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><circle cx="8" cy="16" r="3"/><path d="m6.5 18.5-2.5 2.5"/></svg>
+</span> <h3 class="mt-4 text-lg font-black text-black">Louisiana Act 810 NIL Consent Checklist</h3> <p class="mt-2 text-sm font-medium leading-relaxed text-neutral-600">What should be in writing before anyone uses a minor&#39;s name, image, or likeness in Louisiana.</p> <a href="/downloads/act-810-nil-consent-checklist.pdf" download class="pointer-events-auto relative z-10 mt-5 inline-flex items-center gap-2 text-sm font-black uppercase tracking-wide text-electricBlue transition group-hover:text-black">Download<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></a> </div> </article><article class="group relative flex flex-col rounded-sm border border-neutral-200 bg-white p-7 transition-all duration-300 hover:border-electricBlue hover:shadow-[0_0_25px_rgba(37,99,235,0.15)]"> <a href="/resources/verify-your-sports-agent-checklist/" class="absolute inset-0" aria-label="Verify Your Would-Be Sports Agent"></a> <div class="relative"> <span class="inline-flex items-center gap-1.5 rounded-sm bg-electricBlue/10 px-2.5 py-1 text-[10px] font-black tracking-[0.18em] text-electricBlue"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true"><path d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><circle cx="8" cy="16" r="3"/><path d="m6.5 18.5-2.5 2.5"/></svg>
 PDF
-</span> <h3 class="mt-4 text-lg font-black text-black">Verify Your Would-Be Sports Agent</h3> <p class="mt-2 text-sm font-medium leading-relaxed text-neutral-600">A simple pre-signing checklist for families and student-athletes.</p> <a href="/downloads/verify-your-sports-agent-checklist.pdf" download class="pointer-events-auto relative z-10 mt-5 inline-flex items-center gap-2 text-sm font-black uppercase tracking-wide text-electricBlue transition group-hover:text-black">Download<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></a><script>
-  document.addEventListener("submit", function (event) {
-    var target = event.target;
-    var form = target && target.closest ? target.closest(".download-gate") : null;
-    if (!form) return;
-    event.preventDefault();
-
-    var emailEl = form.querySelector('input[name="email"]');
-    var spoofEl = form.querySelector('input[name="_company"]');
-    var email = emailEl ? emailEl.value : "";
-    if (spoofEl && spoofEl.value) return; // bots fill the honeypot
-
-    var fileUrl = form.getAttribute("data-resource-url") || "";
-    var captureUrl = form.getAttribute("data-capture-url") || "";
-
-    function swap(text) {
-      var btn = form.querySelector("button[type='submit']");
-      if (btn) btn.textContent = text;
-      var old = form.querySelector(".download-gate-note");
-      if (old && old.parentNode) old.parentNode.removeChild(old);
-      var note = document.createElement("p");
-      note.className = "download-gate-note mt-3 text-[11px] font-bold leading-relaxed text-neutral-600";
-      note.textContent = text;
-      form.appendChild(note);
-    }
-
-    function triggerDownload() {
-      var link = document.createElement("a");
-      link.href = fileUrl;
-      link.download = "";
-      document.body.appendChild(link);
-      link.click();
-      link.parentNode.removeChild(link);
-    }
-
-    function done() {
-      swap("Check your inbox - downloading now.");
-      triggerDownload();
-    }
-
-    if (captureUrl) {
-      var timedOut = false;
-      var timer = setTimeout(function () { timedOut = true; done(); }, 4000);
-      fetch(captureUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          resource: form.getAttribute("data-resource-slug") || "",
-          resourceTitle: form.getAttribute("data-resource-title") || "",
-          email: email,
-          consent: true,
-          ts: new Date().toISOString(),
-        }),
-      })
-        .then(function () { clearTimeout(timer); done(); })
-        .catch(function () {
-          if (!timedOut) { clearTimeout(timer); done(); }
-        });
-    } else {
-      done();
-    }
-  });
-</script> </div> </article><article class="group relative flex flex-col rounded-sm border border-neutral-200 bg-white p-7 transition-all duration-300 hover:border-electricBlue hover:shadow-[0_0_25px_rgba(37,99,235,0.15)]"> <a href="/resources/should-families-brand-kids-early/" class="absolute inset-0" aria-label="Should Families Brand Kids Early?"></a> <div class="relative"> <span class="inline-flex items-center gap-1.5 rounded-sm bg-electricBlue/10 px-2.5 py-1 text-[10px] font-black tracking-[0.18em] text-electricBlue"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true"><path d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><circle cx="8" cy="16" r="3"/><path d="m6.5 18.5-2.5 2.5"/></svg>
+</span> <h3 class="mt-4 text-lg font-black text-black">Verify Your Would-Be Sports Agent</h3> <p class="mt-2 text-sm font-medium leading-relaxed text-neutral-600">A simple pre-signing checklist for families and student-athletes.</p> <a href="/downloads/verify-your-sports-agent-checklist.pdf" download class="pointer-events-auto relative z-10 mt-5 inline-flex items-center gap-2 text-sm font-black uppercase tracking-wide text-electricBlue transition group-hover:text-black">Download<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></a> </div> </article><article class="group relative flex flex-col rounded-sm border border-neutral-200 bg-white p-7 transition-all duration-300 hover:border-electricBlue hover:shadow-[0_0_25px_rgba(37,99,235,0.15)]"> <a href="/resources/should-families-brand-kids-early/" class="absolute inset-0" aria-label="Should Families Brand Kids Early?"></a> <div class="relative"> <span class="inline-flex items-center gap-1.5 rounded-sm bg-electricBlue/10 px-2.5 py-1 text-[10px] font-black tracking-[0.18em] text-electricBlue"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true"><path d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><circle cx="8" cy="16" r="3"/><path d="m6.5 18.5-2.5 2.5"/></svg>
 PDF
-</span> <h3 class="mt-4 text-lg font-black text-black">Should Families Brand Kids Early?</h3> <p class="mt-2 text-sm font-medium leading-relaxed text-neutral-600">The one-page version of a longer essay.</p> <a href="/downloads/should-families-brand-kids-early.pdf" download class="pointer-events-auto relative z-10 mt-5 inline-flex items-center gap-2 text-sm font-black uppercase tracking-wide text-electricBlue transition group-hover:text-black">Download<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></a><script>
-  document.addEventListener("submit", function (event) {
-    var target = event.target;
-    var form = target && target.closest ? target.closest(".download-gate") : null;
-    if (!form) return;
-    event.preventDefault();
-
-    var emailEl = form.querySelector('input[name="email"]');
-    var spoofEl = form.querySelector('input[name="_company"]');
-    var email = emailEl ? emailEl.value : "";
-    if (spoofEl && spoofEl.value) return; // bots fill the honeypot
-
-    var fileUrl = form.getAttribute("data-resource-url") || "";
-    var captureUrl = form.getAttribute("data-capture-url") || "";
-
-    function swap(text) {
-      var btn = form.querySelector("button[type='submit']");
-      if (btn) btn.textContent = text;
-      var old = form.querySelector(".download-gate-note");
-      if (old && old.parentNode) old.parentNode.removeChild(old);
-      var note = document.createElement("p");
-      note.className = "download-gate-note mt-3 text-[11px] font-bold leading-relaxed text-neutral-600";
-      note.textContent = text;
-      form.appendChild(note);
-    }
-
-    function triggerDownload() {
-      var link = document.createElement("a");
-      link.href = fileUrl;
-      link.download = "";
-      document.body.appendChild(link);
-      link.click();
-      link.parentNode.removeChild(link);
-    }
-
-    function done() {
-      swap("Check your inbox - downloading now.");
-      triggerDownload();
-    }
-
-    if (captureUrl) {
-      var timedOut = false;
-      var timer = setTimeout(function () { timedOut = true; done(); }, 4000);
-      fetch(captureUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          resource: form.getAttribute("data-resource-slug") || "",
-          resourceTitle: form.getAttribute("data-resource-title") || "",
-          email: email,
-          consent: true,
-          ts: new Date().toISOString(),
-        }),
-      })
-        .then(function () { clearTimeout(timer); done(); })
-        .catch(function () {
-          if (!timedOut) { clearTimeout(timer); done(); }
-        });
-    } else {
-      done();
-    }
-  });
-</script> </div> </article> </div> </div><div class="mt-14" data-reveal> <h2 class="text-xs font-black uppercase tracking-[0.2em] text-neutral-400"> Music &amp; IP </h2> <div class="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3"> <article class="group relative flex flex-col rounded-sm border border-neutral-200 bg-white p-7 transition-all duration-300 hover:border-electricBlue hover:shadow-[0_0_25px_rgba(37,99,235,0.15)]"> <a href="/resources/master-vs-sync-neighboring-rights/" class="absolute inset-0" aria-label="Master vs. Sync vs. Neighboring Rights"></a> <div class="relative"> <span class="inline-flex items-center gap-1.5 rounded-sm bg-electricBlue/10 px-2.5 py-1 text-[10px] font-black tracking-[0.18em] text-electricBlue"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true"><path d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><circle cx="8" cy="16" r="3"/><path d="m6.5 18.5-2.5 2.5"/></svg>
+</span> <h3 class="mt-4 text-lg font-black text-black">Should Families Brand Kids Early?</h3> <p class="mt-2 text-sm font-medium leading-relaxed text-neutral-600">The one-page version of a longer essay.</p> <a href="/downloads/should-families-brand-kids-early.pdf" download class="pointer-events-auto relative z-10 mt-5 inline-flex items-center gap-2 text-sm font-black uppercase tracking-wide text-electricBlue transition group-hover:text-black">Download<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></a> </div> </article> </div> </div><div class="mt-14" data-reveal> <h2 class="text-xs font-black uppercase tracking-[0.2em] text-neutral-400"> Music &amp; IP </h2> <div class="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3"> <article class="group relative flex flex-col rounded-sm border border-neutral-200 bg-white p-7 transition-all duration-300 hover:border-electricBlue hover:shadow-[0_0_25px_rgba(37,99,235,0.15)]"> <a href="/resources/master-vs-sync-neighboring-rights/" class="absolute inset-0" aria-label="Master vs. Sync vs. Neighboring Rights"></a> <div class="relative"> <span class="inline-flex items-center gap-1.5 rounded-sm bg-electricBlue/10 px-2.5 py-1 text-[10px] font-black tracking-[0.18em] text-electricBlue"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true"><path d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><circle cx="8" cy="16" r="3"/><path d="m6.5 18.5-2.5 2.5"/></svg>
 PDF
-</span> <h3 class="mt-4 text-lg font-black text-black">Master vs. Sync vs. Neighboring Rights</h3> <p class="mt-2 text-sm font-medium leading-relaxed text-neutral-600">Three rights in one song - and who gets paid for each.</p> <a href="/downloads/master-vs-sync-neighboring-rights.pdf" download class="pointer-events-auto relative z-10 mt-5 inline-flex items-center gap-2 text-sm font-black uppercase tracking-wide text-electricBlue transition group-hover:text-black">Download<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></a><script>
-  document.addEventListener("submit", function (event) {
-    var target = event.target;
-    var form = target && target.closest ? target.closest(".download-gate") : null;
-    if (!form) return;
-    event.preventDefault();
-
-    var emailEl = form.querySelector('input[name="email"]');
-    var spoofEl = form.querySelector('input[name="_company"]');
-    var email = emailEl ? emailEl.value : "";
-    if (spoofEl && spoofEl.value) return; // bots fill the honeypot
-
-    var fileUrl = form.getAttribute("data-resource-url") || "";
-    var captureUrl = form.getAttribute("data-capture-url") || "";
-
-    function swap(text) {
-      var btn = form.querySelector("button[type='submit']");
-      if (btn) btn.textContent = text;
-      var old = form.querySelector(".download-gate-note");
-      if (old && old.parentNode) old.parentNode.removeChild(old);
-      var note = document.createElement("p");
-      note.className = "download-gate-note mt-3 text-[11px] font-bold leading-relaxed text-neutral-600";
-      note.textContent = text;
-      form.appendChild(note);
-    }
-
-    function triggerDownload() {
-      var link = document.createElement("a");
-      link.href = fileUrl;
-      link.download = "";
-      document.body.appendChild(link);
-      link.click();
-      link.parentNode.removeChild(link);
-    }
-
-    function done() {
-      swap("Check your inbox - downloading now.");
-      triggerDownload();
-    }
-
-    if (captureUrl) {
-      var timedOut = false;
-      var timer = setTimeout(function () { timedOut = true; done(); }, 4000);
-      fetch(captureUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          resource: form.getAttribute("data-resource-slug") || "",
-          resourceTitle: form.getAttribute("data-resource-title") || "",
-          email: email,
-          consent: true,
-          ts: new Date().toISOString(),
-        }),
-      })
-        .then(function () { clearTimeout(timer); done(); })
-        .catch(function () {
-          if (!timedOut) { clearTimeout(timer); done(); }
-        });
-    } else {
-      done();
-    }
-  });
-</script> </div> </article><article class="group relative flex flex-col rounded-sm border border-neutral-200 bg-white p-7 transition-all duration-300 hover:border-electricBlue hover:shadow-[0_0_25px_rgba(37,99,235,0.15)]"> <a href="/resources/first-production-deal-template/" class="absolute inset-0" aria-label="What to Record Before Your First Production Deal"></a> <div class="relative"> <span class="inline-flex items-center gap-1.5 rounded-sm bg-electricBlue/10 px-2.5 py-1 text-[10px] font-black tracking-[0.18em] text-electricBlue"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true"><path d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><circle cx="8" cy="16" r="3"/><path d="m6.5 18.5-2.5 2.5"/></svg>
+</span> <h3 class="mt-4 text-lg font-black text-black">Master vs. Sync vs. Neighboring Rights</h3> <p class="mt-2 text-sm font-medium leading-relaxed text-neutral-600">Three rights in one song - and who gets paid for each.</p> <a href="/downloads/master-vs-sync-neighboring-rights.pdf" download class="pointer-events-auto relative z-10 mt-5 inline-flex items-center gap-2 text-sm font-black uppercase tracking-wide text-electricBlue transition group-hover:text-black">Download<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></a> </div> </article><article class="group relative flex flex-col rounded-sm border border-neutral-200 bg-white p-7 transition-all duration-300 hover:border-electricBlue hover:shadow-[0_0_25px_rgba(37,99,235,0.15)]"> <a href="/resources/first-production-deal-template/" class="absolute inset-0" aria-label="What to Record Before Your First Production Deal"></a> <div class="relative"> <span class="inline-flex items-center gap-1.5 rounded-sm bg-electricBlue/10 px-2.5 py-1 text-[10px] font-black tracking-[0.18em] text-electricBlue"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true"><path d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><circle cx="8" cy="16" r="3"/><path d="m6.5 18.5-2.5 2.5"/></svg>
 PDF
-</span> <h3 class="mt-4 text-lg font-black text-black">What to Record Before Your First Production Deal</h3> <p class="mt-2 text-sm font-medium leading-relaxed text-neutral-600">A template for producers, artists, and families entering a first production agreement.</p> <a href="/downloads/first-production-deal-template.pdf" download class="pointer-events-auto relative z-10 mt-5 inline-flex items-center gap-2 text-sm font-black uppercase tracking-wide text-electricBlue transition group-hover:text-black">Download<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></a><script>
-  document.addEventListener("submit", function (event) {
-    var target = event.target;
-    var form = target && target.closest ? target.closest(".download-gate") : null;
-    if (!form) return;
-    event.preventDefault();
-
-    var emailEl = form.querySelector('input[name="email"]');
-    var spoofEl = form.querySelector('input[name="_company"]');
-    var email = emailEl ? emailEl.value : "";
-    if (spoofEl && spoofEl.value) return; // bots fill the honeypot
-
-    var fileUrl = form.getAttribute("data-resource-url") || "";
-    var captureUrl = form.getAttribute("data-capture-url") || "";
-
-    function swap(text) {
-      var btn = form.querySelector("button[type='submit']");
-      if (btn) btn.textContent = text;
-      var old = form.querySelector(".download-gate-note");
-      if (old && old.parentNode) old.parentNode.removeChild(old);
-      var note = document.createElement("p");
-      note.className = "download-gate-note mt-3 text-[11px] font-bold leading-relaxed text-neutral-600";
-      note.textContent = text;
-      form.appendChild(note);
-    }
-
-    function triggerDownload() {
-      var link = document.createElement("a");
-      link.href = fileUrl;
-      link.download = "";
-      document.body.appendChild(link);
-      link.click();
-      link.parentNode.removeChild(link);
-    }
-
-    function done() {
-      swap("Check your inbox - downloading now.");
-      triggerDownload();
-    }
-
-    if (captureUrl) {
-      var timedOut = false;
-      var timer = setTimeout(function () { timedOut = true; done(); }, 4000);
-      fetch(captureUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          resource: form.getAttribute("data-resource-slug") || "",
-          resourceTitle: form.getAttribute("data-resource-title") || "",
-          email: email,
-          consent: true,
-          ts: new Date().toISOString(),
-        }),
-      })
-        .then(function () { clearTimeout(timer); done(); })
-        .catch(function () {
-          if (!timedOut) { clearTimeout(timer); done(); }
-        });
-    } else {
-      done();
-    }
-  });
-</script> </div> </article> </div> </div><div class="mt-14" data-reveal> <h2 class="text-xs font-black uppercase tracking-[0.2em] text-neutral-400"> Consulting </h2> <div class="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3"> <article class="group relative flex flex-col rounded-sm border border-neutral-200 bg-white p-7 transition-all duration-300 hover:border-electricBlue hover:shadow-[0_0_25px_rgba(37,99,235,0.15)]"> <a href="/resources/sample-brand-ip-audit/" class="absolute inset-0" aria-label="Sample Brand &#38; IP Audit: Redacted Findings"></a> <div class="relative"> <span class="inline-flex items-center gap-1.5 rounded-sm bg-electricBlue/10 px-2.5 py-1 text-[10px] font-black tracking-[0.18em] text-electricBlue"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true"><path d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><circle cx="8" cy="16" r="3"/><path d="m6.5 18.5-2.5 2.5"/></svg>
+</span> <h3 class="mt-4 text-lg font-black text-black">What to Record Before Your First Production Deal</h3> <p class="mt-2 text-sm font-medium leading-relaxed text-neutral-600">A template for producers, artists, and families entering a first production agreement.</p> <a href="/downloads/first-production-deal-template.pdf" download class="pointer-events-auto relative z-10 mt-5 inline-flex items-center gap-2 text-sm font-black uppercase tracking-wide text-electricBlue transition group-hover:text-black">Download<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></a> </div> </article> </div> </div><div class="mt-14" data-reveal> <h2 class="text-xs font-black uppercase tracking-[0.2em] text-neutral-400"> Consulting </h2> <div class="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3"> <article class="group relative flex flex-col rounded-sm border border-neutral-200 bg-white p-7 transition-all duration-300 hover:border-electricBlue hover:shadow-[0_0_25px_rgba(37,99,235,0.15)]"> <a href="/resources/sample-brand-ip-audit/" class="absolute inset-0" aria-label="Sample Brand &#38; IP Audit: Redacted Findings"></a> <div class="relative"> <span class="inline-flex items-center gap-1.5 rounded-sm bg-electricBlue/10 px-2.5 py-1 text-[10px] font-black tracking-[0.18em] text-electricBlue"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true"><path d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><circle cx="8" cy="16" r="3"/><path d="m6.5 18.5-2.5 2.5"/></svg>
 PDF
-</span> <h3 class="mt-4 text-lg font-black text-black">Sample Brand &amp; IP Audit: Redacted Findings</h3> <p class="mt-2 text-sm font-medium leading-relaxed text-neutral-600">What families and schools receive - a redacted sample of the audit deliverable.</p> <a href="/downloads/sample-brand-ip-audit.pdf" download class="pointer-events-auto relative z-10 mt-5 inline-flex items-center gap-2 text-sm font-black uppercase tracking-wide text-electricBlue transition group-hover:text-black">Download<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></a><script>
-  document.addEventListener("submit", function (event) {
-    var target = event.target;
-    var form = target && target.closest ? target.closest(".download-gate") : null;
-    if (!form) return;
-    event.preventDefault();
-
-    var emailEl = form.querySelector('input[name="email"]');
-    var spoofEl = form.querySelector('input[name="_company"]');
-    var email = emailEl ? emailEl.value : "";
-    if (spoofEl && spoofEl.value) return; // bots fill the honeypot
-
-    var fileUrl = form.getAttribute("data-resource-url") || "";
-    var captureUrl = form.getAttribute("data-capture-url") || "";
-
-    function swap(text) {
-      var btn = form.querySelector("button[type='submit']");
-      if (btn) btn.textContent = text;
-      var old = form.querySelector(".download-gate-note");
-      if (old && old.parentNode) old.parentNode.removeChild(old);
-      var note = document.createElement("p");
-      note.className = "download-gate-note mt-3 text-[11px] font-bold leading-relaxed text-neutral-600";
-      note.textContent = text;
-      form.appendChild(note);
-    }
-
-    function triggerDownload() {
-      var link = document.createElement("a");
-      link.href = fileUrl;
-      link.download = "";
-      document.body.appendChild(link);
-      link.click();
-      link.parentNode.removeChild(link);
-    }
-
-    function done() {
-      swap("Check your inbox - downloading now.");
-      triggerDownload();
-    }
-
-    if (captureUrl) {
-      var timedOut = false;
-      var timer = setTimeout(function () { timedOut = true; done(); }, 4000);
-      fetch(captureUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          resource: form.getAttribute("data-resource-slug") || "",
-          resourceTitle: form.getAttribute("data-resource-title") || "",
-          email: email,
-          consent: true,
-          ts: new Date().toISOString(),
-        }),
-      })
-        .then(function () { clearTimeout(timer); done(); })
-        .catch(function () {
-          if (!timedOut) { clearTimeout(timer); done(); }
-        });
-    } else {
-      done();
-    }
-  });
-</script> </div> </article> </div> </div><div class="mt-14" data-reveal> <h2 class="text-xs font-black uppercase tracking-[0.2em] text-neutral-400"> Pro Studio </h2> <div class="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3"> <article class="group relative flex flex-col rounded-sm border border-neutral-200 bg-white p-7 transition-all duration-300 hover:border-electricBlue hover:shadow-[0_0_25px_rgba(37,99,235,0.15)]"> <a href="/resources/podcast-episode-one-sheet/" class="absolute inset-0" aria-label="Podcast Episode One-Sheet Template"></a> <div class="relative"> <span class="inline-flex items-center gap-1.5 rounded-sm bg-electricBlue/10 px-2.5 py-1 text-[10px] font-black tracking-[0.18em] text-electricBlue"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true"><path d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><circle cx="8" cy="16" r="3"/><path d="m6.5 18.5-2.5 2.5"/></svg>
+</span> <h3 class="mt-4 text-lg font-black text-black">Sample Brand &amp; IP Audit: Redacted Findings</h3> <p class="mt-2 text-sm font-medium leading-relaxed text-neutral-600">What families and schools receive - a redacted sample of the audit deliverable.</p> <a href="/downloads/sample-brand-ip-audit.pdf" download class="pointer-events-auto relative z-10 mt-5 inline-flex items-center gap-2 text-sm font-black uppercase tracking-wide text-electricBlue transition group-hover:text-black">Download<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></a> </div> </article> </div> </div><div class="mt-14" data-reveal> <h2 class="text-xs font-black uppercase tracking-[0.2em] text-neutral-400"> Pro Studio </h2> <div class="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3"> <article class="group relative flex flex-col rounded-sm border border-neutral-200 bg-white p-7 transition-all duration-300 hover:border-electricBlue hover:shadow-[0_0_25px_rgba(37,99,235,0.15)]"> <a href="/resources/podcast-episode-one-sheet/" class="absolute inset-0" aria-label="Podcast Episode One-Sheet Template"></a> <div class="relative"> <span class="inline-flex items-center gap-1.5 rounded-sm bg-electricBlue/10 px-2.5 py-1 text-[10px] font-black tracking-[0.18em] text-electricBlue"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true"><path d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><circle cx="8" cy="16" r="3"/><path d="m6.5 18.5-2.5 2.5"/></svg>
 PDF
-</span> <h3 class="mt-4 text-lg font-black text-black">Podcast Episode One-Sheet Template</h3> <p class="mt-2 text-sm font-medium leading-relaxed text-neutral-600">A sponsor-ready one-pager for every episode.</p> <a href="/downloads/podcast-episode-one-sheet.pdf" download class="pointer-events-auto relative z-10 mt-5 inline-flex items-center gap-2 text-sm font-black uppercase tracking-wide text-electricBlue transition group-hover:text-black">Download<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></a><script>
-  document.addEventListener("submit", function (event) {
-    var target = event.target;
-    var form = target && target.closest ? target.closest(".download-gate") : null;
-    if (!form) return;
-    event.preventDefault();
-
-    var emailEl = form.querySelector('input[name="email"]');
-    var spoofEl = form.querySelector('input[name="_company"]');
-    var email = emailEl ? emailEl.value : "";
-    if (spoofEl && spoofEl.value) return; // bots fill the honeypot
-
-    var fileUrl = form.getAttribute("data-resource-url") || "";
-    var captureUrl = form.getAttribute("data-capture-url") || "";
-
-    function swap(text) {
-      var btn = form.querySelector("button[type='submit']");
-      if (btn) btn.textContent = text;
-      var old = form.querySelector(".download-gate-note");
-      if (old && old.parentNode) old.parentNode.removeChild(old);
-      var note = document.createElement("p");
-      note.className = "download-gate-note mt-3 text-[11px] font-bold leading-relaxed text-neutral-600";
-      note.textContent = text;
-      form.appendChild(note);
-    }
-
-    function triggerDownload() {
-      var link = document.createElement("a");
-      link.href = fileUrl;
-      link.download = "";
-      document.body.appendChild(link);
-      link.click();
-      link.parentNode.removeChild(link);
-    }
-
-    function done() {
-      swap("Check your inbox - downloading now.");
-      triggerDownload();
-    }
-
-    if (captureUrl) {
-      var timedOut = false;
-      var timer = setTimeout(function () { timedOut = true; done(); }, 4000);
-      fetch(captureUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          resource: form.getAttribute("data-resource-slug") || "",
-          resourceTitle: form.getAttribute("data-resource-title") || "",
-          email: email,
-          consent: true,
-          ts: new Date().toISOString(),
-        }),
-      })
-        .then(function () { clearTimeout(timer); done(); })
-        .catch(function () {
-          if (!timedOut) { clearTimeout(timer); done(); }
-        });
-    } else {
-      done();
-    }
-  });
-</script> </div> </article> </div> </div><div class="mt-14" data-reveal> <h2 class="text-xs font-black uppercase tracking-[0.2em] text-neutral-400"> Reference </h2> <div class="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3"> <article class="group relative flex flex-col rounded-sm border border-neutral-200 bg-white p-7 transition-all duration-300 hover:border-electricBlue hover:shadow-[0_0_25px_rgba(37,99,235,0.15)]"> <a href="/resources/media-ip-glossary/" class="absolute inset-0" aria-label="Brand, Music &#38; NIL Glossary"></a> <div class="relative"> <span class="inline-flex items-center gap-1.5 rounded-sm bg-electricBlue/10 px-2.5 py-1 text-[10px] font-black tracking-[0.18em] text-electricBlue"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true"><path d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><circle cx="8" cy="16" r="3"/><path d="m6.5 18.5-2.5 2.5"/></svg>
+</span> <h3 class="mt-4 text-lg font-black text-black">Podcast Episode One-Sheet Template</h3> <p class="mt-2 text-sm font-medium leading-relaxed text-neutral-600">A sponsor-ready one-pager for every episode.</p> <a href="/downloads/podcast-episode-one-sheet.pdf" download class="pointer-events-auto relative z-10 mt-5 inline-flex items-center gap-2 text-sm font-black uppercase tracking-wide text-electricBlue transition group-hover:text-black">Download<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></a> </div> </article> </div> </div><div class="mt-14" data-reveal> <h2 class="text-xs font-black uppercase tracking-[0.2em] text-neutral-400"> Reference </h2> <div class="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3"> <article class="group relative flex flex-col rounded-sm border border-neutral-200 bg-white p-7 transition-all duration-300 hover:border-electricBlue hover:shadow-[0_0_25px_rgba(37,99,235,0.15)]"> <a href="/resources/media-ip-glossary/" class="absolute inset-0" aria-label="Brand, Music &#38; NIL Glossary"></a> <div class="relative"> <span class="inline-flex items-center gap-1.5 rounded-sm bg-electricBlue/10 px-2.5 py-1 text-[10px] font-black tracking-[0.18em] text-electricBlue"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true"><path d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><circle cx="8" cy="16" r="3"/><path d="m6.5 18.5-2.5 2.5"/></svg>
 PDF
-</span> <h3 class="mt-4 text-lg font-black text-black">Brand, Music &amp; NIL Glossary</h3> <p class="mt-2 text-sm font-medium leading-relaxed text-neutral-600">Plain-English definitions for the terms people throw around.</p> <a href="/downloads/media-ip-glossary.pdf" download class="pointer-events-auto relative z-10 mt-5 inline-flex items-center gap-2 text-sm font-black uppercase tracking-wide text-electricBlue transition group-hover:text-black">Download<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></a><script>
-  document.addEventListener("submit", function (event) {
-    var target = event.target;
-    var form = target && target.closest ? target.closest(".download-gate") : null;
-    if (!form) return;
-    event.preventDefault();
-
-    var emailEl = form.querySelector('input[name="email"]');
-    var spoofEl = form.querySelector('input[name="_company"]');
-    var email = emailEl ? emailEl.value : "";
-    if (spoofEl && spoofEl.value) return; // bots fill the honeypot
-
-    var fileUrl = form.getAttribute("data-resource-url") || "";
-    var captureUrl = form.getAttribute("data-capture-url") || "";
-
-    function swap(text) {
-      var btn = form.querySelector("button[type='submit']");
-      if (btn) btn.textContent = text;
-      var old = form.querySelector(".download-gate-note");
-      if (old && old.parentNode) old.parentNode.removeChild(old);
-      var note = document.createElement("p");
-      note.className = "download-gate-note mt-3 text-[11px] font-bold leading-relaxed text-neutral-600";
-      note.textContent = text;
-      form.appendChild(note);
-    }
-
-    function triggerDownload() {
-      var link = document.createElement("a");
-      link.href = fileUrl;
-      link.download = "";
-      document.body.appendChild(link);
-      link.click();
-      link.parentNode.removeChild(link);
-    }
-
-    function done() {
-      swap("Check your inbox - downloading now.");
-      triggerDownload();
-    }
-
-    if (captureUrl) {
-      var timedOut = false;
-      var timer = setTimeout(function () { timedOut = true; done(); }, 4000);
-      fetch(captureUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          resource: form.getAttribute("data-resource-slug") || "",
-          resourceTitle: form.getAttribute("data-resource-title") || "",
-          email: email,
-          consent: true,
-          ts: new Date().toISOString(),
-        }),
-      })
-        .then(function () { clearTimeout(timer); done(); })
-        .catch(function () {
-          if (!timedOut) { clearTimeout(timer); done(); }
-        });
-    } else {
-      done();
-    }
-  });
-</script> </div> </article> </div> </div><div class="mt-14" data-reveal> <h2 class="text-xs font-black uppercase tracking-[0.2em] text-neutral-400"> About </h2> <div class="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3"> <article class="group relative flex flex-col rounded-sm border border-neutral-200 bg-white p-7 transition-all duration-300 hover:border-electricBlue hover:shadow-[0_0_25px_rgba(37,99,235,0.15)]"> <a href="/resources/media-kit-press-one-pager/" class="absolute inset-0" aria-label="Media Kit &#38; Press One-Pager"></a> <div class="relative"> <span class="inline-flex items-center gap-1.5 rounded-sm bg-electricBlue/10 px-2.5 py-1 text-[10px] font-black tracking-[0.18em] text-electricBlue"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true"><path d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><circle cx="8" cy="16" r="3"/><path d="m6.5 18.5-2.5 2.5"/></svg>
+</span> <h3 class="mt-4 text-lg font-black text-black">Brand, Music &amp; NIL Glossary</h3> <p class="mt-2 text-sm font-medium leading-relaxed text-neutral-600">Plain-English definitions for the terms people throw around.</p> <a href="/downloads/media-ip-glossary.pdf" download class="pointer-events-auto relative z-10 mt-5 inline-flex items-center gap-2 text-sm font-black uppercase tracking-wide text-electricBlue transition group-hover:text-black">Download<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></a> </div> </article> </div> </div><div class="mt-14" data-reveal> <h2 class="text-xs font-black uppercase tracking-[0.2em] text-neutral-400"> About </h2> <div class="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3"> <article class="group relative flex flex-col rounded-sm border border-neutral-200 bg-white p-7 transition-all duration-300 hover:border-electricBlue hover:shadow-[0_0_25px_rgba(37,99,235,0.15)]"> <a href="/resources/media-kit-press-one-pager/" class="absolute inset-0" aria-label="Media Kit &#38; Press One-Pager"></a> <div class="relative"> <span class="inline-flex items-center gap-1.5 rounded-sm bg-electricBlue/10 px-2.5 py-1 text-[10px] font-black tracking-[0.18em] text-electricBlue"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true"><path d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><circle cx="8" cy="16" r="3"/><path d="m6.5 18.5-2.5 2.5"/></svg>
 PDF
-</span> <h3 class="mt-4 text-lg font-black text-black">Media Kit &amp; Press One-Pager</h3> <p class="mt-2 text-sm font-medium leading-relaxed text-neutral-600">Background for podcast hosts, sponsors, and press.</p> <a href="/downloads/media-kit-press-one-pager.pdf" download class="pointer-events-auto relative z-10 mt-5 inline-flex items-center gap-2 text-sm font-black uppercase tracking-wide text-electricBlue transition group-hover:text-black">Download<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></a><script>
-  document.addEventListener("submit", function (event) {
-    var target = event.target;
-    var form = target && target.closest ? target.closest(".download-gate") : null;
-    if (!form) return;
-    event.preventDefault();
-
-    var emailEl = form.querySelector('input[name="email"]');
-    var spoofEl = form.querySelector('input[name="_company"]');
-    var email = emailEl ? emailEl.value : "";
-    if (spoofEl && spoofEl.value) return; // bots fill the honeypot
-
-    var fileUrl = form.getAttribute("data-resource-url") || "";
-    var captureUrl = form.getAttribute("data-capture-url") || "";
-
-    function swap(text) {
-      var btn = form.querySelector("button[type='submit']");
-      if (btn) btn.textContent = text;
-      var old = form.querySelector(".download-gate-note");
-      if (old && old.parentNode) old.parentNode.removeChild(old);
-      var note = document.createElement("p");
-      note.className = "download-gate-note mt-3 text-[11px] font-bold leading-relaxed text-neutral-600";
-      note.textContent = text;
-      form.appendChild(note);
-    }
-
-    function triggerDownload() {
-      var link = document.createElement("a");
-      link.href = fileUrl;
-      link.download = "";
-      document.body.appendChild(link);
-      link.click();
-      link.parentNode.removeChild(link);
-    }
-
-    function done() {
-      swap("Check your inbox - downloading now.");
-      triggerDownload();
-    }
-
-    if (captureUrl) {
-      var timedOut = false;
-      var timer = setTimeout(function () { timedOut = true; done(); }, 4000);
-      fetch(captureUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          resource: form.getAttribute("data-resource-slug") || "",
-          resourceTitle: form.getAttribute("data-resource-title") || "",
-          email: email,
-          consent: true,
-          ts: new Date().toISOString(),
-        }),
-      })
-        .then(function () { clearTimeout(timer); done(); })
-        .catch(function () {
-          if (!timedOut) { clearTimeout(timer); done(); }
-        });
-    } else {
-      done();
-    }
-  });
-</script> </div> </article><article class="group relative flex flex-col rounded-sm border border-neutral-200 bg-white p-7 transition-all duration-300 hover:border-electricBlue hover:shadow-[0_0_25px_rgba(37,99,235,0.15)]"> <a href="/resources/executive-speaker-one-sheet/" class="absolute inset-0" aria-label="Executive Speaker One-Sheet"></a> <div class="relative"> <span class="inline-flex items-center gap-1.5 rounded-sm bg-electricBlue/10 px-2.5 py-1 text-[10px] font-black tracking-[0.18em] text-electricBlue"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true"><path d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><circle cx="8" cy="16" r="3"/><path d="m6.5 18.5-2.5 2.5"/></svg>
+</span> <h3 class="mt-4 text-lg font-black text-black">Media Kit &amp; Press One-Pager</h3> <p class="mt-2 text-sm font-medium leading-relaxed text-neutral-600">Background for podcast hosts, sponsors, and press.</p> <a href="/downloads/media-kit-press-one-pager.pdf" download class="pointer-events-auto relative z-10 mt-5 inline-flex items-center gap-2 text-sm font-black uppercase tracking-wide text-electricBlue transition group-hover:text-black">Download<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></a> </div> </article><article class="group relative flex flex-col rounded-sm border border-neutral-200 bg-white p-7 transition-all duration-300 hover:border-electricBlue hover:shadow-[0_0_25px_rgba(37,99,235,0.15)]"> <a href="/resources/executive-speaker-one-sheet/" class="absolute inset-0" aria-label="Executive Speaker One-Sheet"></a> <div class="relative"> <span class="inline-flex items-center gap-1.5 rounded-sm bg-electricBlue/10 px-2.5 py-1 text-[10px] font-black tracking-[0.18em] text-electricBlue"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true"><path d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><circle cx="8" cy="16" r="3"/><path d="m6.5 18.5-2.5 2.5"/></svg>
 PDF
-</span> <h3 class="mt-4 text-lg font-black text-black">Executive Speaker One-Sheet</h3> <p class="mt-2 text-sm font-medium leading-relaxed text-neutral-600">Three signature keynotes for corporate, sports, and education stages.</p> <a href="/downloads/executive-speaker-one-sheet.pdf" download class="pointer-events-auto relative z-10 mt-5 inline-flex items-center gap-2 text-sm font-black uppercase tracking-wide text-electricBlue transition group-hover:text-black">Download<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></a><script>
-  document.addEventListener("submit", function (event) {
-    var target = event.target;
-    var form = target && target.closest ? target.closest(".download-gate") : null;
-    if (!form) return;
-    event.preventDefault();
-
-    var emailEl = form.querySelector('input[name="email"]');
-    var spoofEl = form.querySelector('input[name="_company"]');
-    var email = emailEl ? emailEl.value : "";
-    if (spoofEl && spoofEl.value) return; // bots fill the honeypot
-
-    var fileUrl = form.getAttribute("data-resource-url") || "";
-    var captureUrl = form.getAttribute("data-capture-url") || "";
-
-    function swap(text) {
-      var btn = form.querySelector("button[type='submit']");
-      if (btn) btn.textContent = text;
-      var old = form.querySelector(".download-gate-note");
-      if (old && old.parentNode) old.parentNode.removeChild(old);
-      var note = document.createElement("p");
-      note.className = "download-gate-note mt-3 text-[11px] font-bold leading-relaxed text-neutral-600";
-      note.textContent = text;
-      form.appendChild(note);
-    }
-
-    function triggerDownload() {
-      var link = document.createElement("a");
-      link.href = fileUrl;
-      link.download = "";
-      document.body.appendChild(link);
-      link.click();
-      link.parentNode.removeChild(link);
-    }
-
-    function done() {
-      swap("Check your inbox - downloading now.");
-      triggerDownload();
-    }
-
-    if (captureUrl) {
-      var timedOut = false;
-      var timer = setTimeout(function () { timedOut = true; done(); }, 4000);
-      fetch(captureUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          resource: form.getAttribute("data-resource-slug") || "",
-          resourceTitle: form.getAttribute("data-resource-title") || "",
-          email: email,
-          consent: true,
-          ts: new Date().toISOString(),
-        }),
-      })
-        .then(function () { clearTimeout(timer); done(); })
-        .catch(function () {
-          if (!timedOut) { clearTimeout(timer); done(); }
-        });
-    } else {
-      done();
-    }
-  });
-</script> </div> </article> </div> </div><div class="mt-14" data-reveal> <h2 class="text-xs font-black uppercase tracking-[0.2em] text-neutral-400"> Directory </h2> <div class="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3"> <article class="group relative flex flex-col rounded-sm border border-neutral-200 bg-white p-7 transition-all duration-300 hover:border-electricBlue hover:shadow-[0_0_25px_rgba(37,99,235,0.15)]"> <a href="/resources/find-a-producer-launch-flyer/" class="absolute inset-0" aria-label="Find a Producer: Launch Flyer"></a> <div class="relative"> <span class="inline-flex items-center gap-1.5 rounded-sm bg-electricBlue/10 px-2.5 py-1 text-[10px] font-black tracking-[0.18em] text-electricBlue"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true"><path d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><circle cx="8" cy="16" r="3"/><path d="m6.5 18.5-2.5 2.5"/></svg>
+</span> <h3 class="mt-4 text-lg font-black text-black">Executive Speaker One-Sheet</h3> <p class="mt-2 text-sm font-medium leading-relaxed text-neutral-600">Three signature keynotes for corporate, sports, and education stages.</p> <a href="/downloads/executive-speaker-one-sheet.pdf" download class="pointer-events-auto relative z-10 mt-5 inline-flex items-center gap-2 text-sm font-black uppercase tracking-wide text-electricBlue transition group-hover:text-black">Download<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></a> </div> </article> </div> </div><div class="mt-14" data-reveal> <h2 class="text-xs font-black uppercase tracking-[0.2em] text-neutral-400"> Directory </h2> <div class="mt-5 grid gap-6 md:grid-cols-2 lg:grid-cols-3"> <article class="group relative flex flex-col rounded-sm border border-neutral-200 bg-white p-7 transition-all duration-300 hover:border-electricBlue hover:shadow-[0_0_25px_rgba(37,99,235,0.15)]"> <a href="/resources/find-a-producer-launch-flyer/" class="absolute inset-0" aria-label="Find a Producer: Launch Flyer"></a> <div class="relative"> <span class="inline-flex items-center gap-1.5 rounded-sm bg-electricBlue/10 px-2.5 py-1 text-[10px] font-black tracking-[0.18em] text-electricBlue"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true"><path d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><circle cx="8" cy="16" r="3"/><path d="m6.5 18.5-2.5 2.5"/></svg>
 PDF
-</span> <h3 class="mt-4 text-lg font-black text-black">Find a Producer: Launch Flyer</h3> <p class="mt-2 text-sm font-medium leading-relaxed text-neutral-600">A one-page flyer for the upcoming producer directory.</p> <a href="/downloads/find-a-producer-launch-flyer.pdf" download class="pointer-events-auto relative z-10 mt-5 inline-flex items-center gap-2 text-sm font-black uppercase tracking-wide text-electricBlue transition group-hover:text-black">Download<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></a><script>
-  document.addEventListener("submit", function (event) {
-    var target = event.target;
-    var form = target && target.closest ? target.closest(".download-gate") : null;
-    if (!form) return;
-    event.preventDefault();
-
-    var emailEl = form.querySelector('input[name="email"]');
-    var spoofEl = form.querySelector('input[name="_company"]');
-    var email = emailEl ? emailEl.value : "";
-    if (spoofEl && spoofEl.value) return; // bots fill the honeypot
-
-    var fileUrl = form.getAttribute("data-resource-url") || "";
-    var captureUrl = form.getAttribute("data-capture-url") || "";
-
-    function swap(text) {
-      var btn = form.querySelector("button[type='submit']");
-      if (btn) btn.textContent = text;
-      var old = form.querySelector(".download-gate-note");
-      if (old && old.parentNode) old.parentNode.removeChild(old);
-      var note = document.createElement("p");
-      note.className = "download-gate-note mt-3 text-[11px] font-bold leading-relaxed text-neutral-600";
-      note.textContent = text;
-      form.appendChild(note);
-    }
-
-    function triggerDownload() {
-      var link = document.createElement("a");
-      link.href = fileUrl;
-      link.download = "";
-      document.body.appendChild(link);
-      link.click();
-      link.parentNode.removeChild(link);
-    }
-
-    function done() {
-      swap("Check your inbox - downloading now.");
-      triggerDownload();
-    }
-
-    if (captureUrl) {
-      var timedOut = false;
-      var timer = setTimeout(function () { timedOut = true; done(); }, 4000);
-      fetch(captureUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          resource: form.getAttribute("data-resource-slug") || "",
-          resourceTitle: form.getAttribute("data-resource-title") || "",
-          email: email,
-          consent: true,
-          ts: new Date().toISOString(),
-        }),
-      })
-        .then(function () { clearTimeout(timer); done(); })
-        .catch(function () {
-          if (!timedOut) { clearTimeout(timer); done(); }
-        });
-    } else {
-      done();
-    }
-  });
-</script> </div> </article> </div> </div> <div class="mt-16 flex flex-col gap-3 rounded-sm border border-neutral-200 bg-neutral-50 p-7 sm:flex-row sm:items-center sm:justify-between" data-reveal> <p class="flex items-start gap-2 text-sm font-medium text-neutral-700"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 h-4 w-4 shrink-0 text-neonRed" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+</span> <h3 class="mt-4 text-lg font-black text-black">Find a Producer: Launch Flyer</h3> <p class="mt-2 text-sm font-medium leading-relaxed text-neutral-600">A one-page flyer for the upcoming producer directory.</p> <a href="/downloads/find-a-producer-launch-flyer.pdf" download class="pointer-events-auto relative z-10 mt-5 inline-flex items-center gap-2 text-sm font-black uppercase tracking-wide text-electricBlue transition group-hover:text-black">Download<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg></a> </div> </article> </div> </div> <div class="mt-16 flex flex-col gap-3 rounded-sm border border-neutral-200 bg-neutral-50 p-7 sm:flex-row sm:items-center sm:justify-between" data-reveal> <p class="flex items-start gap-2 text-sm font-medium text-neutral-700"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 h-4 w-4 shrink-0 text-neonRed" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
 Every resource is educational. If your situation involves real money, contracts, or a
             minor, have a qualified attorney review the final documents.
 </p> <a href="/#contact" class="inline-flex shrink-0 items-center justify-center gap-2 rounded-sm bg-black px-6 py-3 text-xs font-black uppercase tracking-wide text-white transition hover:bg-neutral-800">
@@ -726,8 +44,8 @@ Start the conversation
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg> </a> </div> </div> </section> </main> <footer class="border-t border-neutral-200 bg-white"> <div class="container-page py-12"> <div class="grid gap-10 lg:grid-cols-3"> <div> <a href="/" class="flex flex-col leading-tight"> <span class="text-base font-extrabold uppercase tracking-tight text-black"> Jaylen Sinegal </span> <span class="text-[10px] font-bold uppercase tracking-[0.22em] text-electricBlue">
 Executive Brand Strategist
 </span> </a> <p class="mt-4 max-w-xs text-sm font-medium leading-relaxed text-neutral-600">
-Brand strategy, talent representation alternatives, media IP, and performance ecosystems
-          across the Gulf Coast.
+Brand strategy, media IP education, and athletic performance ecosystems across the Gulf
+          Coast.
 </p> </div> <div> <h3 class="text-xs font-black uppercase tracking-[0.2em] text-neutral-400">
 Legal safeguards
 </h3> <p class="mt-4 text-sm font-medium leading-relaxed text-neutral-600">
@@ -738,6 +56,70 @@ Jaylen Sinegal provides brand strategy, media education, and IP consulting. He i
 Free resources
 </a> <a href="/faq.html" class="text-sm font-black uppercase tracking-wide text-electricBlue transition hover:text-black">
 FAQ
+</a> <a href="/privacy.html" class="text-sm font-black uppercase tracking-wide text-electricBlue transition hover:text-black">
+Privacy
 </a> </div> </div> <div> <h3 class="text-xs font-black uppercase tracking-[0.2em] text-neutral-400">Connect</h3> <div class="mt-4"> <a href="https://www.linkedin.com/in/jaylen-sinegal" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" class="inline-flex h-10 w-10 items-center justify-center rounded-sm border border-neutral-300 text-neutral-600 transition hover:border-electricBlue hover:text-electricBlue hover:shadow-[0_0_15px_rgba(37,99,235,0.4)]"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg> </a> </div> <p class="mt-4 text-xs font-semibold text-neutral-500">Lafayette · Youngsville · Louisiana</p> </div> </div> <div class="mt-10 flex flex-col gap-3 border-t border-neutral-200 pt-6 sm:flex-row sm:items-center sm:justify-between"> <p class="text-xs font-semibold text-neutral-500">© 2026 Jaylen Sinegal. All rights reserved.</p> <p class="flex items-center gap-2 text-xs font-semibold text-neutral-500"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5 text-electricBlue" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
-Governance · Compliance · Brand evidence
-</p> </div> </div> </footer>  <script type="module">try{localStorage.getItem("jaylen_ga4_opt_out")==="true"&&(window["ga-disable-G-V09SKB92BX"]=!0)}catch{}</script> </body></html>
+Strategy · Education · Compliance
+</p> </div> </div> </footer>  <script>
+      document.addEventListener("submit", function (event) {
+        var target = event.target;
+        var form = target && target.closest ? target.closest(".download-gate") : null;
+        if (!form) return;
+        event.preventDefault();
+
+        var emailEl = form.querySelector('input[name="email"]');
+        var spoofEl = form.querySelector('input[name="_company"]');
+        var email = emailEl ? emailEl.value : "";
+        if (spoofEl && spoofEl.value) return; // bots fill the honeypot
+
+        var fileUrl = form.getAttribute("data-resource-url") || "";
+        var captureUrl = form.getAttribute("data-capture-url") || "";
+
+        function swap(text) {
+          var btn = form.querySelector("button[type='submit']");
+          if (btn) btn.textContent = text;
+          var old = form.querySelector(".download-gate-note");
+          if (old && old.parentNode) old.parentNode.removeChild(old);
+          var note = document.createElement("p");
+          note.className = "download-gate-note mt-3 text-[11px] font-bold leading-relaxed text-neutral-600";
+          note.textContent = text;
+          form.appendChild(note);
+        }
+
+        function triggerDownload() {
+          var link = document.createElement("a");
+          link.href = fileUrl;
+          link.download = "";
+          document.body.appendChild(link);
+          link.click();
+          link.parentNode.removeChild(link);
+        }
+
+        function done() {
+          swap("Check your inbox - downloading now.");
+          triggerDownload();
+        }
+
+        if (captureUrl) {
+          var timedOut = false;
+          var timer = setTimeout(function () { timedOut = true; done(); }, 4000);
+          fetch(captureUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              resource: form.getAttribute("data-resource-slug") || "",
+              resourceTitle: form.getAttribute("data-resource-title") || "",
+              email: email,
+              consent: true,
+              ts: new Date().toISOString(),
+            }),
+          })
+            .then(function () { clearTimeout(timer); done(); })
+            .catch(function () {
+              if (!timedOut) { clearTimeout(timer); done(); }
+            });
+        } else {
+          done();
+        }
+      });
+    </script> </body> <script type="module">try{localStorage.getItem("jaylen_ga4_opt_out")==="true"&&(window["ga-disable-G-V09SKB92BX"]=!0)}catch{}</script> </html>

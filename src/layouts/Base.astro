@@ -80,6 +80,69 @@ const fullCanonical = canonical.startsWith("http") ? canonical : `${host}${canon
   </head>
   <body>
     <slot />
+    <script is:inline>
+      document.addEventListener("submit", function (event) {
+        var target = event.target;
+        var form = target && target.closest ? target.closest(".download-gate") : null;
+        if (!form) return;
+        event.preventDefault();
+
+        var emailEl = form.querySelector('input[name="email"]');
+        var spoofEl = form.querySelector('input[name="_company"]');
+        var email = emailEl ? emailEl.value : "";
+        if (spoofEl && spoofEl.value) return; // bots fill the honeypot
+
+        var fileUrl = form.getAttribute("data-resource-url") || "";
+        var captureUrl = form.getAttribute("data-capture-url") || "";
+
+        function swap(text) {
+          var btn = form.querySelector("button[type='submit']");
+          if (btn) btn.textContent = text;
+          var old = form.querySelector(".download-gate-note");
+          if (old && old.parentNode) old.parentNode.removeChild(old);
+          var note = document.createElement("p");
+          note.className = "download-gate-note mt-3 text-[11px] font-bold leading-relaxed text-neutral-600";
+          note.textContent = text;
+          form.appendChild(note);
+        }
+
+        function triggerDownload() {
+          var link = document.createElement("a");
+          link.href = fileUrl;
+          link.download = "";
+          document.body.appendChild(link);
+          link.click();
+          link.parentNode.removeChild(link);
+        }
+
+        function done() {
+          swap("Check your inbox - downloading now.");
+          triggerDownload();
+        }
+
+        if (captureUrl) {
+          var timedOut = false;
+          var timer = setTimeout(function () { timedOut = true; done(); }, 4000);
+          fetch(captureUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              resource: form.getAttribute("data-resource-slug") || "",
+              resourceTitle: form.getAttribute("data-resource-title") || "",
+              email: email,
+              consent: true,
+              ts: new Date().toISOString(),
+            }),
+          })
+            .then(function () { clearTimeout(timer); done(); })
+            .catch(function () {
+              if (!timedOut) { clearTimeout(timer); done(); }
+            });
+        } else {
+          done();
+        }
+      });
+    </script>
   </body>
   <script>
     import { gsap } from "gsap";
