@@ -2,136 +2,67 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white font-sans selection:bg-blue-600">
+    <main className="min-h-screen bg-white text-black font-sans selection:bg-blue-600 selection:text-white relative overflow-hidden">
+      
+      {/* 3D Electricity Video Background (Insert your sourced .webm here) */}
+      <div className="absolute top-0 left-0 w-full h-full z-0 opacity-40 pointer-events-none mix-blend-multiply flex justify-center items-center">
+        {/* <video autoPlay loop muted playsInline className="object-cover w-full h-full">
+              <source src="/3d-electricity-loop.webm" type="video/webm" />
+            </video> */}
+      </div>
+
       {/* Navigation */}
-      <nav className="border-b border-gray-800 p-6 flex justify-between items-center max-w-7xl mx-auto">
-        <div className="text-xl font-bold tracking-tight">JAYLEN SINEGAL</div>
-        <div className="space-x-8 text-sm text-gray-300 hidden md:flex font-medium">
-          <Link href="#advisory" className="hover:text-white transition">Advisory</Link>
-          <Link href="#clinics" className="hover:text-white transition">IP Clinics</Link>
-          <Link href="#ventures" className="hover:text-white transition">Ventures</Link>
-          <Link href="/blog" className="hover:text-white transition">Blog</Link>
-        </div>
-        <button className="bg-white text-black px-6 py-2.5 text-sm font-semibold hover:bg-gray-200 transition rounded-sm">
+      <nav className="relative z-10 border-b border-gray-200 p-6 flex justify-between items-center max-w-7xl mx-auto bg-white/80 backdrop-blur-md">
+        <div className="text-xl font-extrabold tracking-tight">JAYLEN SINEGAL</div>
+        <button className="bg-white text-black px-6 py-2.5 text-sm font-bold border border-gray-300 hover:border-blue-600 hover:shadow-[0_0_15px_rgba(37,99,235,0.5)] transition-all duration-300 rounded-sm">
           Book Consultation
         </button>
       </nav>
 
       {/* Hero Section */}
-      <section className="px-6 py-24 max-w-5xl mx-auto text-center">
-        <p className="text-blue-500 font-bold text-xs tracking-widest uppercase mb-6">
+      <section className="relative z-10 px-6 py-24 max-w-5xl mx-auto text-center">
+        <p className="text-blue-600 font-extrabold text-xs tracking-widest uppercase mb-6 drop-shadow-[0_0_8px_rgba(37,99,235,0.4)]">
           Executive Strategist • Louisiana Storyteller
         </p>
-        <h1 className="text-5xl md:text-7xl font-extrabold mb-8 leading-tight tracking-tight">
+        <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight tracking-tighter">
           Initiate Your Athletic or <br /> Brand Evolution.
         </h1>
-        <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+        <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-12 leading-relaxed font-medium">
           Architecting modern athlete IP, Louisiana Act 810 compliance, and elite physical development ecosystems across the Gulf Coast.
         </p>
         
-        {/* Authority Bar */}
-        <div className="flex flex-wrap justify-center gap-4 text-xs text-gray-500 font-semibold tracking-wide mb-16 uppercase">
-          <span className="border border-gray-800 px-3 py-1 rounded-full">Louisiana Storyteller (LED)</span>
-          <span className="border border-gray-800 px-3 py-1 rounded-full">M.S. Entertainment Business Candidate</span>
-          <span className="border border-gray-800 px-3 py-1 rounded-full">NSCS Member</span>
-          <span className="border border-gray-800 px-3 py-1 rounded-full">CBO, FlightTime Athletics</span>
+        {/* Neon Interactive Authority Bar */}
+        <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4 mb-16">
+          <div className="px-4 py-2 border border-gray-200 rounded-full bg-white hover:border-blue-500 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] transition-all duration-300 cursor-default">
+            <span className="text-xs font-bold text-gray-800 tracking-wide">Official Louisiana Storyteller (LED)</span>
+          </div>
+          <div className="px-4 py-2 border border-gray-200 rounded-full bg-white hover:border-red-500 hover:shadow-[0_0_20px_rgba(239,68,68,0.4)] transition-all duration-300 cursor-default">
+            <span className="text-xs font-bold text-gray-800 tracking-wide">CBO, FlightTime Athletics LLC</span>
+          </div>
+          <div className="px-4 py-2 border border-gray-200 rounded-full bg-white hover:border-blue-500 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] transition-all duration-300 cursor-default">
+            <span className="text-xs font-bold text-gray-800 tracking-wide">M.S. Ent. Business Candidate</span>
+          </div>
         </div>
       </section>
 
-      {/* 3-Track Conversion Matrix */}
-      <section className="px-6 py-12 max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
-        
-        {/* Path A */}
-        <div id="advisory" className="bg-gray-900 border border-gray-800 p-10 hover:border-blue-500 transition flex flex-col justify-between">
-          <div>
-            <h3 className="text-2xl font-bold mb-4">Executive Advisory</h3>
-            <p className="text-gray-400 text-sm mb-6 leading-relaxed">For elite prep athletes and families seeking independent media architecture.</p>
-            <ul className="text-sm text-gray-300 space-y-4 mb-8">
-              <li className="flex gap-2"><span>✓</span> Digital profile & IP audits</li>
-              <li className="flex gap-2"><span>✓</span> Highlight media strategy</li>
-              <li className="flex gap-2"><span>✓</span> Escaping platform lock-in (Hudl)</li>
-            </ul>
-          </div>
-          <button className="w-full border border-white py-3.5 text-sm font-semibold hover:bg-white hover:text-black transition">
-            Schedule Strategy Call
+      {/* B2B Conversion Block (The Trump NIL Article Route) */}
+      <section className="relative z-10 px-6 py-12 max-w-4xl mx-auto">
+        <div className="bg-white border-2 border-gray-100 p-10 hover:border-blue-500 hover:shadow-[0_0_30px_rgba(37,99,235,0.3)] transition-all duration-500 group relative overflow-hidden">
+          {/* Subtle Accent Line */}
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          
+          <h3 className="text-3xl font-black mb-4 tracking-tight">Is Your Athletic Department Act 810 Compliant?</h3>
+          <p className="text-gray-600 text-base mb-8 leading-relaxed font-medium">
+            Federal NIL shifts and Louisiana's new Act 810 mandate strict compliance regarding minor consent and LHSAA amateur status. Don't leave your program's eligibility to chance.
+          </p>
+          <button className="w-full bg-black text-white py-4 text-sm font-black tracking-wide uppercase border border-black hover:bg-transparent hover:text-red-600 hover:border-red-600 hover:shadow-[0_0_25px_rgba(239,68,68,0.6)] transition-all duration-300">
+            ▶ Host a Sports IP & NIL Compliance Clinic
           </button>
         </div>
-
-        {/* Path B */}
-        <div id="clinics" className="bg-gray-900 border border-gray-800 p-10 hover:border-yellow-500 transition flex flex-col justify-between relative overflow-hidden">
-          <div className="absolute top-0 right-0 bg-yellow-500 text-black text-[10px] font-bold px-3 py-1 uppercase tracking-wider rounded-bl-lg">B2B Priority</div>
-          <div>
-            <h3 className="text-2xl font-bold mb-4">Sports IP Clinics</h3>
-            <p className="text-gray-400 text-sm mb-6 leading-relaxed">For High Schools, Athletic Directors, and Travel Clubs.</p>
-            <ul className="text-sm text-gray-300 space-y-4 mb-8">
-              <li className="flex gap-2"><span>✓</span> Louisiana Act 810 Compliance</li>
-              <li className="flex gap-2"><span>✓</span> LHSAA amateur status protection</li>
-              <li className="flex gap-2"><span>✓</span> Sports music licensing & DMCA audits</li>
-            </ul>
-          </div>
-          <button className="w-full bg-[#F59E0B] text-black py-3.5 text-sm font-semibold hover:bg-yellow-400 transition">
-            Host a Clinic
-          </button>
-        </div>
-
-        {/* Path C */}
-        <div id="ventures" className="bg-gradient-to-b from-gray-900 to-black border border-gray-800 p-10 hover:border-blue-500 transition flex flex-col justify-between">
-          <div>
-            <h3 className="text-2xl font-bold mb-4 text-white">Ventures</h3>
-            <p className="text-gray-400 text-sm mb-6 leading-relaxed">Flagship Case Study: FlightTime Athletics LLC.</p>
-            <ul className="text-sm text-gray-300 space-y-4 mb-8">
-              <li className="flex gap-2"><span>✓</span> Standardized Combine Testing (40-yd dash, 5-10-5 agility, vertical jump)</li>
-              <li className="flex gap-2"><span>✓</span> AI-driven athlete metric tracking</li>
-              <li className="flex gap-2"><span>✓</span> Invitational "Flight Night" showcases</li>
-            </ul>
-          </div>
-          <Link href="https://www.flighttimeathleticsllc.com" target="_blank" className="block text-center w-full bg-blue-600 text-white py-3.5 text-sm font-semibold hover:bg-blue-500 transition">
-            Explore FlightTime Academy →
-          </Link>
-        </div>
-{/* Authority & Proof Strip Component */}
-<div className="w-full max-w-5xl mx-auto mt-12 mb-16 px-4">
-  <p className="text-center text-xs font-semibold text-gray-500 uppercase tracking-widest mb-6">
-    Recognized & Credentialed By
-  </p>
-  
-  <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4">
-    {/* Badge 1: LED */}
-    <div className="flex items-center px-4 py-2 border border-gray-800 rounded-full bg-[#0B0F19] hover:border-[#F59E0B] transition-colors duration-300 cursor-default">
-      <span className="text-xs font-medium text-gray-300 tracking-wide">
-        Official Louisiana Storyteller (LED)
-      </span>
-    </div>
-
-    {/* Badge 2: FlightTime Athletics CBO */}
-    <div className="flex items-center px-4 py-2 border border-gray-800 rounded-full bg-[#0B0F19] hover:border-[#2563EB] transition-colors duration-300 cursor-default">
-      <span className="text-xs font-medium text-gray-300 tracking-wide">
-        Chief Brand Officer, FlightTime Athletics LLC
-      </span>
-    </div>
-
-    {/* Badge 3: M.S. Candidate */}
-    <div className="flex items-center px-4 py-2 border border-gray-800 rounded-full bg-[#0B0F19] hover:border-gray-400 transition-colors duration-300 cursor-default">
-      <span className="text-xs font-medium text-gray-300 tracking-wide">
-        M.S. Entertainment Business Candidate
-      </span>
-    </div>
-
-    {/* Badge 4: B.S. Degree */}
-    <div className="flex items-center px-4 py-2 border border-gray-800 rounded-full bg-[#0B0F19] hover:border-gray-400 transition-colors duration-300 cursor-default">
-      <span className="text-xs font-medium text-gray-300 tracking-wide">
-        B.S. Music Business
-      </span>
-    </div>
-
-    {/* Badge 5: Coach of the Year */}
-    <div className="flex items-center px-4 py-2 border border-gray-800 rounded-full bg-[#0B0F19] hover:border-gray-400 transition-colors duration-300 cursor-default">
-      <span className="text-xs font-medium text-gray-300 tracking-wide">
-        Acadiana Coach of the Year
-      </span>
-    </div>
-  </div>
-</div>
+      </section>
+    </main>
+  );
+}
       </section>
 
       {/* Mandatory Legal Footer */}
