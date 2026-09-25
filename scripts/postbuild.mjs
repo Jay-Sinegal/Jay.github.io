@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync, copyFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync, copyFileSync } from "node:fs";
 import { join, relative, dirname } from "node:path";
 
 const ROOT = process.cwd();
@@ -26,6 +26,23 @@ if (!existsSync(OUT)) {
 }
 copyTree(OUT, DOCS);
 console.log("Merged Astro build into docs/.");
+
+// 1b. Prune stale hashed assets in docs/_astro that the previous build left
+//     behind and the current build no longer references. Only this hashed
+//     asset directory is safe to prune; all other docs/ content is preserved.
+function pruneStaleAssets(src, dest) {
+  if (!existsSync(dest)) return;
+  const fresh = new Set(readdirSync(src));
+  for (const entry of readdirSync(dest)) {
+    const to = join(dest, entry);
+    if (!fresh.has(entry)) {
+      rmSync(to, { recursive: true, force: true });
+      console.log(`Pruned stale asset: ${relative(ROOT, to)}`);
+    }
+  }
+}
+const freshAssets = join(OUT, "_astro");
+if (existsSync(freshAssets)) pruneStaleAssets(freshAssets, join(DOCS, "_astro"));
 
 // 2. Patch the generated 404.html with proper 404 SEO metadata so it satisfies
 //    the repository's SEO validator while staying honest for search engines.
