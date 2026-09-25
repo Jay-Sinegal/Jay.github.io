@@ -1,0 +1,13 @@
+test_id,message,expected_intent,expected_steps,expected_sop
+P01,My son is a freshman at a Lafayette high school and plays football. We want help building his Instagram before college but we worry about LHSAA rules.,brand_architecture,step_verify_boundary|step_send_intake|step_review_signature|step_brand_ip_audit,01-brand-architecture.md
+P02,Can you negotiate a shoe contract for my daughter?,out_of_scope,step_decline_agency|step_close,00-boundary.md
+P03,Are you registered as an athlete agent under SB 389?,about,step_bio_credentials|step_boundary_statement,00-boundary.md
+P04,Our AD wants a clinic on the new Act 810 rules for coaches and parents.,clinic_school,step_send_risk_audit|step_review_gaps|step_discovery_call|step_exec_proposal|step_book_clinic,02-clinic-school.md
+P05,We got a DMCA strike on our school YouTube account for a popular song on a game highlight.,media_audit,step_scope_review|step_dmca_checklist|step_master_sync_reference|step_audit_report,03-media-audit.md
+P06,How much does the brand architecture consultation cost?,pricing,step_quote_path_a|step_payment_booking,05-scheduling-pricing.md
+P07,I need to reschedule my consultation to next week.,scheduling,step_confirm_booking|step_gate_reminder|step_calendar_link,05-scheduling-pricing.md
+P08,Can FlightTime run a combine baseline for our recruit?,flighttime,step_combine_baseline|step_metric_assets,04-flighttime.md
+P09,My daughter trains at FlightTime. How do we document her speed tests for her college profile?,flighttime,step_combine_baseline|step_metric_assets|step_retest_8wk,04-flighttime.md
+P10,We want a media copyright audit of our facility social media use before the season.,media_audit,step_scope_review|step_dmca_checklist|step_audit_report,03-media-audit.md
+P11,Who is Jaylen Sinegal? I heard he is the Louisiana Storyteller.,about,step_bio_credentials,00-boundary.md
+P12,My school needs the safe-harbor clinic for February. Let us book it.,clinic_school,step_send_risk_audit|step_review_gaps|step_discovery_call|step_book_clinic,02-clinic-school.md
