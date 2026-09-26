@@ -31,7 +31,7 @@ consulting-hub/
 - **Consultation form**: Formspree (`src/components/LeadEngine.astro` → `https://formspree.io/f/xeaqkdgv`), owned by `jaylensinegal@yahoo.com`. No persistent CRM.
 - **Resource capture**: Google Apps Script web app (`automation/build_hub.js` -
   `doPost(e)`), wired in `src/layouts/Base.astro` via `RESOURCE_CAPTURE_URL` to
-  `https://script.google.com/macros/s/AKfycbyWitBgV8WbjjprP11CiKdvkyHA0CPsOrK9utuJaiQGlZvhf0ipiSg-GOgwTuu59dpb/exec`.
+  `https://script.google.com/macros/s/AKfycbwh3ITqEDFVHBJRtQ5zztduM04DncUL6XzaCKNkiMtbwiRswYdG252oC6pz63OsY2TM/exec`.
   LIVE. Every PDF download now collects an email and appends a row to the
   configured sheet (`ResourceDownloads` tab; target set with
   `setDownloadsSpreadsheetId(...)`).

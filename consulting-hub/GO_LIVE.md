@@ -68,7 +68,7 @@ call before the gate is met.
 Edit `src/data/site.ts` and paste the schedule URL:
 
 ```ts
-export const RESOURCE_CAPTURE_URL = "https://script.google.com/macros/s/AKfycbyWitBgV8WbjjprP11CiKdvkyHA0CPsOrK9utuJaiQGlZvhf0ipiSg-GOgwTuu59dpb/exec"; // live
+export const RESOURCE_CAPTURE_URL = "https://script.google.com/macros/s/AKfycbwh3ITqEDFVHBJRtQ5zztduM04DncUL6XzaCKNkiMtbwiRswYdG252oC6pz63OsY2TM/exec"; // live
 
 export const SCHEDULING = {
   pathA: "https://calendar.google.com/calendar/appointments/schedules/YOUR_ID",

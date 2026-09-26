@@ -1,6 +1,5 @@
 ---
 import Icons from "./Icons.astro";
-import ShinyButton from "./ShinyButton.astro";
 
 const KEYNOTES = [
   {
@@ -85,9 +84,24 @@ const KEYNOTES = [
         strategy and perspective, not legal advice.
       </p>
       <div class="flex shrink-0 flex-col gap-3 sm:flex-row">
-        <ShinyButton href="/resources/executive-speaker-one-sheet/" className="px-6 py-3 text-xs">
+        <a
+          href="mailto:jaylensinegal@yahoo.com?subject=Speaker%20one-sheet%20request&body=Please%20send%20the%20Executive%20Speaker%20One-Sheet.%0A%0AName%3A%0AOrganization%3A"
+          data-download-event
+          data-file-name="executive-speaker-one-sheet.pdf"
+          class="inline-flex items-center justify-center gap-2 rounded-sm border border-neutral-300 bg-white px-6 py-3 text-xs font-black uppercase tracking-wide text-black transition hover:border-electricBlue"
+        >
           Speaker one-sheet (PDF)
-        </ShinyButton>
+          <Icons name="mail" className="h-4 w-4" />
+        </a>
+        <a
+          href="mailto:jaylensinegal@yahoo.com?subject=Media%20kit%20request&body=Please%20send%20the%20media%20kit%20and%20press%20one-pager.%0A%0AName%3A%0AOrganization%3A"
+          data-download-event
+          data-file-name="media-kit-press-one-pager.pdf"
+          class="inline-flex items-center justify-center gap-2 rounded-sm border border-neutral-300 bg-white px-6 py-3 text-xs font-black uppercase tracking-wide text-black transition hover:border-electricBlue"
+        >
+          Media kit (PDF)
+          <Icons name="mail" className="h-4 w-4" />
+        </a>
         <a
           href="/#contact"
           class="inline-flex items-center justify-center gap-2 rounded-sm bg-black px-6 py-3 text-xs font-black uppercase tracking-wide text-white transition hover:bg-neutral-800"

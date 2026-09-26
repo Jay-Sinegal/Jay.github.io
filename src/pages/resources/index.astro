@@ -52,7 +52,7 @@ const categories = [...new Set((resources as { category: string }[]).map((r) => 
                         </span>
                         <h3 class="mt-4 text-lg font-black text-black">{r.title}</h3>
                         <p class="mt-2 text-sm font-medium leading-relaxed text-neutral-600">{r.tagline}</p>
-                        <DownloadGate pdf={r.pdf} title={r.title} slug={r.slug} gated={r.slug === "executive-speaker-one-sheet"} gatedLabel="Request the one-sheet" />
+                        <DownloadGate pdf={r.pdf} title={r.title} slug={r.slug} />
                       </div>
                     </article>
                   ))}

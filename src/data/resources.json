@@ -52,41 +52,6 @@
     "pdf": "master-vs-sync-neighboring-rights.pdf"
   },
   {
-    "slug": "first-production-deal-template",
-    "title": "What to Record Before Your First Production Deal",
-    "tagline": "A template for producers, artists, and families entering a first production agreement.",
-    "category": "Music & IP",
-    "audience": "Producers and artists",
-    "description": "A structured template for documenting the essentials of a first production deal: scope, credit, ownership, payments, and delivery.",
-    "intro": "The most common creative-production disputes start with what nobody wrote down. Before work begins, producers and artists should agree on scope, credit, ownership, payment, and delivery - in writing. This template keeps the conversation to one page and makes the next session productive.",
-    "bullets": [
-      "Parties: legal names, not stage names or handles",
-      "Scope: recordings or beats, deliverables, and how many revisions are included",
-      "Credit: how each side is credited in titles, metadata, and social posts",
-      "Ownership: who owns the master and the underlying composition rights",
-      "Payment: amounts, timing, and what event triggers each payment",
-      "Delivery: file formats, stems, masters, and deadlines"
-    ],
-    "pdf": "first-production-deal-template.pdf"
-  },
-  {
-    "slug": "should-families-brand-kids-early",
-    "title": "Should Families Brand Kids Early?",
-    "tagline": "The one-page version of a longer essay.",
-    "category": "Families & Athletes",
-    "audience": "Parents and guardians",
-    "description": "A short decision aid for families weighing early sports branding: what to build, what to skip, and who controls the account.",
-    "intro": "Branding a young athlete early is not inherently good or bad. It is a decision about control, records, and consent. This one-pager gives families a simple lens: build evidence, not hype, and keep the family in control of every account and asset.",
-    "bullets": [
-      "Build documentation of results - times, tests, highlights - before chasing followers",
-      "Keep account ownership and passwords with the parent or guardian",
-      "Put written consent in place before posting minors (see the Act 810 checklist)",
-      "Avoid 'manager' or 'agent' labels unless someone is genuinely registered and licensed for that role",
-      "Read the longer essay on the blog: Should Families Brand Kids Early?"
-    ],
-    "pdf": "should-families-brand-kids-early.pdf"
-  },
-  {
     "slug": "sample-brand-ip-audit",
     "title": "Sample Brand & IP Audit: Redacted Findings",
     "tagline": "What families and schools receive - a redacted sample of the audit deliverable.",
@@ -102,61 +67,7 @@
     ],
     "pdf": "sample-brand-ip-audit.pdf"
   },
-  {
-    "slug": "podcast-episode-one-sheet",
-    "title": "Podcast Episode One-Sheet Template",
-    "tagline": "A sponsor-ready one-pager for every episode.",
-    "category": "Pro Studio",
-    "audience": "Hosts, guests, and sponsors",
-    "description": "A template for pitching podcast episodes and sponsorships: show context, guest value, audience, and what a sponsor receives.",
-    "intro": "A one-sheet is the fastest way to explain a podcast episode to a potential sponsor or guest. This template keeps it to one page: who, why, for whom, and what they get from joining.",
-    "bullets": [
-      "Episode title, format, and run time",
-      "Guest or topic value in two sentences",
-      "Audience snapshot and why it matters to a sponsor",
-      "Sponsor deliverables: mentions, credits, social, and air dates",
-      "One contact route so every inquiry lands in the same place"
-    ],
-    "pdf": "podcast-episode-one-sheet.pdf"
-  },
-  {
-    "slug": "media-ip-glossary",
-    "title": "Brand, Music & NIL Glossary",
-    "tagline": "Plain-English definitions for the terms people throw around.",
-    "category": "Reference",
-    "audience": "Everyone",
-    "description": "Plain-English definitions for brand, music, NIL, and media IP terms used across jaylensinegal.com: sync, master, Act 810, fair use, and more.",
-    "intro": "Terms like sync, master, NIL, and fair use get tossed around quickly. This glossary keeps a plain-English reference for families, schools, and creators. It is an educational aid, not a set of legal definitions.",
-    "bullets": [
-      "NIL: name, image, and likeness - the rights tied to a person's identity in commercial use",
-      "Act 810: Louisiana's state law framework for NIL consent",
-      "Master: the sound recording file and who owns it",
-      "Sync license: permission to pair a song with moving images",
-      "Neighboring rights: performance royalties tied to a recording",
-      "Fair use: a limited defense for using copyrighted material; it is not a blanket permission",
-      "DMCA: the US statute that provides safe-harbor workflows for online content",
-      "Hudl: a sports media platform; check its terms before assuming you own your highlights",
-      "Platform lock-in: losing control of your content because the platform keeps it"
-    ],
-    "pdf": "media-ip-glossary.pdf"
-  },
-  {
-    "slug": "media-kit-press-one-pager",
-    "title": "Media Kit & Press One-Pager",
-    "tagline": "Background for podcast hosts, sponsors, and press.",
-    "category": "About",
-    "audience": "Hosts and press",
-    "description": "A one-page backgrounder on Jaylen Sinegal for podcast hosts, sponsors, and press: positioning, focus areas, and the education-not-representation boundary.",
-    "intro": "For podcast hosts and sponsors weighing a collaboration, a one-pager answers the basics fast: who, positioning, focus areas, and how to connect. It also spells out the boundary so there is no confusion about the role.",
-    "bullets": [
-      "Positioning: executive brand strategist and media IP consultant",
-      "Focus: athlete brand architecture, NIL and music licensing education, media copyright audits",
-      "Background: Louisiana-born, Full Sail University music business education, Chief Brand Officer at FlightTime Athletics",
-      "Boundary: education and consulting only - not athlete representation"
-    ],
-    "pdf": "media-kit-press-one-pager.pdf"
-  },
-  {
+{
     "slug": "find-a-producer-launch-flyer",
     "title": "Find a Producer: Launch Flyer",
     "tagline": "A one-page flyer for the upcoming producer directory.",
@@ -171,20 +82,5 @@
       "Join the free interest list from any page: the contact form at the bottom of the home page"
     ],
     "pdf": "find-a-producer-launch-flyer.pdf"
-  },
-  {
-    "slug": "executive-speaker-one-sheet",
-    "title": "Executive Speaker One-Sheet",
-    "tagline": "Three signature keynotes for corporate, sports, and education stages.",
-    "category": "About",
-    "audience": "Event planners, conference organizers, and press",
-    "description": "A printable one-page speaker brief covering Jaylen Sinegal's three signature keynotes: brand memory, the athlete IP ecosystem, and systems-driven leadership.",
-    "intro": "For conference organizers, chambers, athletic departments, and podcasts weighing a booking: this one-pager answers who, why, and what each talk delivers in a single page. It also spells out the boundary so there is no confusion about the role.",
-    "bullets": [
-      "Three keynote titles with subtitles, target audiences, and two-line summaries",
-      "Positioning: executive brand strategist and media IP consultant from Louisiana",
-      "Boundary: stage content is education and brand strategy - not athlete representation"
-    ],
-    "pdf": "executive-speaker-one-sheet.pdf"
   }
 ]
