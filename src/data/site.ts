@@ -7,12 +7,10 @@ export const SITE = {
 export const NAV_LINKS = [
   { label: "About", href: "/#about" },
   { label: "Athlete Advisory", href: "/#advisory" },
-  { label: "Institutional Ed.", href: "/#clinics" },
-  { label: "Speaking & Strategy", href: "/#speaking" },
-  { label: "Performance", href: "/#ventures" },
+  { label: "For Schools", href: "/#clinics" },
+  { label: "Speaking", href: "/#speaking" },
   { label: "Resources", href: "/resources/" },
   { label: "Blog", href: "/blog/" },
-  { label: "Contact", href: "/#contact" },
 ];
 
 export const FLIGHTTIME_URL = "https://www.flighttimeathleticsllc.com";
