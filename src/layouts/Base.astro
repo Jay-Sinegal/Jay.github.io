@@ -117,6 +117,14 @@ const fullCanonical = canonical.startsWith("http") ? canonical : `${host}${canon
 
         function done() {
           swap("Check your inbox - downloading now.");
+          try {
+            if (typeof window.gtag === "function") {
+              window.gtag("event", "file_download", {
+                file_name: form.getAttribute("data-resource-pdf") || "",
+                file_extension: "pdf",
+              });
+            }
+          } catch (err) {}
           triggerDownload();
         }
 
@@ -141,6 +149,20 @@ const fullCanonical = canonical.startsWith("http") ? canonical : `${host}${canon
         } else {
           done();
         }
+      });
+
+      document.addEventListener("click", function (clickEvent) {
+        var el = clickEvent.target && clickEvent.target.closest
+          ? clickEvent.target.closest("[data-download-event]")
+          : null;
+        if (!el || typeof window.gtag !== "function") return;
+        try {
+          var file = el.getAttribute("data-file-name") || "";
+          window.gtag("event", "file_download", {
+            file_name: file,
+            file_extension: (file.split(".").pop() || "").toLowerCase(),
+          });
+        } catch (err) {}
       });
     </script>
   </body>

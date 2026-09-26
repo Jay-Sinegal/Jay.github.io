@@ -99,6 +99,21 @@ const OBJECTIVES = [
           </select>
         </div>
 
+        <div class="flex flex-col gap-3 rounded-sm border border-neutral-200 bg-neutral-50 p-4 text-xs font-medium leading-relaxed text-neutral-700">
+          <label class="flex items-start gap-2">
+            <input type="checkbox" name="consent_non_attorney" value="agreed" required class="mt-0.5 h-4 w-4 shrink-0 accent-black" />
+            <span>I acknowledge that Jaylen Sinegal is an Executive Brand Strategist, not an attorney or licensed athlete agent (Louisiana SB 389). I understand services are strictly educational and do not include legal representation or contract procurement.</span>
+          </label>
+          <label class="flex items-start gap-2">
+            <input type="checkbox" name="consent_parent_guardian_810" value="agreed" class="mt-0.5 h-4 w-4 shrink-0 accent-black" />
+            <span>(If participant is under 18) As parent or legal guardian, I give express written consent for brand advisory consultation in compliance with Louisiana Act 810 minor NIL regulations.</span>
+          </label>
+          <label class="flex items-start gap-2">
+            <input type="checkbox" name="consent_data_ots" value="agreed" required class="mt-0.5 h-4 w-4 shrink-0 accent-black" />
+            <span>I acknowledge that all student-athlete data is handled confidentially and evaluated with direct human oversight, adhering to Louisiana OTS ethical data standards.</span>
+          </label>
+        </div>
+
         <button
           type="submit"
           class="inline-flex items-center justify-center gap-2 rounded-sm border border-black bg-black px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition-all duration-300 hover:bg-transparent hover:text-neonRed hover:shadow-[0_0_25px_rgba(239,68,68,0.6)]"

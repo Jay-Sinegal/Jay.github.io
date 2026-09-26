@@ -59,7 +59,7 @@ const blockLink = "pointer-events-auto relative z-10 mt-4 inline-flex w-full ite
     </form>
   ) : gated ? (
     <div class="pointer-events-auto relative z-10 mt-5">
-      <a href={requestHref} class={block ? blockLink : compactLink}>
+      <a href={requestHref} data-download-event data-file-name={pdf} class={block ? blockLink : compactLink}>
         {gatedLabel}
         <Icons name="mail" className="h-4 w-4" />
       </a>
@@ -72,6 +72,8 @@ const blockLink = "pointer-events-auto relative z-10 mt-4 inline-flex w-full ite
     <a
       href={fileUrl}
       download
+      data-download-event
+      data-file-name={pdf}
       class={block ? blockLink : compactLink}
     >
       {label}

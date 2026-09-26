@@ -25,6 +25,18 @@ consulting-hub/
     └── build_hub.js                # Google Apps Script: one-click builder
 ```
 
+## Live tech stack (as-built, keep this accurate)
+
+- **Site**: Astro 7 static build → GitHub Pages (`docs/`).
+- **Consultation form**: Formspree (`src/components/LeadEngine.astro` → `https://formspree.io/f/xeaqkdgv`), owned by `jaylensinegal@yahoo.com`. No persistent CRM.
+- **Resource capture**: Google Apps Script web app (`automation/build_hub.js` -
+  `doPost(e)`), wired in `src/layouts/Base.astro` via `RESOURCE_CAPTURE_URL`.
+  Currently **empty / not deployed** until Step 7 in `GO_LIVE.md`.
+- **Analytics**: Google Analytics only.
+- **Inquiries / gated one-sheet**: `mailto:` handoffs (no form backend).
+- **CRM**: NONE. Future pipeline tooling (Gap 2 build-out) starts from a clean
+  slate - do not assume HubSpot or any vendor.
+
 ## Roles
 
 - **Path A**: 1-on-1 counseling for athletes and families. Education and media

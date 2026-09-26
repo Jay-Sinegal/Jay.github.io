@@ -115,6 +115,20 @@ The resource library already POSTs to `RESOURCE_CAPTURE_URL` when it is set
    `DOWNLOAD_LEADS > ResourceDownloads`. Until you paste the URL, downloads
    stay direct with no gate, so nothing breaks if you skip this step.
 
+### Use an existing spreadsheet instead (optional)
+
+Rows default to a new `DOWNLOAD_LEADS` sheet created by `createHub`. To land
+them in a spreadsheet you already created (e.g. the
+`1Goy1jtWqivYsb9E8NvkMa9UxS0z3Oo1Yo8jTSWKoGx8` one you identified), run once in
+the Apps Script editor:
+
+```js
+setDownloadsSpreadsheetId("1Goy1jtWqivYsb9E8NvkMa9UxS0z3Oo1Yo8jTSWKoGx8");
+```
+
+It points the web app at that sheet (a `ResourceDownloads` tab is created on
+first POST). Verify after a test download that a row lands there.
+
 ## Guardrails to keep
 
 - The subfolder is created automatically; the GATE is your decision. Never take

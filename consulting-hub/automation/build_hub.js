@@ -214,6 +214,19 @@ function resourceLeadsSheet() {
   return sheet;
 }
 
+/**
+ * Optional: send download rows to a specific existing spreadsheet instead of a
+ * new DOWNLOAD_LEADS sheet. Run in the Apps Script editor:
+ *   setDownloadsSpreadsheetId("1Goy1jt...")   // paste any drive sheet id
+ * Use the id of the sheet from GO_LIVE.md Step 7 if you already created one.
+ */
+function setDownloadsSpreadsheetId(id) {
+  if (!id) throw new Error("id required");
+  var ss = SpreadsheetApp.openById(id);
+  PROPS.setProperty(KEY_DOWNLOADS, ss.getId());
+  return ss.getUrl();
+}
+
 function doPost(e) {
   try {
     var body = JSON.parse(e.postData.contents || "{}");
