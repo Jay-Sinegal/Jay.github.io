@@ -97,10 +97,11 @@ const CONTACT_IDS: Record<string, string> = {
 
 const TRACKS = PATHS.map((path) => {
   const booking = BOOKING_BY_ID[path.id] ?? "";
+  const isMailTo = typeof booking === "string" && booking.startsWith("mailto:");
   return {
     ...path,
     href: booking || path.cta.href,
-    openNewTab: Boolean(booking) || Boolean(path.cta.external),
+    openNewTab: Boolean(booking) && !isMailTo || Boolean(path.cta.external),
     redHover: Boolean(path.cta.external),
   };
 });

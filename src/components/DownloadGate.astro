@@ -1,6 +1,6 @@
 ---
 import Icons from "./Icons.astro";
-import { RESOURCE_CAPTURE_URL } from "../data/site";
+import { CONTACT_EMAIL, RESOURCE_CAPTURE_URL } from "../data/site";
 
 interface Props {
   pdf: string;
@@ -8,11 +8,16 @@ interface Props {
   slug?: string;
   block?: boolean;
   label?: string;
+  gated?: boolean;
+  gatedLabel?: string;
 }
 
-const { pdf, title, slug = "", block = false, label = "Download" } = Astro.props as Props;
+const { pdf, title, slug = "", block = false, label = "Download", gated = false, gatedLabel = "Request a copy" } = Astro.props as Props;
 const captureActive = Boolean(RESOURCE_CAPTURE_URL);
 const fileUrl = `/downloads/${pdf}`;
+const requestHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("" + title + " request")}&body=${encodeURIComponent(
+  "Please send a copy.\n\nName:\nSchool / Organization:",
+)}`;
 
 const compactLink = "pointer-events-auto relative z-10 mt-5 inline-flex items-center gap-2 text-sm font-black uppercase tracking-wide text-electricBlue transition group-hover:text-black";
 const blockLink = "pointer-events-auto relative z-10 mt-4 inline-flex w-full items-center justify-center gap-2 rounded-sm bg-black px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition-all duration-300 hover:bg-neutral-800";
@@ -52,6 +57,17 @@ const blockLink = "pointer-events-auto relative z-10 mt-4 inline-flex w-full ite
         from anytime. Education only - not legal advice, not athlete representation.
       </p>
     </form>
+  ) : gated ? (
+    <div class="pointer-events-auto relative z-10 mt-5">
+      <a href={requestHref} class={block ? blockLink : compactLink}>
+        {gatedLabel}
+        <Icons name="mail" className="h-4 w-4" />
+      </a>
+      <p class="mt-3 text-[11px] font-medium leading-relaxed text-neutral-500">
+        Delivered by email on request - not an open download. Education only - not legal
+        advice, not athlete representation.
+      </p>
+    </div>
   ) : (
     <a
       href={fileUrl}

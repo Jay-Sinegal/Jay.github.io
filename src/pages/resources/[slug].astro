@@ -96,7 +96,7 @@ const creativeSchema = {
               <p class="text-xs font-black uppercase tracking-[0.2em] text-neutral-400">
                 Download the PDF
               </p>
-              <DownloadGate pdf={resource.pdf} title={resource.title} slug={resource.slug} block label="Save PDF" />
+              <DownloadGate pdf={resource.pdf} title={resource.title} slug={resource.slug} block label="Save PDF" gated={resource.slug === "executive-speaker-one-sheet"} gatedLabel="Request the one-sheet" />
               <p class="mt-4 text-xs font-semibold leading-relaxed text-neutral-500">
                 {resource.audience}
               </p>
