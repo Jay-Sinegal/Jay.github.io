@@ -1,0 +1,138 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import Icons from "../components/Icons.astro";
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://jaylensinegal.com/find-a-producer.html#webpage",
+  url: "https://jaylensinegal.com/find-a-producer.html",
+  name: "Find a Producer",
+  description:
+    "Producer discovery directory in pre-launch: free to browse for visitors, no active checkout, enrollment, profiles, or uploads, and no payments accepted.",
+  isPartOf: { "@id": "https://jaylensinegal.com/#website" },
+  about: ["Music producers", "Music production", "Producer directory"],
+  inLanguage: "en-US",
+};
+---
+
+<Base
+  title="Find a Producer | Pre-Launch Directory by Jaylen Sinegal"
+  description="Producer discovery directory in pre-launch. Visitors browse free at launch; producers can join a free interest list. No checkout, enrollment, or payments are active."
+  canonical="/find-a-producer.html"
+>
+  <Nav />
+  <main>
+    <section class="px-6 pb-24 pt-20">
+      <div class="container-page">
+        <div class="mx-auto max-w-3xl" data-hero-animate>
+          <p class="lead-label text-electricBlue">Producer discovery · In pre-launch</p>
+          <h1 class="mt-3 text-4xl font-black tracking-tight text-black sm:text-5xl">
+            Find the sound. Meet the producer.
+          </h1>
+          <p class="mt-5 text-lg font-medium leading-relaxed text-neutral-600">
+            A public directory of music producers is planned, free for artists, companies,
+            filmmakers, content creators, sports organizations, and entertainment professionals to
+            browse. The directory is in pre-launch: no profiles, uploads, checkout, membership, or
+            payments are active today.
+          </p>
+          <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+            <a
+              href="/#contact"
+              class="inline-flex items-center justify-center gap-2 rounded-sm border border-black bg-black px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition-all duration-300 hover:bg-transparent hover:text-black hover:shadow-[0_0_25px_rgba(37,99,235,0.4)]"
+            >
+              Join the free interest list
+              <Icons name="arrow-right" />
+            </a>
+            <a
+              href="/resources/find-a-producer-launch-flyer/"
+              class="inline-flex items-center justify-center gap-2 rounded-sm border border-neutral-300 bg-white px-6 py-4 text-sm font-black uppercase tracking-wide text-black transition-all duration-300 hover:border-electricBlue hover:text-electricBlue hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]"
+            >
+              Launch flyer (PDF)
+              <Icons name="arrow-up-right" />
+            </a>
+          </div>
+        </div>
+
+        <div class="mx-auto mt-16 grid max-w-4xl gap-6 md:grid-cols-3" data-reveal-group>
+          <div class="rounded-sm border border-neutral-200 bg-white p-6">
+            <span class="inline-flex items-center gap-1.5 rounded-sm px-2.5 py-1 text-[10px] font-black tracking-[0.18em] bg-electricBlue/10 text-electricBlue">
+              <Icons name="building" className="h-3.5 w-3.5" />
+              VISITORS
+            </span>
+            <h2 class="mt-4 text-lg font-black text-black">Browse free at launch</h2>
+            <p class="mt-2 text-sm font-medium leading-relaxed text-neutral-600">
+              Visitors will never be charged to search the directory, view a profile, follow an
+              external music link, or contact a listed producer directly.
+            </p>
+          </div>
+          <div class="rounded-sm border border-neutral-200 bg-white p-6">
+            <span class="inline-flex items-center gap-1.5 rounded-sm px-2.5 py-1 text-[10px] font-black tracking-[0.18em] bg-neonRed/10 text-neonRed">
+              <Icons name="file-badge" className="h-3.5 w-3.5" />
+              PRODUCERS
+            </span>
+            <h2 class="mt-4 text-lg font-black text-black">Optional listing, later</h2>
+            <p class="mt-2 text-sm font-medium leading-relaxed text-neutral-600">
+              A paid promotional listing for producers is planned, with membership terms, pricing,
+              and renewal disclosures announced only after the governing documents pass attorney
+              review. Joining the interest list is free and nonbinding and creates no membership,
+              reservation, profile, or payment.
+            </p>
+          </div>
+          <div class="rounded-sm border border-neutral-200 bg-white p-6">
+            <span class="inline-flex items-center gap-1.5 rounded-sm px-2.5 py-1 text-[10px] font-black tracking-[0.18em] bg-black text-white">
+              <Icons name="check-circle" className="h-3.5 w-3.5" />
+              BOUNDARIES
+            </span>
+            <h2 class="mt-4 text-lg font-black text-black">The music stays with the producer</h2>
+            <p class="mt-2 text-sm font-medium leading-relaxed text-neutral-600">
+              Jaylen Sinegal does not own, investigate, verify, sell, license, represent, or
+              guarantee any music displayed or linked through the directory. Producers remain
+              solely responsible for their content and conduct every licensing transaction.
+            </p>
+          </div>
+        </div>
+
+        <div class="mx-auto mt-14 max-w-4xl rounded-sm border-2 border-neutral-100 bg-white p-8 sm:p-10" data-reveal>
+          <p class="lead-label text-electricBlue">Planned operating model</p>
+          <ol class="mt-6 grid gap-3 sm:grid-cols-2">
+            {
+              [
+                "Producers create and maintain their own profiles at launch",
+                "Profiles carry only external links or authorized embeds",
+                "BeatStars, Airbit, SoundCloud, Audiomack, YouTube, or a producer-owned site hosts the music",
+                "Visitors contact producers directly through producer-controlled destinations",
+                "Producers independently negotiate every license and sale",
+                "Producers receive 100% of their outside transaction proceeds",
+                "Disputed material or profiles may be suspended or removed when appropriate",
+                "Jaylen Sinegal never represents, verifies, sells, or licenses the music",
+              ].map((line) => (
+                <li class="flex items-start gap-2.5 text-sm font-semibold leading-relaxed text-neutral-700">
+                  <Icons name="check-circle" className="mt-0.5 h-4 w-4 shrink-0 text-electricBlue" />
+                  {line}
+                </li>
+              ))
+            }
+          </ol>
+          <p class="mt-6 text-sm font-semibold leading-relaxed text-neutral-600">
+            No checkout, producer enrollment, content submission, profiles, or recurring billing
+            will activate until counsel approves the membership agreement, website terms, privacy
+            policy, cancellation and refund terms, and copyright/DMCA procedure.
+          </p>
+        </div>
+
+        <div class="mx-auto mt-10 flex max-w-4xl items-start gap-3 rounded-sm border border-neutral-200 bg-neutral-50 p-6" data-reveal>
+          <Icons name="shield-check" className="mt-0.5 h-5 w-5 shrink-0 text-neonRed" />
+          <p class="text-sm font-medium leading-relaxed text-neutral-700">
+            This page is a directory-in-progress plan, not legal advice. Users are responsible for
+            confirming ownership, availability, and licensing rights before using any music.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+  <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+</Base>

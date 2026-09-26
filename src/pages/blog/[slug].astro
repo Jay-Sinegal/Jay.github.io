@@ -1,0 +1,85 @@
+---
+import Base from "../../layouts/Base.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import Icons from "../../components/Icons.astro";
+import { ARTICLES } from "../../data/articles";
+import { ARTICLE_BODIES } from "../../data/article-bodies";
+import "../../styles/blog-article.css";
+
+export function getStaticPaths() {
+  return ARTICLES.map((article) => ({ params: { slug: article.slug }, props: { article } }));
+}
+
+const { article } = Astro.props;
+const body = ARTICLE_BODIES[article.slug] ?? "";
+
+const title = article.shortTitle ?? article.title;
+const raw = article.dek.trim();
+const description = raw.length > 158 ? `${raw.slice(0, 155).trim()}...` : raw;
+const url = `https://jaylensinegal.com/blog/${article.slug}.html`;
+
+const blogPostSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": `${url}#article`,
+  headline: article.title,
+  description,
+  image: "https://jaylensinegal.com/louisiana-storyteller.jpg",
+  author: {
+    "@type": "Person",
+    "@id": "https://jaylensinegal.com/#person",
+    name: "Jaylen Sinegal",
+    url: "https://jaylensinegal.com/",
+  },
+  publisher: {
+    "@type": "Person",
+    "@id": "https://jaylensinegal.com/#person",
+    name: "Jaylen Sinegal",
+    url: "https://jaylensinegal.com/",
+  },
+  datePublished: article.date,
+  dateModified: article.date,
+  mainEntityOfPage: { "@type": "WebPage", "@id": url },
+  isPartOf: { "@type": "Blog", "@id": "https://jaylensinegal.com/blog/#blog", name: "Jaylen Sinegal Blog" },
+  articleSection: article.pillar,
+  inLanguage: "en-US",
+};
+---
+
+<Base
+  title={`${title} | Jaylen Sinegal`}
+  description={description}
+  canonical={`/blog/${article.slug}.html`}
+  ogType="article"
+  ogImage="https://jaylensinegal.com/louisiana-storyteller.jpg"
+  ogImageAlt="Jaylen Sinegal, executive brand strategist and Louisiana storyteller"
+>
+  <Nav />
+  <main class="pb-24 pt-20">
+    <div class="container-page">
+      <div class="mx-auto max-w-3xl" data-hero-animate>
+        <a
+          href="/blog/"
+          class="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-[0.18em] text-electricBlue transition hover:text-black"
+        >
+          <Icons name="arrow-left" className="h-3.5 w-3.5" />
+          Back to the blog
+        </a>
+        <p class="mt-8 lead-label text-electricBlue">{article.pillar}</p>
+        <h1 class="mt-3 text-4xl font-black tracking-tight text-black sm:text-5xl">
+          {article.title}
+        </h1>
+        <p class="mt-5 text-lg font-medium leading-relaxed text-neutral-600">{article.dek}</p>
+        <p class="mt-6 flex items-center gap-2 text-sm font-semibold text-neutral-500">
+          <Icons name="arrow-right" className="h-4 w-4 text-electricBlue" />
+          By Jaylen Sinegal · {article.dateLabel} · {article.read}
+        </p>
+      </div>
+
+      <div class="blog-article mt-12" set:html={body} />
+    </div>
+  </main>
+  <Footer />
+  <script type="application/ld+json" set:html={JSON.stringify(blogPostSchema)} />
+</Base>

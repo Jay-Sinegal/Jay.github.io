@@ -1,0 +1,318 @@
+/* Blog article prose — scoped to the migrated article bodies.
+   Rendered inside the Astro site chrome, so typography matches the new
+   design system instead of the retired legacy blog stylesheet. */
+
+.blog-article {
+  max-width: 46rem;
+  margin-inline: auto;
+  color: #2b2b30;
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+
+.blog-article > :first-child {
+  margin-top: 0;
+}
+
+.blog-article p {
+  margin: 0 0 1.4rem;
+}
+
+.blog-article a {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(37, 99, 235, 0.35);
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.blog-article a:hover {
+  color: #171717;
+}
+
+.blog-article h2 {
+  margin: 3.4rem 0 1.2rem;
+  padding-top: 1rem;
+  color: #0a0a0a;
+  font-size: clamp(1.55rem, 3vw, 2.05rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  position: relative;
+}
+
+.blog-article h2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 52px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2563eb, #d7b57a);
+}
+
+.blog-article h3 {
+  margin: 2.4rem 0 0.9rem;
+  color: #171717;
+  font-size: 1.28rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.blog-article h4 {
+  margin: 2rem 0 0.8rem;
+  color: #171717;
+  font-size: 1.08rem;
+  font-weight: 800;
+}
+
+.blog-article ul,
+.blog-article ol {
+  margin: 0 0 1.5rem 0;
+  padding-left: 1.35rem;
+  color: #3f3f46;
+}
+
+.blog-article li {
+  margin-bottom: 0.55rem;
+  padding-left: 0.25rem;
+  line-height: 1.7;
+}
+
+.blog-article ul li::marker {
+  color: #2563eb;
+}
+
+.blog-article ol li::marker {
+  color: #2563eb;
+  font-weight: 800;
+}
+
+.blog-article strong {
+  color: #111113;
+  font-weight: 800;
+}
+
+.blog-article em {
+  font-style: italic;
+}
+
+.blog-article figure {
+  margin: 2.4rem 0;
+}
+
+.blog-article figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+}
+
+.blog-article figcaption {
+  margin: 0.9rem auto 0;
+  color: #71717a;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.blog-article img {
+  max-width: 100%;
+  height: auto;
+}
+
+.blog-article blockquote {
+  margin: 2.2rem 0;
+  padding: 1.3rem 1.5rem;
+  border-left: 4px solid #2563eb;
+  border-radius: 0 10px 10px 0;
+  background: #eff6ff;
+  color: #111827;
+  font-weight: 600;
+}
+
+.blog-article blockquote.pull {
+  padding: 1.8rem 1.6rem;
+  border: 2px solid #e5e5e5;
+  border-left: none;
+  border-radius: 12px;
+  background: #fafafa;
+  color: #171717;
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.blog-article blockquote.pull::before {
+  content: "“";
+  display: block;
+  margin-bottom: 0.35rem;
+  color: #d7b57a;
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.blog-article table {
+  display: block;
+  width: 100%;
+  margin: 1.75rem 0;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.blog-article th,
+.blog-article td {
+  padding: 0.7rem 0.85rem;
+  border: 1px solid #e5e5e5;
+  text-align: left;
+  vertical-align: top;
+}
+
+.blog-article th {
+  background: #fafafa;
+  color: #171717;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.blog-article hr {
+  margin: 2.6rem 0;
+  border: 0;
+  border-top: 1px solid #e5e5e5;
+}
+
+.blog-article .note {
+  margin: 2.2rem 0;
+  padding: 1.3rem 1.5rem;
+  border: 1px solid #e7e5e4;
+  border-left: 4px solid #d97706;
+  border-radius: 0 12px 12px 0;
+  background: #fffbeb;
+  color: #78350f;
+  font-size: 0.95rem;
+}
+
+.blog-article .note p:last-child {
+  margin-bottom: 0;
+}
+
+.blog-article .meta {
+  color: #71717a;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.blog-article .field {
+  color: #2563eb;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.blog-article .story-bank {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 2.2rem 0;
+}
+
+.blog-article .story-card {
+  padding: 1.4rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 18px 40px rgba(18, 16, 15, 0.05);
+}
+
+.blog-article .story-card .who {
+  margin-bottom: 0.25rem;
+  color: #171717;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.blog-article .story-card p {
+  margin: 0;
+  color: #3f3f46;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.blog-article .story-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.blog-article .cta {
+  margin: 3.2rem 0 1rem;
+  padding: 2rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #171717, #2b2b30);
+  box-shadow: 0 28px 70px rgba(18, 16, 15, 0.18);
+  color: #fafafa;
+}
+
+.blog-article .cta p {
+  margin-bottom: 1.2rem;
+  color: #d4d4d8;
+}
+
+.blog-article .cta p:first-child {
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.blog-article .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+  padding: 0.85rem 1.4rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+  text-decoration-color: transparent;
+  box-shadow: 0 14px 34px rgba(37, 99, 235, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blog-article .btn:hover {
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 18px 40px rgba(37, 99, 235, 0.4);
+}
+
+@media (max-width: 640px) {
+  .blog-article {
+    font-size: 1rem;
+  }
+  .blog-article .story-bank {
+    grid-template-columns: 1fr;
+  }
+  .blog-article .story-card:last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+  .blog-article blockquote.pull {
+    padding-inline: 1.2rem;
+    font-size: 1.15rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blog-article a,
+  .blog-article .btn {
+    transition: none;
+  }
+}

@@ -1,6 +1,7 @@
 export type Article = {
   slug: string;
   title: string;
+  shortTitle?: string;
   date: string;
   dateLabel: string;
   read: string;
@@ -12,6 +13,7 @@ export const ARTICLES: Article[] = [
   {
     slug: "escaping-platform-lock-in-hudl-student-athlete-ip",
     title: "Escaping Platform Lock-In: What Hudl's Terms Mean for Student-Athlete IP",
+    shortTitle: "Hudl Terms & Student-Athlete IP: Escaping Platform Lock-In",
     date: "2026-09-25",
     dateLabel: "September 25, 2026",
     read: "10 min read",
@@ -21,6 +23,7 @@ export const ARTICLES: Article[] = [
   {
     slug: "how-to-get-started-as-a-college-student-athlete",
     title: "How to Get Started as a College Student-Athlete: A Step-by-Step Scholarship and Recruiting Checklist",
+    shortTitle: "How to Get Started as a College Student-Athlete",
     date: "2026-09-24",
     dateLabel: "September 24, 2026",
     read: "11 min read",
@@ -30,6 +33,7 @@ export const ARTICLES: Article[] = [
   {
     slug: "the-scholarship-is-not-the-strategy",
     title: "The Scholarship Is Not the Strategy: A Louisiana Student-Athlete's Guide to Finding College Opportunities",
+    shortTitle: "The Scholarship Is Not the Strategy",
     date: "2026-09-24",
     dateLabel: "September 24, 2026",
     read: "25 min read",
@@ -39,6 +43,7 @@ export const ARTICLES: Article[] = [
   {
     slug: "hbcu-college-athletics-louisiana-scholarships",
     title: "HBCU College Athletics in Louisiana: Recruiting, Scholarships, and the SWAC Advantage",
+    shortTitle: "HBCU Athletics in Louisiana: Recruiting & Scholarships",
     date: "2026-09-24",
     dateLabel: "September 24, 2026",
     read: "11 min read",
@@ -48,6 +53,7 @@ export const ARTICLES: Article[] = [
   {
     slug: "ragin-fc-louisiana-sports-brand",
     title: "Ragin FC Is More Than a Fight Night. It's a Louisiana Sports Brand.",
+    shortTitle: "Ragin FC Is a Louisiana Sports Brand",
     date: "2026-09-22",
     dateLabel: "September 22, 2026",
     read: "9 min read",
@@ -57,6 +63,7 @@ export const ARTICLES: Article[] = [
   {
     slug: "event-strategy-brand-experience",
     title: "I Don't Just Plan Events. I Build the System Behind Them.",
+    shortTitle: "I Don't Just Plan Events. I Build the System.",
     date: "2026-09-07",
     dateLabel: "September 7, 2026",
     read: "19 min read",
@@ -75,6 +82,7 @@ export const ARTICLES: Article[] = [
   {
     slug: "trump-executive-order-college-sports-nil",
     title: "Act 810, SB 389, and Trump's Executive Order: Louisiana High School NIL Compliance",
+    shortTitle: "Act 810 & SB 389: Louisiana High School NIL",
     date: "2026-09-07",
     dateLabel: "September 7, 2026",
     read: "10 min read",

@@ -18,6 +18,7 @@ const PATHS = [
     promise: "Control your narrative. I teach the family how.",
     bullets: [
       "Student-athlete digital profile audits across platforms and recruiting systems",
+      "Mandatory parental/guardian consent built into every engagement",
       "Recruitment highlight and brand story strategy",
       "Platform lock-in analysis, including Hudl terms",
       "Unified, family-controlled personal IP",
@@ -51,6 +52,7 @@ const PATHS = [
     ],
     deliverables: [
       "Compliance Risk Audit: a written report of your Act 810 / SB 389 gaps",
+      "A student-athlete workbook, parent guide, and coach checklist for the media team",
       "A music-clearance guide: master vs. sync and DMCA safe-harbor workflows for your media team",
       "A 2-hour clinic: delivered on your in-service, admin, or parent day",
       "A yearly refresh offer to keep the program current as rules change",
@@ -74,18 +76,24 @@ const PATHS = [
       "BlazePod reactive light training and Vital Tanks sled loading on the training floor",
       "Laser-timed combine testing: 40-yard dash, 5-10-5 agility, and vertical jump",
       "AI metric leaderboards for measurable progress",
-      'Invitational "Flight Night" walkout showcases',
+      "Invitational \"Flight Night\" walkout showcases (a seasonal, invite-only showcase - not a daily service)",
     ],
     deliverables: [
       "Standardized combine metrics: 40-yard dash, 5-10-5 agility, and vertical jump, tracked over time",
       "AI-powered leaderboards so progress is measurable, not just felt",
-      "Invitational Flight Night exposure events on the training floor",
+      "Flight Night as seasonal exposure programming, held on the training floor",
     ],
     cta: { label: "Visit FlightTime Athletics", href: FLIGHTTIME_URL, external: true },
   },
 ];
 
 const BOOKING_BY_ID: Record<string, string> = { advisory: SCHEDULING.pathA, clinics: SCHEDULING.pathB };
+
+const CONTACT_IDS: Record<string, string> = {
+  advisory: "contact-brand",
+  clinics: "contact-clinic",
+  ventures: "contact-flighttime",
+};
 
 const TRACKS = PATHS.map((path) => {
   const booking = BOOKING_BY_ID[path.id] ?? "";
@@ -114,11 +122,13 @@ const TRACKS = PATHS.map((path) => {
     <div class="mt-14 grid gap-6 lg:grid-cols-3" data-reveal-group>
       {
         TRACKS.map((path) => (
-          <article
-            id={path.id}
-            data-glow-card
-            class={`relative flex flex-col rounded-sm border border-neutral-200 bg-white p-8 transition-all duration-300 ${path.ring}`}
-          >
+          <Fragment>
+            <span id={CONTACT_IDS[path.id]} class="sr-only" aria-hidden="true"></span>
+            <article
+              id={path.id}
+              data-glow-card
+              class={`relative flex flex-col rounded-sm border border-neutral-200 bg-white p-8 transition-all duration-300 ${path.ring}`}
+            >
             <GlowEffect variant={path.glow} />
             <div class="flex items-center justify-between">
               <span class={`inline-flex items-center gap-1.5 rounded-sm px-2.5 py-1 text-[10px] font-black tracking-[0.18em] ${path.chip}`}>
@@ -177,7 +187,8 @@ const TRACKS = PATHS.map((path) => {
               {path.cta.label}
               <Icons name={path.openNewTab ? "arrow-up-right" : "arrow-right"} />
             </a>
-          </article>
+            </article>
+          </Fragment>
         ))
       }
     </div>
@@ -187,7 +198,8 @@ const TRACKS = PATHS.map((path) => {
         <Icons name="file-badge" className="h-4 w-4 text-neonRed" />
         Consulting, education, and media IP work only. Jaylen Sinegal builds the strategy;
         FlightTime Athletics operates the athlete-performance ecosystem. Jaylen is not a licensed
-        sports agent.
+        sports agent and is not an attorney; these services are educational and strategic, not
+        legal advice or athlete representation.
       </p>
       <ShinyButton href="/#contact" className="shrink-0 px-6 py-3 text-xs">Start the conversation</ShinyButton>
     </div>

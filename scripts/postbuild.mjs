@@ -54,11 +54,11 @@ if (existsSync(freshAssets)) {
   }
 }
 
-// 1c. FAQ and Privacy are Astro pages but must keep their legacy canonical
-//     URLs (/faq.html, /privacy.html). Astro emits them under directories
-//     (dist/faq/index.html), so flatten each back to the .html file that
-//     replaces the old hand-maintained page.
-for (const name of ["faq", "privacy"]) {
+// 1c. Several Astro pages must keep legacy canonical URLs ending in .html
+//     (/faq.html, /privacy.html, /find-a-producer.html, /blog/<slug>.html)
+//     while Astro emits them under directories (dist/faq/index.html). Flatten
+//     each back to the .html file that replaces the old hand-maintained page.
+for (const name of ["faq", "privacy", "find-a-producer"]) {
   const dirHtml = join(DOCS, name, "index.html");
   const flatHtml = join(DOCS, `${name}.html`);
   if (existsSync(dirHtml)) {
@@ -66,6 +66,22 @@ for (const name of ["faq", "privacy"]) {
     copyFileSync(dirHtml, flatHtml);
     rmSync(join(DOCS, name), { recursive: true, force: true });
     console.log(`Flattened docs/${name}/index.html -> docs/${name}.html`);
+  }
+}
+
+// Blog articles render at /blog/<slug>/index.html in dist; flatten each to
+// the established /blog/<slug>.html URL.
+const blogDist = join(OUT, "blog");
+if (existsSync(blogDist) && statSync(blogDist).isDirectory()) {
+  for (const entry of readdirSync(blogDist)) {
+    if (entry === "index.html") continue;
+    const dirHtml = join(blogDist, entry, "index.html");
+    if (!existsSync(dirHtml)) continue;
+    const flatHtml = join(DOCS, "blog", `${entry}.html`);
+    rmSync(flatHtml, { force: true });
+    copyFileSync(dirHtml, flatHtml);
+    rmSync(join(DOCS, "blog", entry), { recursive: true, force: true });
+    console.log(`Flattened docs/blog/${entry}/index.html -> docs/blog/${entry}.html`);
   }
 }
 
