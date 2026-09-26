@@ -36,18 +36,19 @@
   },
   {
     "slug": "master-vs-sync-neighboring-rights",
-    "title": "Master vs. Sync vs. Neighboring Rights",
-    "tagline": "Three rights in one song - and who gets paid for each.",
-    "category": "Music & IP",
-    "audience": "Athletes, creators, schools, and families",
-    "description": "A one-page reference on the difference between a master recording, synchronization (sync), and neighboring rights in music.",
-    "intro": "A single song contains multiple rights. In highlight reels, event content, and social video, schools and creators routinely need more than one permission. This reference untangles the three most common rights so the next clearance question is clear.",
+    "title": "Why Your Highlight Got Muted: Music Rights for Sports Reels",
+    "tagline": "Game footage is yours. The music on top of it is a separate question.",
+    "category": "Families & Athletes",
+    "audience": "Families, athletes, schools, and media staff",
+    "description": "Plain-English guide to highlights that get muted or banned: master and sync rights, what buying a song does and does not cover, and music-safe ways to post game film.",
+    "intro": "Your game footage belongs to you. The song you edit onto it does not come with your footage. Music is the most common reason highlight reels get muted, blocked, or taken down on YouTube, Hudl, TikTok, and X. This one-pager explains the two rights that matter in plain English - master and sync - why that red 'banned' banner appears, and how to post highlights without giving the platform a reason to yank them.",
     "bullets": [
-      "Master: the actual sound recording and who owns that file",
-      "Sync: the right to pair music with moving images - required for any video using a song",
-      "Neighboring rights: performance-side royalties tied to the recording, adjacent to copyright",
-      "Highlight reels usually need both master and sync clearance; buying the song does not grant sync rights",
-      "When in doubt, treat unlicensed music in video as a clearance question, not a taste question"
+      "Why highlights get muted: unlicensed music is the #1 trigger across YouTube, Hudl, TikTok, and X",
+      "Master = the recording you (or a label) own; sync = permission to pair any song with moving video",
+      "Buying or streaming a song does not grant sync rights - using it over your film still needs a license",
+      "The mute or banned outcome: platforms may mute, block, remove, or claim revenue on flagged footage",
+      "Safe edits: your own footage, voiceover, commentary, and royalty-free or properly licensed music",
+      "The playbook: choose one of these safe audio paths before you ever drop a highlight this season"
     ],
     "pdf": "master-vs-sync-neighboring-rights.pdf"
   },
