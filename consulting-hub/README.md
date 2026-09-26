@@ -30,10 +30,15 @@ consulting-hub/
 - **Site**: Astro 7 static build → GitHub Pages (`docs/`).
 - **Consultation form**: Formspree (`src/components/LeadEngine.astro` → `https://formspree.io/f/xeaqkdgv`), owned by `jaylensinegal@yahoo.com`. No persistent CRM.
 - **Resource capture**: Google Apps Script web app (`automation/build_hub.js` -
-  `doPost(e)`), wired in `src/layouts/Base.astro` via `RESOURCE_CAPTURE_URL`.
-  Currently **empty / not deployed** until Step 7 in `GO_LIVE.md`.
+  `doPost(e)`), wired in `src/layouts/Base.astro` via `RESOURCE_CAPTURE_URL` to
+  `https://script.google.com/macros/s/AKfycbyWitBgV8WbjjprP11CiKdvkyHA0CPsOrK9utuJaiQGlZvhf0ipiSg-GOgwTuu59dpb/exec`.
+  LIVE. Every PDF download now collects an email and appends a row to the
+  configured sheet (`ResourceDownloads` tab; target set with
+  `setDownloadsSpreadsheetId(...)`).
+- **Invoicing / payments**: Square Invoices (deposits, milestones, retainers).
 - **Analytics**: Google Analytics only.
-- **Inquiries / gated one-sheet**: `mailto:` handoffs (no form backend).
+- **Inquiries / gated one-sheet**: `mailto:` handoffs superseded by the capture
+  gate once enabled; form remains the consultation intake.
 - **CRM**: NONE. Future pipeline tooling (Gap 2 build-out) starts from a clean
   slate - do not assume HubSpot or any vendor.
 

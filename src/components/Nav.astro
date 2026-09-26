@@ -1,5 +1,5 @@
 ---
-import { NAV_LINKS, SITE } from "../data/site";
+import { NAV_LINKS, SCHEDULING, SITE } from "../data/site";
 import Icons from "./Icons.astro";
 ---
 
@@ -30,11 +30,13 @@ import Icons from "./Icons.astro";
 
     <div class="flex items-center gap-3">
       <a
-        href="/#contact"
+        href={SCHEDULING.pathA}
+        target="_blank"
+        rel="noopener noreferrer"
         class="hidden items-center gap-2 rounded-sm border border-neutral-300 bg-white px-6 py-2.5 text-sm font-bold text-black transition-all duration-300 hover:border-electricBlue hover:shadow-[0_0_15px_rgba(37,99,235,0.5)] sm:inline-flex"
       >
         Book Consultation
-        <Icons name="arrow-right" />
+        <Icons name="arrow-up-right" />
       </a>
       <button
         type="button"
@@ -63,12 +65,14 @@ import Icons from "./Icons.astro";
         ))
       }
       <a
-        href="/#contact"
+        href={SCHEDULING.pathA}
+        target="_blank"
+        rel="noopener noreferrer"
         data-mobile-link
         class="mt-4 inline-flex items-center justify-center gap-2 rounded-sm bg-black px-4 py-3 text-sm font-bold text-white"
       >
         Book Consultation
-        <Icons name="arrow-right" />
+        <Icons name="arrow-up-right" />
       </a>
     </nav>
   </div>

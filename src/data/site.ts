@@ -26,11 +26,10 @@ export const FLIGHTTIME_URL = "https://www.flighttimeathleticsllc.com";
 export const CONTACT_EMAIL = "jjsinegal@alumni.fullsail.edu";
 
 // Resource downloads: where the site POSTs an email capture on each PDF
-// download (steps in consulting-hub/GO_LIVE.md Step 7). Empty string keeps
-// downloads direct (no gate) until the Google Apps Script web app is live.
-// Only a deployed `.../exec` web app URL works here (Google "Web app" > Who has
-// access: Anyone). A Drive folder link is not a capture endpoint.
-export const RESOURCE_CAPTURE_URL = "";
+// download (steps in consulting-hub/GO_LIVE.md Step 7). Deployed web app URL;
+// when set, every PDF download requires an email and rows land in the
+// DOWNLOAD_LEADS / configured spreadsheet (ResourceDownloads tab).
+export const RESOURCE_CAPTURE_URL = "https://script.google.com/macros/s/AKfycbyWitBgV8WbjjprP11CiKdvkyHA0CPsOrK9utuJaiQGlZvhf0ipiSg-GOgwTuu59dpb/exec";
 
 // Paste your real Google Calendar appointment-schedule links here after
 // creating them (steps in consulting-hub/GO_LIVE.md). Format:
